@@ -9,6 +9,7 @@ sentence-transformers
 chromadb
 pypdf
 PyMuPDF==1.26.4
+pytesseract==0.3.13
 python-dotenv
 python-multipart
 langchain-experimental
