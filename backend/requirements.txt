@@ -8,6 +8,7 @@ langchain-huggingface
 sentence-transformers
 chromadb
 pypdf
+PyMuPDF==1.26.4
 python-dotenv
 python-multipart
 langchain-experimental
