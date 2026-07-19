@@ -4,8 +4,7 @@ import logging
 from pathlib import Path
 import fitz  # PyMuPDF
 
-import pytesseract
-from pdf2image import convert_from_path
+
 from langchain_community.document_loaders import TextLoader
 from langchain_core.documents import Document
 from langchain_experimental.text_splitter import SemanticChunker
@@ -70,47 +69,33 @@ def _load_csv(file_path: Path):
     return documents
 
 def _extract_pdf_hybrid(file_path: Path) -> tuple[list[Document], bool, int]:
-    """Extracts text using PyMuPDF. Falls back to OCR if text is sparse. Returns (docs, ocr_used, num_pages)."""
+    """Extract text from PDF using PyMuPDF only."""
     documents = []
     ocr_used = False
-    
+
     try:
         doc = fitz.open(str(file_path))
         num_pages = len(doc)
-        total_text = ""
-        
+
         for page_num in range(num_pages):
             page = doc.load_page(page_num)
             text = page.get_text("text")
-            total_text += text
-            
+
             if text.strip():
-                documents.append(Document(
-                    page_content=text,
-                    metadata={"source_file": file_path.name, "document_type": "pdf", "page": page_num + 1}
-                ))
-        
-        # Determine if OCR is needed (less than 50 chars per page on average implies scanned image)
-        avg_chars_per_page = len(total_text.strip()) / max(1, num_pages)
-        if avg_chars_per_page < 50:
-            logger.info(f"Insufficient digital text detected in {file_path.name}. Falling back to OCR.")
-            ocr_used = True
-            documents = [] # Clear digital text attempts
-            try:
-                images = convert_from_path(str(file_path))
-                for i, img in enumerate(images):
-                    text = pytesseract.image_to_string(img)
-                    if text.strip():
-                        documents.append(Document(
-                            page_content=text,
-                            metadata={"source_file": file_path.name, "document_type": "pdf", "page": i + 1, "ocr": True}
-                        ))
-            except Exception as ocr_err:
-                logger.error(f"OCR failed for {file_path.name}: {ocr_err}")
-                
+                documents.append(
+                    Document(
+                        page_content=text,
+                        metadata={
+                            "source_file": file_path.name,
+                            "document_type": "pdf",
+                            "page": page_num + 1,
+                        },
+                    )
+                )
+
         doc.close()
         return documents, ocr_used, num_pages
-        
+
     except Exception as e:
         logger.error(f"Error parsing PDF {file_path}: {e}")
         return [], False, 0
