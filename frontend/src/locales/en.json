@@ -1,0 +1,34 @@
+{
+  "sidebar": {
+    "groups": {
+      "main": "Main",
+      "campus": "Campus",
+      "academics": "Academics",
+      "administration": "Administration"
+    },
+    "items": {
+      "dashboard": "Dashboard",
+      "map": "Campus Navigation",
+      "timetable": "Timetable",
+      "notices": "Announcements",
+      "events": "Events",
+      "faculty": "Faculty",
+      "departments": "Departments",
+      "library": "Library",
+      "transport": "Transport",
+      "admin-cms": "Content Manager",
+      "admin-knowledge": "Knowledge Base",
+      "admin-analytics": "Analytics",
+      "settings": "Settings",
+      "logout": "Logout"
+    },
+    "header": {
+      "title": "SCE Portal",
+      "subtitle1": "Saranathan College of",
+      "subtitle2": "Engineering"
+    }
+  },
+  "topbar": {
+    "search": "Search campus..."
+  }
+}

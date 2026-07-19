@@ -1,0 +1,7 @@
+faculty_name,department,designation,cabin,phone,email,advisor_for
+Dr. Karthik Menon,CSE,HOD,RV Block - HOD Cabin,9876543210,hod.cse@college.edu,
+Prof. Ananya Sharma,CSE,Associate Professor,RV Block - Room 302,9876543211,ananya.s@college.edu,B.Tech CSE Section A
+Dr. Vikram Singh,ECE,HOD,KS Block - HOD Cabin,9876543212,hod.ece@college.edu,
+Prof. Meera Reddy,ECE,Assistant Professor,KS Block - Room 205,9876543213,meera.r@college.edu,B.Tech ECE Section B
+Dr. Rohan Gupta,MECH,Professor,Mech Block - Room 101,9876543214,rohan.g@college.edu,
+Prof. Priya Das,AI,Assistant Professor,BD Block - AI Faculty Cabin,9876543215,priya.das@college.edu,B.Tech AI Section A

@@ -1,0 +1,27 @@
+onboarding_id,step_number,instruction
+ITO01,1,Open WiFi settings on your device and select the network 'SCE_CAMPUS'.
+ITO01,2,Open a browser. You will be redirected to the SCE WiFi login page.
+ITO01,3,Enter your register number as username.
+ITO01,4,Enter your default password (DDMMYYYY + last 2 digits of register number).
+ITO01,5,Click Login. You will be connected to campus WiFi.
+ITO01,6,"For password reset, visit wifi.sce.edu/reset or contact the IT Support Desk."
+ITO02,1,Open mail.sce.edu in your browser.
+ITO02,2,Enter your college email ID (firstname.registernumber@student.sce.edu).
+ITO02,3,Enter your default password (register number).
+ITO02,4,Change your password immediately through Settings > Security.
+ITO02,5,Set a recovery email or phone number for account recovery.
+ITO03,1,Open lms.sce.edu in your browser (works best on campus WiFi).
+ITO03,2,Click 'Student Login' and enter your register number.
+ITO03,3,Enter your date of birth (DDMMYYYY) as the default password.
+ITO03,4,Change your password via Profile Settings.
+ITO03,5,You will see all your enrolled courses on the dashboard.
+ITO03,6,"For access issues, contact the IT Support Desk."
+ITO04,1,Open portal.sce.edu in your browser from any internet connection.
+ITO04,2,Enter your register number and date of birth (DDMMYYYY) as password.
+ITO04,3,"On first login, change your password and update your profile photo."
+ITO04,4,"Access timetable, attendance, internal marks, and fee receipts from the dashboard."
+ITO05,1,Go to a computer lab and sit at any available PC.
+ITO05,2,Press Ctrl+Alt+Del to see the login screen.
+ITO05,3,Enter your register number as username.
+ITO05,4,Enter the lab code provided by your lab instructor as the default password.
+ITO05,5,Change your password after first login.

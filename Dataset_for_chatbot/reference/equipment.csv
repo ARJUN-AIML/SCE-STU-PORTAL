@@ -1,0 +1,16 @@
+equipment_id,equipment_name,category
+EQ01,Projector,av_equipment
+EQ02,Smart Board,av_equipment
+EQ03,Air Conditioner,climate
+EQ04,Desktop PC,computing
+EQ05,Oscilloscope,lab_instrument
+EQ06,Function Generator,lab_instrument
+EQ07,Multimeter,lab_instrument
+EQ08,Soldering Station,lab_instrument
+EQ09,3D Printer,lab_instrument
+EQ10,CNC Machine,lab_instrument
+EQ11,Lathe Machine,lab_instrument
+EQ12,Welding Equipment,lab_instrument
+EQ13,Whiteboard,furniture
+EQ14,PA System,av_equipment
+EQ15,Server Rack,computing

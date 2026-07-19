@@ -1,0 +1,12 @@
+office_id,office_name,building_id,room_id,floor,officer_in_charge,office_hours,description
+OFF01,Principal Office,B01,R001,0,Dr. V. Ramachandran,Mon-Fri 09:00-17:00,"The Principal Office is on the ground floor of RV Block. The Principal oversees all academic, administrative, and student welfare activities of the institution."
+OFF02,Administrative Office,B01,R002,0,Mr. S. Krishnamurthy,Mon-Fri 09:00-17:00,"The Administrative Office handles student records, correspondence, ID card issuance, bonafide certificates, and general administrative queries."
+OFF03,Accounts Office,B01,R003,0,Mr. T. Balakrishnan,Mon-Fri 09:00-17:00,"The Accounts Office handles all fee payments, fee receipts, scholarship disbursements, and financial transactions."
+OFF04,Exam Cell,B01,R008,1,Dr. P. Sundaram,Mon-Fri 09:00-17:00,"The Exam Cell coordinates all examination activities including scheduling, hall ticket distribution, result publication, and arrear management."
+OFF05,Placement Cell,B01,R009,1,Ms. R. Kavitha,Mon-Fri 09:00-17:00,"The Placement Cell coordinates campus placement drives, internship programs, career counseling, and connects students with industry partners."
+OFF06,Admission Cell,B01,R004,0,Mr. A. Venkatesh,Mon-Fri 09:00-16:00,"The Admission Cell handles new student enrollments, document verification, and lateral entry applications."
+OFF07,Library Office,B01,R010,1,Ms. D. Subramanian,Mon-Sat 08:30-17:30,"The Library Office manages book lending, renewals, library membership, and maintains the digital catalogue."
+OFF08,Transport Office,B01,R005,0,Mr. K. Selvam,Mon-Sat 08:00-16:00,"The Transport Office handles bus pass applications, transport fee collection, and manages the college bus scheduling."
+OFF09,HOD Office — CSE,B01,R019,3,Dr. Karthik Menon,Mon-Fri 09:00-17:00,HOD Office for Computer Science and Engineering on the third floor of RV Block.
+OFF10,HOD Office — AIML,B03,R039,3,Dr. Arvind Raman,Mon-Fri 09:00-17:00,HOD Office for the AIML department located on the third floor of BD Block.
+OFF11,IT Support Desk,B01,R020,2,Mr. P. Subhash,Mon-Fri 08:30-17:30,"IT Support Desk located in the computer lab area of RV Block. Handles WiFi issues, email setup, LMS access, and student portal problems."

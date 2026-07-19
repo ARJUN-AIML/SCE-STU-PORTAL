@@ -1,0 +1,14 @@
+[
+  {
+    "event_name": "Tech Symposium 2026",
+    "date": "2026-08-15",
+    "location": "Main Auditorium",
+    "description": "Annual technology symposium featuring guest speakers from top tech companies."
+  },
+  {
+    "event_name": "Freshers Welcome Party",
+    "date": "2026-09-01",
+    "location": "College Ground",
+    "description": "Welcome party for the new batch of students."
+  }
+]

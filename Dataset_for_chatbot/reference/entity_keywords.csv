@@ -1,0 +1,200 @@
+keyword_id,entity_type,entity_id,keyword
+KW0001,building,B01,principal office
+KW0002,building,B01,administrative office
+KW0003,building,B01,admin
+KW0004,building,B01,main building
+KW0005,building,B01,first year
+KW0006,building,B01,cse classes
+KW0007,building,B01,exam cell
+KW0008,building,B01,placement cell
+KW0009,building,B01,library
+KW0010,building,B01,accounts
+KW0011,building,B01,fees
+KW0012,building,B01,transport office
+KW0013,building,B01,medical room
+KW0014,building,B02,ece department
+KW0015,building,B02,eee department
+KW0016,building,B02,ice department
+KW0017,building,B02,it department
+KW0018,building,B02,electronics lab
+KW0019,building,B02,engineering block
+KW0020,building,B03,aiml department
+KW0021,building,B03,aids department
+KW0022,building,B03,csbs department
+KW0023,building,B03,civil department
+KW0024,building,B03,js-ch
+KW0025,building,B03,ai lab
+KW0026,building,B03,data science lab
+KW0027,building,B03,js block
+KW0028,building,B04,mechanical department
+KW0029,building,B04,cad lab
+KW0030,building,B04,thermodynamics lab
+KW0031,building,B04,mech block
+KW0032,building,B05,workshop
+KW0033,building,B05,symposium
+KW0034,building,B05,fabrication
+KW0035,building,B05,tech fest venue
+KW0036,building,B06,main gate
+KW0037,building,B06,entrance
+KW0038,building,B06,bus stop
+KW0039,building,B06,security
+KW0040,building,B06,visitor
+KW0041,building,B07,sports
+KW0042,building,B07,cricket
+KW0043,building,B07,football
+KW0044,building,B07,athletics
+KW0045,building,B07,sports meet
+KW0046,building,B08,canteen
+KW0047,building,B08,food
+KW0048,building,B08,lunch
+KW0049,building,B08,breakfast
+KW0050,building,B08,mess
+KW0051,building,B09,hostel
+KW0052,building,B09,warden
+KW0053,building,B09,accommodation
+KW0054,building,B09,dormitory
+KW0055,building,B09,men's hostel
+KW0056,building,B09,women's hostel
+KW0057,department,D01,computer science
+KW0058,department,D01,programming
+KW0059,department,D01,software
+KW0060,department,D01,algorithms
+KW0061,department,D02,artificial intelligence
+KW0062,department,D02,machine learning
+KW0063,department,D02,deep learning
+KW0064,department,D02,neural networks
+KW0065,department,D03,data science
+KW0066,department,D03,big data
+KW0067,department,D03,analytics
+KW0068,department,D03,python
+KW0069,department,D04,business systems
+KW0070,department,D04,erp
+KW0071,department,D04,management
+KW0072,department,D05,structural engineering
+KW0073,department,D05,construction
+KW0074,department,D05,concrete
+KW0075,department,D06,electronics
+KW0076,department,D06,communication
+KW0077,department,D06,vlsi
+KW0078,department,D06,embedded systems
+KW0079,department,D07,electrical machines
+KW0080,department,D07,power systems
+KW0081,department,D07,transformers
+KW0082,department,D08,instrumentation
+KW0083,department,D08,process control
+KW0084,department,D08,plc
+KW0085,department,D08,scada
+KW0086,department,D09,networking
+KW0087,department,D09,cloud computing
+KW0088,department,D09,cybersecurity
+KW0089,department,D09,web development
+KW0090,department,D10,thermodynamics
+KW0091,department,D10,fluid mechanics
+KW0092,department,D10,manufacturing
+KW0093,department,D10,cad cam
+KW0094,room,R010,library
+KW0095,room,R010,books
+KW0096,room,R010,reading
+KW0097,room,R019,computer lab
+KW0098,room,R019,programming lab
+KW0099,room,R021,seminar hall
+KW0100,room,R021,orientation
+KW0101,room,R040,ai lab
+KW0102,room,R040,machine learning lab
+KW0103,room,R038,conference hall
+KW0104,room,R038,js block a
+KW0105,facility,FAC01,library
+KW0106,facility,FAC01,books
+KW0107,facility,FAC01,journals
+KW0108,facility,FAC02,food
+KW0109,facility,FAC02,lunch
+KW0110,facility,FAC02,breakfast
+KW0111,facility,FAC03,health
+KW0112,facility,FAC03,first aid
+KW0113,facility,FAC04,parking
+KW0114,facility,FAC04,bike
+KW0115,facility,FAC07,wifi
+KW0116,facility,FAC07,internet
+KW0117,facility,FAC08,stationery
+KW0118,facility,FAC08,books shop
+KW0119,facility,FAC09,sports
+KW0120,facility,FAC09,cricket
+KW0121,facility,FAC10,xerox
+KW0122,facility,FAC10,printing
+KW0123,facility,FAC10,photocopy
+KW0124,office,OFF01,principal
+KW0125,office,OFF01,head of institution
+KW0126,office,OFF02,admin
+KW0127,office,OFF02,id card
+KW0128,office,OFF02,bonafide
+KW0129,office,OFF03,fees
+KW0130,office,OFF03,payment
+KW0131,office,OFF04,exam
+KW0132,office,OFF04,hall ticket
+KW0133,office,OFF04,results
+KW0134,office,OFF04,transcript
+KW0135,office,OFF05,placement
+KW0136,office,OFF05,job
+KW0137,office,OFF05,recruitment
+KW0138,office,OFF07,library membership
+KW0139,office,OFF07,book lending
+KW0140,office,OFF08,bus pass
+KW0141,office,OFF08,transport
+KW0142,office,OFF11,wifi help
+KW0143,office,OFF11,email setup
+KW0144,office,OFF11,lms
+KW0145,office,OFF11,student portal
+KW0146,club,C001,AI
+KW0147,club,C001,machine learning
+KW0148,club,C001,deep learning
+KW0149,club,C002,coding
+KW0150,club,C002,competitive programming
+KW0151,club,C002,leetcode
+KW0152,club,C003,electronics
+KW0153,club,C003,arduino
+KW0154,club,C003,circuits
+KW0155,club,C004,robotics
+KW0156,club,C004,robot building
+KW0157,club,C005,startup
+KW0158,club,C005,entrepreneurship
+KW0159,club,C006,cybersecurity
+KW0160,club,C006,ethical hacking
+KW0161,club,C006,ctf
+KW0162,club,C007,design
+KW0163,club,C007,figma
+KW0164,club,C007,ui ux
+KW0165,club,C008,data science
+KW0166,club,C008,kaggle
+KW0167,club,C009,environment
+KW0168,club,C009,green
+KW0169,club,C010,debate
+KW0170,club,C010,public speaking
+KW0171,club,C011,automobile
+KW0172,club,C011,go-kart
+KW0173,club,C012,drone
+KW0174,club,C012,uav
+KW0175,it_onboarding,ITO01,wifi password
+KW0176,it_onboarding,ITO01,internet access
+KW0177,it_onboarding,ITO01,campus network
+KW0178,it_onboarding,ITO02,email setup
+KW0179,it_onboarding,ITO02,college email
+KW0180,it_onboarding,ITO03,lms login
+KW0181,it_onboarding,ITO03,course materials
+KW0182,it_onboarding,ITO03,assignments
+KW0183,it_onboarding,ITO04,student portal login
+KW0184,it_onboarding,ITO04,attendance
+KW0185,it_onboarding,ITO04,internal marks
+KW0186,student_support,SUP01,complaint
+KW0187,student_support,SUP01,grievance
+KW0188,student_support,SUP02,ragging
+KW0189,student_support,SUP02,anti ragging
+KW0190,student_support,SUP02,helpline
+KW0191,student_support,SUP03,counseling
+KW0192,student_support,SUP03,mental health
+KW0193,student_support,SUP03,stress
+KW0194,student_support,SUP04,first aid
+KW0195,student_support,SUP04,nurse
+KW0196,student_support,SUP05,security
+KW0197,student_support,SUP05,emergency
+KW0198,student_support,SUP06,women safety
+KW0199,student_support,SUP06,harassment

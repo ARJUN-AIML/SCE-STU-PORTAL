@@ -1,0 +1,14 @@
+faculty_id,faculty_name,department,designation,administrative_role,email,qualification,specialization,building,office,data_type
+F001,Dr. XYZ,Computer Science and Engineering,Professor,Principal,principal@saranathan.ac.in,Ph.D,Artificial Intelligence,Main Block,Principal Office,DEMO
+F002,Dr. ABC,Electronics and Communication Engineering,Professor,Dean - Academics,dean.academics@saranathan.ac.in,Ph.D,VLSI Design,Main Block,Dean Office,DEMO
+F003,Dr. Karthik Menon,Computer Science and Engineering,Professor,HOD,karthik.cse@saranathan.ac.in,Ph.D,Machine Learning,RV Block,CSE HOD Cabin,DEMO
+F004,Dr. Meena Krishnan,Electronics and Communication Engineering,Professor,HOD,meena.ece@saranathan.ac.in,Ph.D,Embedded Systems,KS Block,ECE HOD Cabin,DEMO
+F005,Dr. Sanjay Iyer,Electrical and Electronics Engineering,Associate Professor,HOD,sanjay.eee@saranathan.ac.in,Ph.D,Power Systems,KS Block,EEE HOD Cabin,DEMO
+F006,Dr. Lakshmi Narayanan,Information Technology,Professor,HOD,lakshmi.it@saranathan.ac.in,Ph.D,Cloud Computing,KS Block,IT HOD Cabin,DEMO
+F007,Dr. Rahul Dev,Instrumentation and Control Engineering,Assistant Professor,,rahul.ice@saranathan.ac.in,M.E,Control Systems,KS Block,Staff Room 1,DEMO
+F008,Dr. Divya Srinivas,Computer Science and Business Systems,Assistant Professor,HOD,divya.csbs@saranathan.ac.in,Ph.D,Data Analytics,BD Block,CSBS HOD Cabin,DEMO
+F009,Dr. Naveen Kumar,Civil Engineering,Professor,HOD,naveen.civil@saranathan.ac.in,Ph.D,Structural Engineering,BD Block,Civil HOD Cabin,DEMO
+F010,Dr. Hari Prasad,Mechanical Engineering,Professor,HOD,hari.mech@saranathan.ac.in,Ph.D,Thermal Engineering,ME Block,Mech HOD Cabin,DEMO
+F011,Prof. Aishwarya Rao,Artificial Intelligence & Machine Learning,Assistant Professor,HOD,aishwarya.aiml@saranathan.ac.in,M.E,Deep Learning,BD Block,AIML HOD Cabin,DEMO
+F012,Dr. Priya Nair,Artificial Intelligence & Data Science,Associate Professor,HOD,priya.aids@saranathan.ac.in,Ph.D,Data Science,BD Block,AIDS HOD Cabin,DEMO
+F013,Prof. Vikram Shah,Computer Science and Engineering,Assistant Professor,Placement Officer,vikram.placement@saranathan.ac.in,M.E,Software Engineering,RV Block,Placement Cell,DEMO

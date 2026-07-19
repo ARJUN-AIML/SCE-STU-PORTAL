@@ -1,0 +1,9 @@
+form_id,form_name,related_process_id,download_url,submission_office_id,description,last_updated
+FRM01,Bus Pass Application Form,PROC04,https://forms.sce.edu/buspass,OFF08,Standard form to apply for a college bus pass. Available at the Transport Office and online.,2026-07-01
+FRM02,Hostel Application Form,PROC05,https://forms.sce.edu/hostel,OFF02,Form to apply for on-campus hostel accommodation. Fill online and submit with documents to the hostel warden.,2026-07-01
+FRM03,Bonafide Certificate Request,PROC07,https://forms.sce.edu/bonafide,OFF02,Online form to request a Bonafide Certificate from the Administrative Office.,2026-07-01
+FRM04,Transcript Request Form,PROC10,https://forms.sce.edu/transcript,OFF04,Form to request official academic transcripts from the Exam Cell.,2026-07-01
+FRM05,Library Membership Form,PROC03,https://forms.sce.edu/library,OFF07,Form to activate library membership and collect library card.,2026-07-01
+FRM06,OD Request Form,PROC08,https://forms.sce.edu/od,OFF09,Form to request On-Duty certificate for external academic events.,2026-07-01
+FRM07,Leave Application Form,PROC09,https://forms.sce.edu/leave,OFF09,Standard leave application form. Available at department office and student portal.,2026-07-01
+FRM08,Club Registration Form,PROC02,https://forms.sce.edu/clubs,OFF09,Form to join a college club. Obtain from the club coordinator or download online.,2026-07-01

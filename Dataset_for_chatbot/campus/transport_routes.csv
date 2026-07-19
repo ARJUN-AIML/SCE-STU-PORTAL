@@ -1,0 +1,5 @@
+route_id,route_name,departure_time,arrival_time,return_time,fare,days_of_operation,vehicle_type,description
+TR01,Bus 2 - KK Nagar,07:00,08:30,16:30,400,Mon-Sat,bus,Picks up from KK Nagar through Airport and Thuvakudi to Campus.
+TR02,Bus 18 - Thillai Nagar,07:00,08:30,16:30,400,Mon-Sat,bus,"Covers Thillai Nagar, Cantonment, TVS Tolgate to Campus."
+TR03,Van 1 - Thanjavur,07:00,08:30,16:30,400,Mon-Sat,van,Express Van from Thanjavur via NIT Trichy.
+TR04,Bus 21 - Srirangam,07:00,08:30,16:30,400,Mon-Sat,bus,"Covers Srirangam, Chatram Bus Stand, Palakkarai to Campus."

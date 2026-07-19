@@ -1,0 +1,27 @@
+route_id,stop_number,stop_name,pickup_time
+TR01,1,KK Nagar,07:00
+TR01,2,Sundar Nagar,07:10
+TR01,3,LIC Colony,07:20
+TR01,4,Kajamalai,07:30
+TR01,5,Airport,07:40
+TR01,6,Gundur,07:50
+TR01,7,HAPP,07:60
+TR01,8,Thuvakudi,07:70
+TR01,9,Saranathan College of Engineering,07:80
+TR02,1,Thillai Nagar,07:00
+TR02,2,Tennur,07:10
+TR02,3,Cantonment,07:20
+TR02,4,TVS Tolgate,07:30
+TR02,5,Saranathan College of Engineering,07:40
+TR03,1,Thanjavur,07:00
+TR03,2,Vallam,07:10
+TR03,3,Sengipatti,07:20
+TR03,4,NIT Trichy,07:30
+TR03,5,Thuvakudi,07:40
+TR03,6,Saranathan College of Engineering,07:50
+TR04,1,Srirangam,07:00
+TR04,2,Thiruvanaikoil,07:10
+TR04,3,Chatram Bus Stand,07:20
+TR04,4,Main Guard Gate,07:30
+TR04,5,Palakkarai,07:40
+TR04,6,Saranathan College of Engineering,07:50

@@ -1,0 +1,34 @@
+{
+  "sidebar": {
+    "groups": {
+      "main": "പ്രധാനം",
+      "campus": "ക്യാമ്പസ്",
+      "academics": "പഠനം",
+      "administration": "ഭരണം"
+    },
+    "items": {
+      "dashboard": "ഡാഷ്ബോർഡ്",
+      "map": "ക്യാമ്പസ് നാവിഗേഷൻ",
+      "timetable": "സമയപ്പട്ടിക",
+      "notices": "അറിയിപ്പുകൾ",
+      "events": "പരിപാടികൾ",
+      "faculty": "അധ്യാപകർ",
+      "departments": "വകുപ്പുകൾ",
+      "library": "ലൈബ്രറി",
+      "transport": "ഗതാഗതം",
+      "admin-cms": "ഉള്ളടക്ക മാനേജർ",
+      "admin-knowledge": "നോളജ് ബേസ്",
+      "admin-analytics": "അനലിറ്റിക്സ്",
+      "settings": "ക്രമീകരണങ്ങൾ",
+      "logout": "ലോഗൗട്ട്"
+    },
+    "header": {
+      "title": "SCE പോർട്ടൽ",
+      "subtitle1": "ശരണാഥൻ എഞ്ചിനീയറിംഗ്",
+      "subtitle2": "കോളേജ്"
+    }
+  },
+  "topbar": {
+    "search": "തിരയുക..."
+  }
+}

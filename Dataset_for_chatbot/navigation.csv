@@ -1,0 +1,8 @@
+source,destination,walking_time,directions
+Main Gate,RV Block,2 min,Walk straight from entrance.
+RV Block,BD Block,3 min,Follow central pathway.
+RV Block,KS Block,4 min,Walk east from RV Block.
+RV Block,ME Block,6 min,Proceed towards Mechanical Block.
+BD Block,ME Workshop,2 min,Workshop behind ME Block.
+KS Block,BD Block,5 min,Use academic corridor.
+Library,Principal Office,1 min,Inside RV Block.

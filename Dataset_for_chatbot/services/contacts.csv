@@ -1,0 +1,13 @@
+contact_id,entity_type,entity_id,entity_name,email,phone,is_emergency,description
+CON01,office,OFF01,Principal Office,principal@sce.edu,+91-9876540201,no,"Contact the Principal Office for academic grievances, policy matters, and escalated student concerns."
+CON02,office,OFF02,Administrative Office,admin@sce.edu,+91-9876540202,no,"Contact the Administrative Office for ID cards, bonafide certificates, and general student records."
+CON03,office,OFF03,Accounts Office,accounts@sce.edu,+91-9876540203,no,"Contact the Accounts Office for fee payment, receipts, and scholarship disbursement."
+CON04,office,OFF05,Placement Cell,placement@sce.edu,+91-9876540205,no,"Contact the Placement Cell for campus recruitment, internships, and career guidance."
+CON05,office,OFF04,Exam Cell,examcell@sce.edu,+91-9876540204,no,"Contact the Exam Cell for exam schedules, hall tickets, results, and transcript requests."
+CON06,office,OFF07,Library Office,library@sce.edu,+91-9876540206,no,"Contact the Library for membership, book queries, and digital resource access."
+CON07,office,OFF08,Transport Office,transport@sce.edu,+91-9876540207,no,Contact the Transport Office for bus pass applications and route information.
+CON08,emergency,,Campus Security,security@sce.edu,+91-9876540100,yes,24x7 campus security. Call immediately for any safety emergency on campus.
+CON09,emergency,,Anti-Ragging Helpline,antiragging@sce.edu,1800-180-5522,yes,National anti-ragging helpline. Available 24x7. All complaints are treated confidentially.
+CON10,office,OFF11,IT Support Desk,itsupport@sce.edu,+91-9876540210,no,"IT Support for WiFi, email, LMS, and student portal issues."
+CON11,office,OFF06,Admission Cell,admissions@sce.edu,+91-9876540208,no,"Contact Admissions for enrollment, document verification, and lateral entry queries."
+CON12,facility,FAC03,Medical Room,medical@sce.edu,+91-9876540209,yes,Campus medical room. Contact for health emergencies during college hours.

@@ -1,0 +1,51 @@
+room_id,building_id,room_number,floor,capacity,room_type,department_id,description
+R001,B01,RV-GF-Principal,0,5,office,D01,Principal's Office located on the ground floor of RV Block. Houses the Principal and administrative support staff.
+R002,B01,RV-GF-Admin,0,10,office,D01,"Administrative Office on the ground floor of RV Block. Handles student records, correspondence, and general administration."
+R003,B01,RV-GF-Accounts,0,8,office,D01,"Accounts Office on the ground floor of RV Block. Handles fee payment, receipts, and financial transactions."
+R004,B01,RV-GF-Admission,0,6,office,D01,"Admission Cell on the ground floor of RV Block. Handles new student admissions, document verification, and enrollment."
+R005,B01,RV-GF-Transport,0,4,office,D01,Transport Office on the ground floor of RV Block. Manages bus pass applications and college transport scheduling.
+R006,B01,RV-GF-Medical,0,4,office,D01,Medical Room on the ground floor of RV Block. First-aid and basic medical care provided by the campus nurse.
+R007,B01,RV-GF-Security,0,3,office,D01,Security Office at the ground floor of RV Block near the entrance. Manages campus security and visitor passes.
+R008,B01,RV-1F-ExamCell,1,8,office,D01,"Exam Cell on the first floor of RV Block. Handles exam scheduling, hall ticket distribution, results, and arrear management."
+R009,B01,RV-1F-Placement,1,10,office,D01,"Placement Cell on the first floor of RV Block. Coordinates campus recruitment drives, internships, and career guidance."
+R010,B01,RV-1F-Library,1,80,office,D01,"Central Library on the first floor of RV Block. Houses a collection of over 10,000 books, journals, and digital resources available to all students and faculty."
+R011,B01,RV-301,3,60,classroom,D01,CSE Classroom on the third floor of RV Block. Equipped with projector and whiteboard. Used primarily for first-year CSE theory classes.
+R012,B01,RV-302,3,60,classroom,D01,CSE Classroom on the third floor of RV Block. Used for first-year theory classes.
+R013,B01,RV-303,3,60,classroom,D01,CSE Classroom on the third floor of RV Block.
+R014,B01,RV-304,3,60,classroom,D01,CSE Classroom on the third floor of RV Block.
+R015,B01,RV-305,3,60,classroom,D01,CSE Classroom on the third floor of RV Block.
+R016,B01,RV-401,4,60,classroom,D01,CSE Classroom on the fourth floor of RV Block.
+R017,B01,RV-402,4,60,classroom,D01,CSE Classroom on the fourth floor of RV Block.
+R018,B01,RV-403,4,60,classroom,D01,CSE Classroom on the fourth floor of RV Block.
+R019,B01,RV-Lab1,2,40,laboratory,D01,Computer Lab 1 on the second floor of RV Block. Contains 40 desktop PCs used for programming and software labs.
+R020,B01,RV-Lab2,2,40,laboratory,D01,"Computer Lab 2 on the second floor of RV Block. Used for DBMS, operating systems, and web development labs."
+R021,B01,RV-SH1,1,150,seminar_hall,D01,"Seminar Hall 1 on the first floor of RV Block. Large air-conditioned hall used for orientation, guest lectures, and workshops."
+R022,B02,KS-301,3,60,classroom,D06,ECE Classroom on the third floor of KS Block.
+R023,B02,KS-302,3,60,classroom,D06,ECE Classroom on the third floor of KS Block.
+R024,B02,KS-303,3,60,classroom,D06,ECE Classroom on the third floor of KS Block.
+R025,B02,KS-304,3,60,classroom,D07,EEE Classroom on the third floor of KS Block.
+R026,B02,KS-305,3,60,classroom,D07,EEE Classroom on the third floor of KS Block.
+R027,B02,KS-401,4,60,classroom,D08,ICE Classroom on the fourth floor of KS Block.
+R028,B02,KS-402,4,60,classroom,D09,IT Classroom on the fourth floor of KS Block.
+R029,B02,KS-403,4,60,classroom,D09,IT Classroom on the fourth floor of KS Block.
+R030,B02,KS-ECE-Lab,2,40,laboratory,D06,"Electronics and Communication Lab on the second floor of KS Block. Equipped with oscilloscopes, function generators, and breadboard kits."
+R031,B02,KS-EEE-Lab,2,40,laboratory,D07,"Electrical Machines Lab on the second floor of KS Block. Contains AC/DC motors, transformers, and power supply units."
+R032,B02,KS-IT-Lab,2,40,laboratory,D09,IT Lab on the second floor of KS Block. Contains 40 networked desktop PCs for networking and web labs.
+R033,B03,BD-2-103,1,60,classroom,D02,AIML Classroom on the first floor of BD Block.
+R034,B03,BD-2-104,1,60,classroom,D02,AIML Classroom on the first floor of BD Block.
+R035,B03,BD-2-201,2,60,classroom,D03,AIDS Classroom on the second floor of BD Block.
+R036,B03,BD-2-202,2,60,classroom,D03,AIDS Classroom on the second floor of BD Block.
+R037,B03,BD-2-301,3,60,classroom,D02,AIML Classroom on the third floor of BD Block. Primary classroom for AIML third-year students.
+R038,B03,BD-2-302,3,60,classroom,D04,CSBS Classroom on the third floor of BD Block.
+R039,B03,BD-2-401,4,60,classroom,D05,Civil Engineering Classroom on the fourth floor of BD Block.
+R040,B03,JS-Block-A,0,120,seminar_hall,D02,"JS Block A is a large open seminar hall on the ground floor of BD Block. Used for inter-departmental events, technical talks, and college-wide conferences."
+R041,B03,JS-Block-B,0,120,seminar_hall,D03,JS Block B is a seminar hall adjacent to JS Block A in BD Block. Used for departmental events and placement training sessions.
+R042,B03,BD-AI-Lab,3,40,laboratory,D02,AI Lab on the third floor of BD Block. Equipped with high-performance workstations for machine learning and deep learning experiments.
+R043,B03,BD-DS-Lab,2,40,laboratory,D03,"Data Science Lab on the second floor of BD Block. Equipped with workstations running Python, R, Tableau, and cloud tools."
+R044,B04,ME-301,3,60,classroom,D10,Mechanical Engineering Classroom on the third floor of ME Block.
+R045,B04,ME-302,3,60,classroom,D10,Mechanical Engineering Classroom on the third floor of ME Block.
+R046,B04,ME-401,4,60,classroom,D10,Mechanical Engineering Classroom on the fourth floor of ME Block.
+R047,B04,ME-CAD-Lab,2,30,laboratory,D10,"CAD/CAM Lab on the second floor of ME Block. Equipped with workstations running SolidWorks, AutoCAD, and ANSYS."
+R048,B04,ME-Thermo-Lab,1,20,laboratory,D10,Thermodynamics and Fluid Mechanics Lab on the first floor of ME Block.
+R049,B05,MEW-Main,0,200,workshop,D10,"Main workshop floor of the ME Workshop building. Contains lathes, milling machines, welding bays, and CNC machines. Used for manufacturing practice and symposiums."
+R050,B05,MEW-Hall,0,300,seminar_hall,D10,"Large event hall within the ME Workshop building used for symposiums, technical fests, and cultural events."

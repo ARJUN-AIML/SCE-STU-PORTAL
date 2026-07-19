@@ -1,0 +1,6 @@
+building,floor,room,description,nearby_landmark
+BD Block,3,BD-AI-Lab,The AI Lab is located on the third floor of the BD Block.,Next to Computer Center
+RV Block,Ground,Seminar Hall,The main Seminar Hall for guest lectures.,Near Main Entrance
+RV Block,First,Placement Cell,Placement Cell handles campus recruitment.,Above the Library
+RV Block,First,Examination Cell,Examination Cell handles schedules and hall tickets.,Opposite Placement Cell
+RV Block,Ground,Library,Central Library.,Next to Seminar Hall

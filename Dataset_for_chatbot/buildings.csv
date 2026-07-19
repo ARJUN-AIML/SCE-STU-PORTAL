@@ -1,0 +1,6 @@
+building_id,building_name,alias,description
+B01,RV Block,,"Main administrative block. Principal office, administrative office, first-year classes, CSE (1st-4th year)."
+B02,KS Block,,"Core engineering block for ECE, EEE, ICE and IT (2nd-4th year)."
+B03,BD Block,JS-CH,"AIML, AIDS, CIVIL and CSBS (2nd-4th year)."
+B04,ME Block,,Mechanical Engineering academic block.
+B05,ME Workshop,,Workshop building. Symposiums are commonly conducted here.

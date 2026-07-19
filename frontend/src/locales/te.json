@@ -1,0 +1,34 @@
+{
+  "sidebar": {
+    "groups": {
+      "main": "ముఖ్యమైనవి",
+      "campus": "క్యాంపస్",
+      "academics": "విద్యా విషయాలు",
+      "administration": "నిర్వహణ"
+    },
+    "items": {
+      "dashboard": "డాష్‌బోర్డ్",
+      "map": "క్యాంపస్ నావిగేషన్",
+      "timetable": "టైమ్‌టేబుల్",
+      "notices": "ప్రకటనలు",
+      "events": "కార్యక్రమాలు",
+      "faculty": "అధ్యాపకులు",
+      "departments": "విభాగాలు",
+      "library": "గ్రంథాలయం",
+      "transport": "రవాణా",
+      "admin-cms": "కంటెంట్ మేనేజర్",
+      "admin-knowledge": "నాలెడ్జ్ బేస్",
+      "admin-analytics": "విశ్లేషణలు",
+      "settings": "సెట్టింగులు",
+      "logout": "లాగ్ అవుట్"
+    },
+    "header": {
+      "title": "SCE పోర్టల్",
+      "subtitle1": "శరణాథన్ ఇంజనీరింగ్",
+      "subtitle2": "కళాశాల"
+    }
+  },
+  "topbar": {
+    "search": "క్యాంపస్‌లో వెతకండి..."
+  }
+}

@@ -1,0 +1,12 @@
+mapping_id,building_id,canonical_name,block_code,alternate_name
+MAP01,B01,RV Block,RV,Main Block
+MAP02,B01,RV Block,RV,Administration Block
+MAP03,B02,KS Block,KS,Engineering Block
+MAP04,B03,BD Block,BD,JS-CH Block
+MAP05,B03,BD Block,BD,AIML Block
+MAP06,B04,ME Block,ME,Mechanical Block
+MAP07,B05,ME Workshop,MEW,Workshop Block
+MAP08,B06,Main Gate,MG,College Gate
+MAP09,B07,Sports Ground,SG,Ground
+MAP10,B08,Canteen Block,CB,Canteen Area
+MAP11,B09,Hostel Complex,HC,Hostel

@@ -1,0 +1,36 @@
+book_id,title,author,subject_area,department_id,copies_available,shelf_location,isbn,description
+LIB0001,Introduction to Algorithms,"Cormen, Leiserson, Rivest, Stein",Algorithms,D01,3,Shelf A1-Row 1,9780262033848,Comprehensive textbook on algorithms and data structures. Widely used in CSE and IT programs.
+LIB0002,The C Programming Language,Kernighan and Ritchie,Programming,D01,4,Shelf A1-Row 2,9780131103627,Classic reference for C programming by the creators of the language.
+LIB0003,Clean Code,Robert C. Martin,Software Engineering,D01,2,Shelf A1-Row 3,9780132350884,Best practices for writing maintainable and readable code.
+LIB0004,Database System Concepts,"Silberschatz, Korth, Sudarshan",Databases,D01,3,Shelf A2-Row 1,9780078022159,Standard textbook for database management systems.
+LIB0005,Computer Networks,Andrew Tanenbaum,Networking,D01,2,Shelf A2-Row 2,9780132126953,Complete reference on computer networking protocols and systems.
+LIB0006,Operating System Concepts,"Silberschatz, Galvin",Operating Systems,D01,3,Shelf A2-Row 3,9781118063330,The dinosaur book — standard OS textbook.
+LIB0007,Design Patterns,Gang of Four,Software Engineering,D01,2,Shelf A3-Row 1,9780201633610,Essential patterns for object-oriented software design.
+LIB0008,Python Crash Course,Eric Matthes,Programming,D01,4,Shelf A3-Row 2,9781593279288,Beginner-friendly Python programming guide.
+LIB0009,Pattern Recognition and Machine Learning,Bishop,Machine Learning,D02,2,Shelf B1-Row 1,9780387310732,Authoritative ML textbook covering probabilistic models.
+LIB0010,Deep Learning,"Goodfellow, Bengio, Courville",Deep Learning,D02,3,Shelf B1-Row 2,9780262035613,Comprehensive deep learning reference.
+LIB0011,Hands-On Machine Learning,Aurélien Géron,Machine Learning,D02,4,Shelf B1-Row 3,9781492032649,Practical ML with scikit-learn and TensorFlow.
+LIB0012,Natural Language Processing with Python,"Bird, Klein, Loper",NLP,D02,2,Shelf B2-Row 1,9780596516499,Classic NLTK-based NLP textbook.
+LIB0013,Artificial Intelligence: A Modern Approach,Russell and Norvig,Artificial Intelligence,D02,3,Shelf B2-Row 2,9780136042594,"The definitive AI textbook, used worldwide."
+LIB0014,Python for Data Analysis,Wes McKinney,Data Science,D03,4,Shelf B2-Row 3,9781491957660,pandas creator's guide to data analysis in Python.
+LIB0015,Data Science for Business,Provost and Fawcett,Data Science,D03,2,Shelf B3-Row 1,9781449361327,Connecting data science concepts to business problems.
+LIB0016,Electronic Devices and Circuit Theory,Boylestad,Electronics,D06,3,Shelf C1-Row 1,9780132622261,Standard electronics devices textbook.
+LIB0017,Digital Design,Morris Mano,Digital Electronics,D06,4,Shelf C1-Row 2,9780132774208,Classic digital logic design reference.
+LIB0018,Signals and Systems,"Oppenheim, Willsky",Signal Processing,D06,2,Shelf C1-Row 3,9780138147570,Standard signals and systems textbook.
+LIB0019,Electrical Machines,I.J. Nagrath,Electrical Machines,D07,3,Shelf C2-Row 1,9780070965935,Standard textbook for electrical machines.
+LIB0020,Power System Analysis,Stevenson,Power Systems,D07,2,Shelf C2-Row 2,9780070614505,Comprehensive power systems analysis reference.
+LIB0021,Control Systems Engineering,Norman Nise,Control Systems,D08,3,Shelf D1-Row 1,9781119474227,Standard control systems textbook.
+LIB0022,Cloud Computing,"Buyya, Broberg",Cloud Computing,D09,2,Shelf D1-Row 2,9780470887998,Principles and practice of cloud computing.
+LIB0023,Computer Organization and Architecture,Stallings,Computer Architecture,D01,3,Shelf A4-Row 1,9780134101613,Standard computer organization reference.
+LIB0024,Engineering Thermodynamics,"Cengel, Boles",Thermodynamics,D10,4,Shelf E1-Row 1,9780073398174,Standard thermodynamics textbook for engineers.
+LIB0025,Fluid Mechanics,"Cengel, Cimbala",Fluid Mechanics,D10,3,Shelf E1-Row 2,9780073380322,Complete fluid mechanics reference.
+LIB0026,Strength of Materials,R.K. Bansal,Strength of Materials,D10,2,Shelf E1-Row 3,9788131808146,Standard strength of materials textbook.
+LIB0027,Structural Analysis,R.C. Hibbeler,Structural Analysis,D05,3,Shelf F1-Row 1,9780134610672,Standard structural analysis textbook.
+LIB0028,Concrete Technology,M.S. Shetty,Concrete Technology,D05,2,Shelf F1-Row 2,9788121900775,Comprehensive concrete technology reference.
+LIB0029,Engineering Mathematics,B.S. Grewal,Mathematics,,5,Shelf G1-Row 1,9788174091956,The most widely used engineering mathematics reference in India.
+LIB0030,Technical Communication,Mike Markel,Communication,,3,Shelf G1-Row 2,9781319058258,Technical writing and professional communication guide.
+LIB0031,The Pragmatic Programmer,"Hunt, Thomas",Software Engineering,D01,2,Shelf A3-Row 3,9780135957059,Essential reading for every professional developer.
+LIB0032,Discrete Mathematics,Kenneth Rosen,Mathematics,D01,3,Shelf A4-Row 2,9780073383095,Standard discrete mathematics textbook for CS programs.
+LIB0033,Computer Vision,Szeliski,Computer Vision,D02,2,Shelf B3-Row 2,9781848829343,Comprehensive computer vision algorithms reference.
+LIB0034,Embedded Systems,Raj Kamal,Embedded Systems,D06,3,Shelf C3-Row 1,9780070494824,Standard embedded systems design textbook.
+LIB0035,VLSI Design,Neil Weste,VLSI,D06,2,Shelf C3-Row 2,9780321547996,Standard VLSI design and CMOS reference.

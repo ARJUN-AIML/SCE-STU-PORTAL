@@ -1,0 +1,154 @@
+{
+  "intents": {
+    "greeting": {
+      "examples": ["hi", "hello", "hey", "good morning", "good afternoon", "good evening"],
+      "response": "Hi! 👋 I'm your SCE Campus Assistant. I can help with faculty info, bus routes, events, timetables, notices, library, clubs, and more. What would you like to know?",
+      "follow_ups": ["Who is the HOD of CSE?", "What events are coming up?", "Show me bus routes"]
+    },
+    "capabilities": {
+      "examples": ["what can you do", "help", "what do you know", "what questions can I ask", "what can you help with"],
+      "response": "I can help with:\n• Faculty details & HODs\n• Bus routes & schedules\n• Events, hackathons & workshops\n• Notices & placements\n• Timetables & schedules\n• Library info & hours\n• Club details & registration\n• Department info\n• Campus navigation\n• Fee details\n• Exam schedules\n• Hostel & canteen info\n\nJust ask me anything about SCE!",
+      "follow_ups": ["Who is the HOD of CSE?", "Which bus goes to my area?", "Any upcoming events?"]
+    },
+    "leave_application": {
+      "examples": ["I need leave tomorrow", "I'll be absent today", "How do I apply for leave?", "I want to take a day off", "leave application", "sick leave", "absent from class"],
+      "response": "First inform your Class Coordinator about your absence. If you need a formal leave application, I can help you draft a leave email to your Department HOD. Would you like me to draft one?",
+      "follow_ups": ["Can you draft the leave email?", "Who is my Class Coordinator?", "What is the attendance policy?"]
+    },
+    "bonafide_certificate": {
+      "examples": ["I need a bonafide certificate", "How to get bonafide", "bonafide request", "apply for bonafide certificate", "bonafide letter"],
+      "response": "You can request a Bonafide Certificate from your Department Office or the Administrative Office. Bring your college ID card. I can help draft a request letter if needed.",
+      "follow_ups": ["Can you draft the request letter?", "Where is the Administrative Office?"]
+    },
+    "lost_id_card": {
+      "examples": ["My ID is missing", "I lost my college card", "I can't find my ID", "where to report lost ID", "lost my identity card", "ID card replacement"],
+      "response": "Report the loss immediately to your Department Office or Administrative Office and apply for a replacement ID card. You'll need to fill a replacement form and pay the replacement fee.",
+      "follow_ups": ["Where is the Administrative Office?", "How much does a replacement ID cost?"]
+    },
+    "fee_payment": {
+      "examples": ["How to pay fees", "fee payment", "where do I pay my fees", "pay tuition fee", "fee due date", "fees structure"],
+      "response": "For fee payments, procedures, and due dates, please visit the Accounts Section on the ground floor of the Admin Block.",
+      "follow_ups": ["Where is the Accounts Section?", "What are the accepted payment methods?"]
+    },
+    "required_documents": {
+      "examples": ["What documents are required?", "which certificates do I need", "list of documents needed", "documents for admission"],
+      "response": "Could you specify what you need the documents for? (e.g., admission, scholarship, bonafide, exam registration). I'll give you the exact list.",
+      "follow_ups": ["Documents for admission", "Documents for scholarship", "Documents for bonafide"]
+    },
+    "join_clubs": {
+      "examples": ["How to join a club", "club recruitment", "I want to join coding club", "participate in clubs", "register for club"],
+      "response": "Clubs announce recruitment periodically during the semester. You can register through their official announcements on the portal's Events or Clubs section.",
+      "follow_ups": ["What clubs are available?", "Are there any active recruitments?"]
+    },
+    "sports_information": {
+      "examples": ["Tell me about sports", "is there a gym", "can I play cricket", "sports facilities", "indoor games", "outdoor sports"],
+      "response": "SCE offers indoor sports (table tennis, chess, carrom) and outdoor sports (cricket, football, volleyball, basketball, athletics). Contact the Physical Education Department for schedules and team selections.",
+      "follow_ups": ["Where is the sports ground?", "When are the sports trials?"]
+    },
+    "python_resources": {
+      "examples": ["Where can I learn Python?", "Python programming books", "I want to study Python", "best resources for python", "programming resources"],
+      "response": "Check the Library's Programming Resources section for Python books and study materials. The college also offers online access to NPTEL and Coursera courses.",
+      "follow_ups": ["What are the library hours?", "Where is the Library located?"]
+    },
+    "library_hours": {
+      "examples": ["What time does the library open?", "library timings", "is the library open now?", "when does library close", "library working hours"],
+      "dynamic": "library_hours",
+      "follow_ups": ["Where is the library located?", "How many books can I borrow?"]
+    },
+    "library_navigation": {
+      "examples": ["Where is the library?", "Take me to library", "navigate me to library", "location of library", "how to get to library", "library direction"],
+      "response": "The Library is located in BD Block, Ground Floor. You can access it from the main corridor.",
+      "follow_ups": ["What are the library hours?", "How many books can I borrow?"]
+    },
+    "canteen_hours": {
+      "examples": ["When does the canteen open?", "canteen timings", "is the canteen open?", "what time is canteen closing", "canteen working hours", "mess timings"],
+      "dynamic": "canteen_hours",
+      "follow_ups": ["Where is the canteen?", "What is on the canteen menu?"]
+    },
+    "today_events": {
+      "examples": ["What events are happening today?", "today's events", "any events today?", "is there any event today", "what's going on today"],
+      "dynamic": "today_events",
+      "follow_ups": ["Any upcoming hackathons?", "How do I register for events?"]
+    },
+    "weekly_workshops": {
+      "examples": ["Any workshops this week?", "weekly workshops", "workshops happening now", "upcoming workshops", "training sessions"],
+      "dynamic": "weekly_workshops",
+      "follow_ups": ["What events are happening today?", "Any open competitions?"]
+    },
+    "event_registration": {
+      "examples": ["How to register for event", "event registration", "I want to participate in event", "sign up for events", "register for workshop"],
+      "dynamic": "event_registration",
+      "follow_ups": ["What events are happening today?", "Any upcoming hackathons?"]
+    },
+    "upcoming_hackathons": {
+      "examples": ["Any hackathons?", "upcoming hackathons", "hackathon schedule", "when is the next hackathon", "coding competition"],
+      "dynamic": "upcoming_hackathons",
+      "follow_ups": ["How to register for events?", "Any workshops this week?"]
+    },
+    "open_competitions": {
+      "examples": ["What competitions are open?", "any contests?", "open competitions", "ongoing contests", "inter-college competitions"],
+      "dynamic": "open_competitions",
+      "follow_ups": ["Any upcoming hackathons?", "How to register for events?"]
+    },
+    "placement_info": {
+      "examples": ["Tell me about placements", "placement details", "placement record", "which companies visit", "campus recruitment", "placement cell"],
+      "response": "The Training & Placement Cell handles all campus recruitment. Companies like TCS, Infosys, Wipro, CTS, and others conduct drives regularly. Check the Notices section for upcoming placement drives.",
+      "follow_ups": ["Are there any upcoming placement drives?", "Where is the placement cell?"]
+    },
+    "hostel_info": {
+      "examples": ["Tell me about hostel", "hostel facilities", "hostel room", "hostel fees", "boys hostel", "girls hostel", "hostel admission"],
+      "response": "SCE has separate hostels for boys and girls with mess facilities. Contact the Hostel Warden or Administrative Office for room availability and fees.",
+      "follow_ups": ["What are the hostel fees?", "What are the mess timings?"]
+    },
+    "exam_schedule": {
+      "examples": ["When are the exams?", "exam schedule", "exam timetable", "internal exam dates", "semester exam", "exam calendar"],
+      "response": "Exam schedules are published on the college notice board and portal. Check the Notices section for the latest exam timetable or contact your Department Office.",
+      "follow_ups": ["Any recent notices?", "Where is the exam hall?"]
+    },
+    "academic_calendar": {
+      "examples": ["Academic calendar", "semester dates", "when does semester start", "college reopening", "holiday list", "vacation dates"],
+      "response": "The academic calendar with semester dates, holidays, and exam schedules is available on the college website and notice board. Check the Notices section for updates.",
+      "follow_ups": ["When are the exams?", "Any recent notices?"]
+    },
+    "campus_wifi": {
+      "examples": ["How to connect to wifi", "campus wifi", "internet access", "wifi password", "wifi not working"],
+      "response": "Campus WiFi is available in all academic blocks. Connect to the college network and use your student credentials to login. For WiFi issues, contact the IT Support team in the Computer Centre.",
+      "follow_ups": ["Where is the Computer Centre?", "Who handles IT support?"]
+    },
+    "medical_facilities": {
+      "examples": ["Is there a medical room?", "first aid", "sick room", "medical emergency", "doctor on campus", "health centre"],
+      "response": "The college has a First Aid / Sick Room with basic medical facilities. For emergencies, contact the Administrative Office. A college doctor visits during scheduled hours.",
+      "follow_ups": ["Where is the sick room?", "What are the doctor's visiting hours?"]
+    },
+    "admission_process": {
+      "examples": ["How to get admission", "admission process", "admission requirements", "apply for admission", "entrance exam", "eligibility criteria"],
+      "response": "Admissions are through TNEA counselling for UG programs and direct admission for PG programs. Visit the Admissions Office or the college website for detailed eligibility criteria and documents required.",
+      "follow_ups": ["What documents are required?", "Where is the Admissions Office?"]
+    },
+    "attendance_policy": {
+      "examples": ["What is the attendance policy?", "minimum attendance", "attendance percentage", "attendance requirement", "how much attendance is needed"],
+      "response": "A minimum of 75% attendance is mandatory for all students to be eligible for end-semester exams. Students below 75% may be detained. Contact your Class Coordinator for your attendance status.",
+      "follow_ups": ["How do I apply for leave?", "Who is my Class Coordinator?"]
+    },
+    "scholarship_info": {
+      "examples": ["Are there any scholarships?", "scholarship details", "financial aid", "merit scholarship", "government scholarship"],
+      "response": "SCE students can apply for government scholarships (BC/MBC/SC/ST), merit scholarships, and institutional fee waivers. Contact the Scholarship Section in the Administrative Office for eligibility and application procedures.",
+      "follow_ups": ["What documents are needed for scholarship?", "Where is the Administrative Office?"]
+    },
+    "it_support": {
+      "examples": ["IT support", "computer lab issue", "projector not working", "system not working", "technical support", "lab computer problem"],
+      "response": "For IT and technical issues, contact the Computer Centre or raise a ticket with the IT Support team. For lab-specific issues, inform your lab instructor.",
+      "follow_ups": ["Where is the Computer Centre?", "How to connect to campus WiFi?"]
+    },
+    "college_timings": {
+      "examples": ["What are the college timings?", "when does college start", "college working hours", "what time does college close", "class timings"],
+      "response": "College hours are from 8:45 AM to 4:00 PM (Monday to Friday). Saturday classes may be scheduled as per department requirements.",
+      "follow_ups": ["What are the library hours?", "What are the canteen hours?"]
+    },
+    "parking_info": {
+      "examples": ["Where to park my vehicle?", "parking area", "bike parking", "car parking", "two wheeler parking", "vehicle parking"],
+      "response": "Separate parking areas are available for two-wheelers and four-wheelers near the college entrance. Students must display their parking sticker. Contact the security office for a parking pass.",
+      "follow_ups": ["Where is the security office?", "What are the college timings?"]
+    }
+  }
+}

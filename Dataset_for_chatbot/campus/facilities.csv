@@ -1,0 +1,11 @@
+facility_id,facility_name,category,building_id,room_id,timing,description
+FAC01,Central Library,academic,B01,R010,Mon-Sat 08:30-17:30,"The Central Library on the first floor of RV Block houses over 10,000 books, national and international journals, digital resources, and e-library access. Students can borrow up to 3 books at a time. Membership is free for all enrolled students."
+FAC02,Central Canteen,food,B08,,Mon-Sat 08:00-16:30,"The Central Canteen in the Canteen Block serves hot breakfast, lunch, and evening snacks. Menu includes both vegetarian and non-vegetarian options at subsidized rates. Operates on weekdays and Saturdays."
+FAC03,Medical Room,health,B01,R006,Mon-Fri 09:00-16:00,"The Medical Room on the ground floor of RV Block provides first-aid, basic medication, and health consultation. A campus nurse is available full-time during working hours. Students requiring emergency care are referred to the nearest government hospital."
+FAC04,Parking Area,transport,B06,,24x7,The Parking Area near the Main Gate provides designated spots for two-wheelers and four-wheelers. Students require a valid parking permit issued by the Transport Office.
+FAC05,RO Drinking Water,utility,B01,,24x7,RO-purified drinking water stations are available on every floor of every academic block. Stations are serviced and cleaned daily.
+FAC06,Restrooms,utility,B01,,24x7,"Separate restrooms for male and female students are available on every floor of all academic blocks (RV, KS, BD, ME)."
+FAC07,WiFi Zone,internet,B01,,Mon-Sat 08:00-20:00,"Campus WiFi is available in all academic blocks (RV, KS, BD, ME). Login using your student register number. Speed: 100 Mbps shared. Contact IT Support Desk in RV Block for login issues."
+FAC08,Stationery Store,shop,B01,,Mon-Sat 09:00-17:00,"The Stationery Store on the ground floor of RV Block sells notebooks, pens, graph sheets, drawing instruments, and college-branded items."
+FAC09,Sports Ground,sports,B07,,Mon-Sat 06:00-20:00,"The Sports Ground behind BD Block is used for cricket, football, volleyball, and athletics. The annual Sports Meet is held here. Students can use the ground outside class hours with prior permission."
+FAC10,Reprography / Xerox,shop,B01,,Mon-Sat 09:00-18:00,"Photocopying, printing, and spiral binding services are available near the library on the ground floor of RV Block."

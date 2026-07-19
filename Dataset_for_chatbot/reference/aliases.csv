@@ -1,0 +1,91 @@
+alias_id,entity_type,entity_id,alias_name,alias_type
+ALI0001,building,B01,Main Block,casual
+ALI0002,building,B01,Administration Block,casual
+ALI0003,building,B01,Admin Block,abbreviation
+ALI0004,building,B02,Engineering Block,casual
+ALI0005,building,B02,KS,abbreviation
+ALI0006,building,B03,JS-CH,alternate
+ALI0007,building,B03,AIML Block,casual
+ALI0008,building,B03,BD,abbreviation
+ALI0009,building,B04,Mech Block,casual
+ALI0010,building,B04,ME,abbreviation
+ALI0011,building,B05,Workshop,casual
+ALI0012,building,B06,College Gate,casual
+ALI0013,building,B07,Ground,casual
+ALI0014,building,B08,Canteen,casual
+ALI0015,building,B09,Hostel,casual
+ALI0016,department,D01,Computer Science,casual
+ALI0017,department,D01,Comp Sci,casual
+ALI0018,department,D01,Computer Science and Engineering,full_name
+ALI0019,department,D02,Artificial Intelligence and Machine Learning,full_name
+ALI0020,department,D02,AI ML,casual
+ALI0021,department,D02,AI and ML,casual
+ALI0022,department,D03,Artificial Intelligence and Data Science,full_name
+ALI0023,department,D03,AI DS,casual
+ALI0024,department,D04,Computer Science and Business Systems,full_name
+ALI0025,department,D05,Civil,casual
+ALI0026,department,D05,Civil Engineering,full_name
+ALI0027,department,D06,Electronics,casual
+ALI0028,department,D06,ECE,abbreviation
+ALI0029,department,D06,Electronics and Communication Engineering,full_name
+ALI0030,department,D07,Electrical,casual
+ALI0031,department,D07,Electrical and Electronics Engineering,full_name
+ALI0032,department,D08,Instrumentation and Control Engineering,full_name
+ALI0033,department,D08,ICE,abbreviation
+ALI0034,department,D08,Instrumentation,casual
+ALI0035,department,D09,IT,abbreviation
+ALI0036,department,D09,Information Technology,full_name
+ALI0037,department,D10,Mechanical,casual
+ALI0038,department,D10,Mech,abbreviation
+ALI0039,department,D10,Mechanical Engineering,full_name
+ALI0040,club,C001,AI Club,casual
+ALI0041,club,C001,Machine Learning Club,casual
+ALI0042,club,C002,Coding Club,casual
+ALI0043,club,C002,Programming Club,casual
+ALI0044,club,C003,Electronics Club,casual
+ALI0045,club,C003,Circuit Club,casual
+ALI0046,club,C004,Robotics Club,casual
+ALI0047,club,C005,Startup Club,casual
+ALI0048,club,C005,Entrepreneurship Club,casual
+ALI0049,club,C006,Hacking Club,casual
+ALI0050,club,C006,Cyber Club,casual
+ALI0051,club,C007,Design Club,casual
+ALI0052,club,C007,UI UX Club,casual
+ALI0053,club,C008,Data Club,casual
+ALI0054,club,C009,Environment Club,casual
+ALI0055,club,C009,Green Club,casual
+ALI0056,club,C010,Speaking Club,casual
+ALI0057,club,C010,Debate Club,casual
+ALI0058,club,C011,Automobile Club,casual
+ALI0059,club,C012,Drone Club,casual
+ALI0060,club,C012,UAV Club,casual
+ALI0061,office,OFF01,Principal's Office,casual
+ALI0062,office,OFF02,Admin Office,abbreviation
+ALI0063,office,OFF04,Examination Cell,full_name
+ALI0064,office,OFF05,Placements Office,casual
+ALI0065,office,OFF07,Library,casual
+ALI0066,office,OFF08,Transport,casual
+ALI0067,facility,FAC01,Library,casual
+ALI0068,facility,FAC01,Central Library,full_name
+ALI0069,facility,FAC02,Canteen,casual
+ALI0070,facility,FAC03,Medical Room,casual
+ALI0071,facility,FAC03,Sick Room,casual
+ALI0072,facility,FAC04,Parking,casual
+ALI0073,facility,FAC07,Internet,casual
+ALI0074,facility,FAC07,Campus Network,casual
+ALI0075,subject,SUB009,ML,abbreviation
+ALI0076,subject,SUB009,Machi Learning,casual
+ALI0077,subject,SUB014,NLP,abbreviation
+ALI0078,subject,SUB013,DL,abbreviation
+ALI0079,subject,SUB006,DBMS,abbreviation
+ALI0080,subject,SUB006,Database,casual
+ALI0081,subject,SUB007,CN,abbreviation
+ALI0082,subject,SUB007,Networking,casual
+ALI0083,it_onboarding,ITO01,WiFi,casual
+ALI0084,it_onboarding,ITO01,Internet,casual
+ALI0085,it_onboarding,ITO02,Email,casual
+ALI0086,it_onboarding,ITO02,College Mail,casual
+ALI0087,it_onboarding,ITO03,LMS,abbreviation
+ALI0088,it_onboarding,ITO03,Learning Management System,full_name
+ALI0089,it_onboarding,ITO04,Portal,casual
+ALI0090,it_onboarding,ITO04,Student Portal,casual

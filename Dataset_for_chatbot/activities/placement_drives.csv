@@ -1,0 +1,6 @@
+drive_id,company_name,drive_date,min_cgpa,package_lpa_min,package_lpa_max,registration_deadline,process_description,tpo_contact_id,status,last_updated
+PLC01,Infosys,2026-10-05,6.0,3.6,4.5,2026-09-25,"Infosys recruitment process includes an online aptitude test (InfyTQ certification preferred), technical interview covering DSA and OOPS, and HR interview. Process is 1-day on campus.",CON04,upcoming,2026-07-12
+PLC02,TCS,2026-10-15,6.0,3.36,5.0,2026-10-05,"TCS recruitment consists of TCS NQT (National Qualifier Test) online, followed by technical and managerial interviews for shortlisted candidates.",CON04,upcoming,2026-07-12
+PLC03,Wipro,2026-10-22,6.5,3.5,4.0,2026-10-12,"Wipro recruitment includes an aptitude test (NLTH test), technical test, technical interview, and HR round. Dress code is formals.",CON04,upcoming,2026-07-12
+PLC04,HCL Technologies,2026-11-02,6.0,3.25,4.5,2026-10-25,"HCL recruitment includes online aptitude, technical interview, and HR round. Offers graduate engineer trainee roles.",CON04,upcoming,2026-07-12
+PLC05,Cognizant,2026-11-12,6.0,4.0,5.5,2026-11-01,"Cognizant GenC programme includes aptitude, coding test, technical interview, and HR interview. Programming knowledge in Java or Python required.",CON04,upcoming,2026-07-12

@@ -1,0 +1,13 @@
+club_id,club_name,category,focus_area,meeting_place,meeting_frequency,data_type
+C001,Neural Nexus,Technical,AI & ML,BD Block,Weekly,DEMO
+C002,CodeForge,Technical,Programming,RV Block,Weekly,DEMO
+C003,CircuitSphere,Technical,Electronics,KS Block,Biweekly,DEMO
+C004,RoboWorks,Technical,Robotics,ME Workshop,Weekly,DEMO
+C005,Innovators Guild,Innovation,Startups,BD Block,Monthly,DEMO
+C006,Cyber Sentinels,Technical,Cybersecurity,RV Block,Weekly,DEMO
+C007,Pixel Studio,Creative,Design & UI/UX,BD Block,Weekly,DEMO
+C008,Data Mavericks,Technical,Data Science,BD Block,Weekly,DEMO
+C009,Eco Builders,Social,Sustainability,BD Block,Monthly,DEMO
+C010,SpeakUp Forum,Communication,Public Speaking,RV Block,Biweekly,DEMO
+C011,Ignite Motors,Technical,Automobile,ME Block,Monthly,DEMO
+C012,AeroVision,Technical,Drone & UAV,KS Block,Monthly,DEMO

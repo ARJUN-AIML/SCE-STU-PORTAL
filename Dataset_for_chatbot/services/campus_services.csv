@@ -1,0 +1,11 @@
+service_id,service_name,provider_office_id,building_id,process_id,fee_amount,processing_time,required_documents,description
+SVC01,ID Card Issue,OFF02,B01,PROC07,0,2-3 working days,Student ID card. Apply at Administrative Office. Bring admission confirmation letter.,"ID cards are issued by the Administrative Office, RV Block ground floor. New students receive their ID during orientation. Replacement cards cost Rs. 100."
+SVC02,Fee Payment,OFF03,B01,PROC06,0,Immediate,"Student ID, fee challan.","Semester fees are paid at the Accounts Office, RV Block ground floor. Online payment also available at fees.sce.edu."
+SVC03,Bonafide Certificate,OFF02,B01,PROC07,0,2 working days,"Student ID, purpose letter.","Bonafide Certificates are issued by the Administrative Office. Used for bank loans, scholarships, and visa applications."
+SVC04,Transcript,OFF04,B01,PROC10,200,5 working days,"Fee receipt, student ID.","Official transcripts are issued by the Exam Cell, RV Block first floor. Required for higher education applications and job offers."
+SVC05,Placement Support,OFF05,B01,,0,Ongoing,"Student ID, updated resume.","Placement Cell (first floor, RV Block) provides interview preparation, resume reviews, and coordinates campus placement drives."
+SVC06,Library Services,OFF07,B01,PROC03,0,Immediate,"Library card, student ID.","Library borrowing, renewal, and digital resource access through the Library Office, first floor RV Block."
+SVC07,Internet and WiFi Support,OFF11,B01,,0,Immediate,"Student ID, register number.","IT Support Desk (second floor, RV Block) helps with WiFi connectivity, college email setup, LMS access, and student portal login issues."
+SVC08,Bus Pass,OFF08,B01,PROC04,400,3 working days,"Student ID, address proof, fee receipt.","Bus passes are issued by the Transport Office, RV Block ground floor. Monthly fee varies by route."
+SVC09,Lost and Found,OFF02,B01,,0,Immediate,Owner identification.,Report lost items at the Administrative Office. Recovered items are stored for 30 days before disposal.
+SVC10,OD Certificate,OFF09,B01,PROC08,0,1 working day,"Event proof, student ID.",On-Duty certificates are approved by the HOD office and available for students participating in external academic events.

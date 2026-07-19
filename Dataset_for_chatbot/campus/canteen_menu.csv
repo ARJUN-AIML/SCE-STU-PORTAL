@@ -1,0 +1,31 @@
+menu_id,day,meal_type,item_name,price,veg_nonveg,available_from,available_to
+MNU001,Monday,breakfast,Idli Sambar,20,veg,08:00,10:00
+MNU002,Monday,breakfast,Masala Dosa,30,veg,08:00,10:00
+MNU003,Monday,lunch,Rice + Sambar + Poriyal,50,veg,12:00,14:30
+MNU004,Monday,lunch,Chicken Biryani,80,nonveg,12:00,14:30
+MNU005,Monday,snacks,Vada + Tea,25,veg,15:30,16:30
+MNU006,Tuesday,breakfast,Pongal + Chutney,20,veg,08:00,10:00
+MNU007,Tuesday,breakfast,Uthappam,25,veg,08:00,10:00
+MNU008,Tuesday,lunch,Rice + Rasam + Curry,50,veg,12:00,14:30
+MNU009,Tuesday,lunch,Egg Fried Rice,65,egg,12:00,14:30
+MNU010,Tuesday,snacks,Samosa + Chai,20,veg,15:30,16:30
+MNU011,Wednesday,breakfast,Idiyappam + Coconut Milk,25,veg,08:00,10:00
+MNU012,Wednesday,lunch,Rice + Dal + Pappad,50,veg,12:00,14:30
+MNU013,Wednesday,lunch,Mutton Curry + Rice,90,nonveg,12:00,14:30
+MNU014,Wednesday,snacks,Bajji + Coffee,20,veg,15:30,16:30
+MNU015,Thursday,breakfast,Poori + Aloo Bhaji,30,veg,08:00,10:00
+MNU016,Thursday,lunch,Rice + Kuzhambu + Papad,50,veg,12:00,14:30
+MNU017,Thursday,lunch,Fish Curry + Rice,80,nonveg,12:00,14:30
+MNU018,Thursday,snacks,Bread Omelette,35,egg,15:30,16:30
+MNU019,Friday,breakfast,Chapati + Paneer Bhurji,35,veg,08:00,10:00
+MNU020,Friday,lunch,Veg Biryani,60,veg,12:00,14:30
+MNU021,Friday,lunch,Chicken Curry + Parotta,85,nonveg,12:00,14:30
+MNU022,Friday,snacks,Sundal + Tea,15,veg,15:30,16:30
+MNU023,Saturday,breakfast,Idli + Sambar,20,veg,08:00,10:00
+MNU024,Saturday,lunch,Rice + Curd + Pickle,40,veg,12:00,14:00
+MNU025,Daily,snacks,Tea,10,veg,08:00,16:30
+MNU026,Daily,snacks,Coffee,12,veg,08:00,16:30
+MNU027,Daily,snacks,Cold Water Bottle,15,veg,08:00,16:30
+MNU028,Daily,breakfast,Plain Dosa,20,veg,08:00,10:00
+MNU029,Daily,snacks,Banana,10,veg,08:00,16:30
+MNU030,Daily,snacks,Biscuits,5,veg,08:00,16:30

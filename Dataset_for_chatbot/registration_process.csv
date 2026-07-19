@@ -1,0 +1,11 @@
+process_name,step_1,document,approval,office,block,availability
+Hackathon Registration,Submit Google Form,Student ID,Faculty Approval,CSE Labs,RV Block,Open
+Club Registration,Fill club form,Student ID,Club Coordinator Approval,Concerned Club,BD Block,Open
+Library Membership,Submit application,Student ID,Library Verification,Library,RV Block,Open
+Bus Pass,Apply at Transport Office,Fee Receipt,Transport Approval,Transport Office,RV Block,Open
+Hostel Admission,Hostel Application,Admission Letter,Warden Approval,Hostel Office,RV Block,Seasonal
+Semester Fee Payment,Pay at Accounts,Student ID,Receipt Generation,Accounts Office,RV Block,Open
+Bonafide Certificate,Apply online/offline,Student ID,Office Approval,Administrative Office,RV Block,Open
+OD Request,Submit OD form,Event Proof,HOD Approval,Department Office,Department Block,Open
+Leave Application,Submit leave letter,Parent Letter,Advisor Approval,Department Office,Department Block,Open
+Transcript Request,Submit request,Fee Receipt,Exam Cell Approval,Exam Cell,RV Block,Open

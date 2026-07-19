@@ -1,0 +1,20 @@
+calendar_id,event_type,title,start_date,end_date,applies_to,description
+CAL01,semester_start,Odd Semester 2026–27 Begins,2026-07-15,2026-07-15,all,The academic odd semester for 2026–27 begins on 15 July 2026. All departments resume classes. Students should collect their timetables from the respective departments.
+CAL02,orientation,First Year Orientation Program,2026-07-16,2026-07-17,I,Orientation for first-year students is conducted on 16–17 July 2026 at RV Block Seminar Hall 1. Parents are welcome on Day 1.
+CAL03,deadline,Last Date for Fee Payment — Semester 1,2026-07-31,2026-07-31,I,"Final date to pay semester fees without late penalty. Pay at the Accounts Office, RV Block, Ground Floor."
+CAL04,deadline,Last Date for Fee Payment — Sem 3/5/7,2026-08-05,2026-08-05,all,"Fee payment deadline for second, third, and fourth-year students."
+CAL05,deadline,Club Registration Deadline,2026-08-10,2026-08-10,all,Last date for students to register for college clubs and associations for the 2026–27 academic year.
+CAL06,exam_week,Internal Assessment 1,2026-08-25,2026-09-05,all,First internal assessment examinations for all departments. Schedule will be published by the Exam Cell.
+CAL07,holiday,Independence Day Holiday,2026-08-15,2026-08-15,all,Independence Day national holiday. Campus remains open but no academic activities.
+CAL08,deadline,Project Abstract Submission,2026-09-15,2026-09-15,III,Third-year students must submit mini-project abstracts to their respective HODs by 15 September 2026.
+CAL09,exam_week,Internal Assessment 2,2026-10-05,2026-10-15,all,Second internal assessment examinations for all departments.
+CAL10,holiday,Dussehra Holidays,2026-10-01,2026-10-05,all,Dussehra holiday block. Campus closed.
+CAL11,deadline,Project Report Submission — Final Year,2026-10-20,2026-10-20,IV,Final-year students must submit their project reports to the department before this date.
+CAL12,exam_week,Internal Assessment 3 / Model Exam,2026-11-01,2026-11-12,all,Third internal assessment and model exams. Results will determine exam eligibility.
+CAL13,exam_week,Semester End Examinations,2026-11-23,2026-12-15,all,End-semester university examinations begin on 23 November 2026. Hall tickets will be issued one week prior by the Exam Cell.
+CAL14,vacation,Winter Vacation,2026-12-20,2027-01-05,all,Winter vacation for all students. Campus security and hostel operations continue.
+CAL15,semester_start,Even Semester 2026–27 Begins,2027-01-06,2027-01-06,all,The even semester begins on 6 January 2027.
+CAL16,deadline,Hostel Application Deadline — Even Semester,2026-12-20,2026-12-20,all,Students wishing to apply for hostel accommodation for the even semester must submit applications by this date.
+CAL17,holiday,Pongal Holidays,2027-01-14,2027-01-16,all,Pongal holiday block. Campus closed.
+CAL18,exam_week,Internal Assessment 4,2027-02-15,2027-02-25,all,Internal assessment 1 for even semester.
+CAL19,semester_end,Even Semester Ends,2027-05-15,2027-05-15,all,The even semester ends with completion of practical exams. Results expected within 60 days.

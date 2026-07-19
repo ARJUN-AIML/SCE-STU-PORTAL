@@ -1,0 +1,26 @@
+faculty_id,faculty_name,designation,department_id,building_id,cabin_room_id,email,phone,office_hours
+F001,Dr. Karthik Menon,Professor,D01,B01,R019,karthik.menon@sce.edu,+91-9876541001,Mon-Fri 10:00-12:00
+F002,Dr. Suresh Babu,Associate Professor,D01,B01,R019,suresh.babu@sce.edu,+91-9876541002,Mon-Fri 11:00-13:00
+F003,Prof. Vikram Shah,Assistant Professor,D01,B01,R020,vikram.shah@sce.edu,+91-9876541003,Mon-Fri 14:00-16:00
+F004,Prof. Anita Rao,Assistant Professor,D01,B01,R020,anita.rao@sce.edu,+91-9876541004,Tue-Thu 10:00-12:00
+F005,Dr. Arvind Raman,Professor,D02,B03,R039,arvind.raman@sce.edu,+91-9876541005,Mon-Fri 09:00-11:00
+F006,Prof. Aishwarya Rao,Assistant Professor,D02,B03,R039,aishwarya.rao@sce.edu,+91-9876541006,Mon-Fri 14:00-16:00
+F007,Dr. Deepa Srinivasan,Associate Professor,D02,B03,R040,deepa.srinivasan@sce.edu,+91-9876541007,Mon-Wed 10:00-12:00
+F008,Dr. Priya Nair,Associate Professor,D03,B03,R040,priya.nair@sce.edu,+91-9876541008,Mon-Fri 10:00-12:00
+F009,Prof. Rahul Dev,Assistant Professor,D03,B03,R041,rahul.dev@sce.edu,+91-9876541009,Tue-Fri 14:00-16:00
+F010,Dr. Divya Srinivas,Associate Professor,D04,B03,R041,divya.srinivas@sce.edu,+91-9876541010,Mon-Fri 10:00-12:00
+F011,Prof. Ramesh Kumar,Assistant Professor,D04,B03,R042,ramesh.kumar@sce.edu,+91-9876541011,Mon-Thu 14:00-16:00
+F012,Dr. Naveen Kumar,Professor,D05,B03,R042,naveen.kumar@sce.edu,+91-9876541012,Mon-Fri 09:00-11:00
+F013,Prof. Meena Reddy,Assistant Professor,D05,B03,R043,meena.reddy@sce.edu,+91-9876541013,Mon-Fri 14:00-16:00
+F014,Dr. Meena Krishnan,Professor,D06,B02,R029,meena.krishnan@sce.edu,+91-9876541014,Mon-Fri 09:00-11:00
+F015,Prof. Sunil Thomas,Assistant Professor,D06,B02,R029,sunil.thomas@sce.edu,+91-9876541015,Mon-Fri 14:00-16:00
+F016,Dr. Kavita Iyer,Associate Professor,D06,B02,R030,kavita.iyer@sce.edu,+91-9876541016,Tue-Fri 10:00-12:00
+F017,Dr. Sanjay Iyer,Associate Professor,D07,B02,R030,sanjay.iyer@sce.edu,+91-9876541017,Mon-Fri 10:00-12:00
+F018,Prof. Lakshmi Priya,Assistant Professor,D07,B02,R031,lakshmi.priya@sce.edu,+91-9876541018,Mon-Thu 14:00-16:00
+F019,Dr. Rahul Verma,Assistant Professor,D08,B02,R031,rahul.verma@sce.edu,+91-9876541019,Mon-Fri 10:00-12:00
+F020,Prof. Sneha Pillai,Assistant Professor,D08,B02,R032,sneha.pillai@sce.edu,+91-9876541020,Tue-Fri 14:00-16:00
+F021,Dr. Lakshmi Narayanan,Associate Professor,D09,B02,R032,lakshmi.narayanan@sce.edu,+91-9876541021,Mon-Fri 09:00-11:00
+F022,Prof. Ajay Menon,Assistant Professor,D09,B02,R033,ajay.menon@sce.edu,+91-9876541022,Mon-Fri 14:00-16:00
+F023,Dr. Hari Prasad,Professor,D10,B04,R046,hari.prasad@sce.edu,+91-9876541023,Mon-Fri 09:00-11:00
+F024,Prof. Geetha Rajan,Assistant Professor,D10,B04,R046,geetha.rajan@sce.edu,+91-9876541024,Mon-Fri 14:00-16:00
+F025,Dr. Mohan Lal,Associate Professor,D10,B04,R047,mohan.lal@sce.edu,+91-9876541025,Tue-Fri 10:00-12:00

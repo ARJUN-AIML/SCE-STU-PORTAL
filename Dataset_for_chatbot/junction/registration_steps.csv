@@ -1,0 +1,48 @@
+process_id,step_number,instruction
+PROC01,1,Visit the event page or department notice board to find the registration form link.
+PROC01,2,"Fill in your student details, team details (if team event), and project idea summary."
+PROC01,3,Submit the form to your faculty coordinator for approval.
+PROC01,4,Pay the registration fee (if applicable) at the Accounts Office and attach the receipt.
+PROC01,5,Collect your registration confirmation slip from the organizing department.
+PROC02,1,Attend the club open house session held in the first two weeks of semester.
+PROC02,2,Pick up a club registration form from the club coordinator or download from the college portal.
+PROC02,3,"Fill in your details, area of interest, and prior experience."
+PROC02,4,Submit the form to the faculty coordinator and get their signature.
+PROC02,5,Your name will be added to the club roster. You will receive meeting schedule via email.
+PROC03,1,Visit the Library Office on the first floor of RV Block.
+PROC03,2,Present your student ID card.
+PROC03,3,Collect your library membership card from the librarian.
+PROC03,4,You can now borrow up to 3 books at a time for a period of 14 days.
+PROC04,1,Visit the Transport Office on the ground floor of RV Block.
+PROC04,2,Collect the bus pass application form.
+PROC04,3,Fill in your residential address and select your bus route.
+PROC04,4,Pay the bus pass fee at the Accounts Office and collect the fee receipt.
+PROC04,5,Submit the form with the fee receipt and your student ID at the Transport Office.
+PROC04,6,Collect your bus pass within 3 working days.
+PROC05,1,Fill the hostel application form online at forms.sce.edu/hostel before the deadline.
+PROC05,2,Pay the hostel fee at the Accounts Office and collect the payment receipt.
+PROC05,3,"Report to the Hostel Complex on the allotment date with admission letter, parent letter, medical certificate, and fee receipt."
+PROC05,4,Collect room keys from the warden after document verification.
+PROC05,5,Sign the hostel rules agreement form.
+PROC06,1,Log in to fees.sce.edu with your register number.
+PROC06,2,Select the current semester and verify the fee amount.
+PROC06,3,"Pay online via UPI, net banking, or debit card. OR visit the Accounts Office (ground floor, RV Block) for cash/DD payment."
+PROC06,4,Download and save the payment receipt.
+PROC07,1,"Visit the Administrative Office on the ground floor of RV Block, or apply online at forms.sce.edu/bonafide."
+PROC07,2,"State the purpose of the Bonafide Certificate (e.g., bank loan, scholarship application, visa)."
+PROC07,3,Submit your student ID and purpose letter.
+PROC07,4,The certificate will be ready in 2 working days. Collect it from the Administrative Office.
+PROC08,1,Obtain the official event invitation letter or participation proof.
+PROC08,2,Fill the OD request form available at your department HOD office.
+PROC08,3,Attach the event proof and submit to your HOD at least 2 days before the event.
+PROC08,4,Collect the approved OD letter from the HOD office before the event date.
+PROC09,1,Inform your class advisor about the reason for leave.
+PROC09,2,Fill the leave application form (available at department office or student portal).
+PROC09,3,"For leave exceeding 3 days, attach a parent/guardian letter."
+PROC09,4,Submit the form to your class advisor for approval.
+PROC09,5,The approved leave will be updated in the attendance register.
+PROC10,1,Visit the Exam Cell on the first floor of RV Block.
+PROC10,2,Fill the transcript request form specifying the number of copies.
+PROC10,3,Pay Rs. 200 per copy at the Accounts Office and collect the receipt.
+PROC10,4,Submit the form and receipt at the Exam Cell.
+PROC10,5,Transcripts will be ready in 5 working days. Collect with your student ID.
