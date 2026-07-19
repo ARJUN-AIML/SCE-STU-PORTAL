@@ -1,4 +1,6 @@
 import os
+import json
+from firebase_admin import credentials
 import firebase_admin
 from firebase_admin import auth
 from fastapi import Request, HTTPException, Depends
@@ -8,15 +10,21 @@ from models.models import User
 
 # Initialize Firebase Admin
 # Requires GOOGLE_APPLICATION_CREDENTIALS environment variable
+# Initialize Firebase Admin
 BYPASS_AUTH = os.getenv("BYPASS_AUTH", "false").lower() == "true"
 
 if not BYPASS_AUTH and not firebase_admin._apps:
     try:
-        # Default initialization (looks for GOOGLE_APPLICATION_CREDENTIALS)
-        firebase_admin.initialize_app()
-    except Exception as e:
-        print("Firebase Admin initialization failed. Make sure GOOGLE_APPLICATION_CREDENTIALS is set.")
+        firebase_json = os.getenv("FIREBASE_CREDENTIALS_JSON")
 
+        if firebase_json:
+            cred = credentials.Certificate(json.loads(firebase_json))
+            firebase_admin.initialize_app(cred)
+        else:
+            firebase_admin.initialize_app()
+
+    except Exception as e:
+        print(f"Firebase Admin initialization failed: {e}")
 
 async def verify_token(request: Request, db: Session = Depends(get_db)):
     if BYPASS_AUTH:
