@@ -17,7 +17,8 @@ Base.metadata.create_all(bind=engine)
 def seed_database():
     db = SessionLocal()
     try:
-        base_dir = os.path.join(os.path.dirname(__file__), "..", "Dataset_for_chatbot")
+        from ai.config import DATA_DIR
+        base_dir = str(DATA_DIR)
         
         # 1. Departments
         dept_path = os.path.join(base_dir, "departments.csv")

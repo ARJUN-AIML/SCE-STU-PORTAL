@@ -28,8 +28,8 @@ def process_upload_task(file_path: str):
     # We will just call it for now.
     
     # Place the downloaded file into Dataset_for_chatbot/uploads so ingest.py picks it up natively
-    project_root = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
-    uploads_dir = os.path.join(project_root, "Dataset_for_chatbot", "uploads")
+    from ai.config import DATA_DIR
+    uploads_dir = os.path.join(str(DATA_DIR), "uploads")
     os.makedirs(uploads_dir, exist_ok=True)
     
     dest_path = os.path.join(uploads_dir, os.path.basename(file_path))

@@ -4,16 +4,18 @@ import logging
 
 logger = logging.getLogger(__name__)
 
+from ai.config import DATA_DIR
+
 class CSVLoader:
     def __init__(self):
         self.data = {}
-        # Path is relative to backend directory or use config
-        self.dataset_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "Dataset_for_chatbot")
+        # Use centralized dynamic dataset path
+        self.dataset_dir = str(DATA_DIR)
 
     def load_all(self):
         """Recursively loads all CSV files in the Dataset_for_chatbot directory."""
         if not os.path.exists(self.dataset_dir):
-            logger.error(f"Dataset directory not found: {self.dataset_dir}")
+            logger.warning(f"Dataset directory not found: {self.dataset_dir}. Returning empty collections.")
             return
             
         for root, _, files in os.walk(self.dataset_dir):

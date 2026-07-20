@@ -51,12 +51,18 @@ class CampusRetriever:
 
     def build_bm25_index(self):
         """Builds in-memory BM25 index from ChromaDB chunks for hybrid retrieval."""
+        if not self.chroma:
+            logger.warning("Chroma is unavailable. Skipping BM25 index creation.")
+            self.bm25 = None
+            return
+            
         try:
             data = self.chroma.get()
             docs = data.get("documents", [])
             metadatas = data.get("metadatas", [])
             
             if not docs:
+                logger.warning("Chroma returned no documents. Skipping BM25 index creation.")
                 self.bm25 = None
                 return
                 
@@ -73,16 +79,18 @@ class CampusRetriever:
     def hybrid_search(self, query: str, k: int = 6, filter_dict: dict = None):
         """Executes Hybrid Retrieval (Dense + BM25) and scores via Reciprocal Rank Fusion."""
         
-        if not self.chroma:
-            logger.warning("Chroma is not initialized, hybrid search unavailable.")
+        if not self.chroma and not self.bm25:
+            logger.warning("Both Chroma and BM25 are missing, hybrid search unavailable.")
             return []
             
         # 1. Dense Search
-        if filter_dict:
-            dense_results = self.chroma.similarity_search_with_score(query, k=k*2, filter=filter_dict)
-        else:
-            dense_results = self.chroma.similarity_search_with_score(query, k=k*2)
-            
+        dense_results = []
+        if self.chroma:
+            if filter_dict:
+                dense_results = self.chroma.similarity_search_with_score(query, k=k*2, filter=filter_dict)
+            else:
+                dense_results = self.chroma.similarity_search_with_score(query, k=k*2)
+                
         dense_docs = [doc for doc, score in dense_results]
         
         # 2. Keyword Search
@@ -102,6 +110,12 @@ class CampusRetriever:
                         bm25_docs.append(d)
             else:
                 bm25_docs = raw_bm25[:k*2]
+
+        # If only one retrieval method is available, skip RRF entirely.
+        if not self.chroma and self.bm25:
+            return [(doc, 0.0) for doc in bm25_docs[:k]]
+        if self.chroma and not self.bm25:
+            return dense_results[:k]
 
         # 3. Reciprocal Rank Fusion (RRF)
         c = 60 # RRF constant

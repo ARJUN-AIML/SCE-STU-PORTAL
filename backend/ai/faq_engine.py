@@ -39,14 +39,22 @@ class FAQEngine:
 
         # Pre-compute embeddings for all examples
         self.embeddings_model = get_embeddings()
-        self.example_embeddings = np.array(
-            self.embeddings_model.embed_documents(self.intent_examples)
-        )
-        self.example_norms = np.linalg.norm(self.example_embeddings, axis=1)
+        if self.embeddings_model is None:
+            logger.warning("Embeddings unavailable. FAQ Engine semantic search disabled.")
+            self.example_embeddings = None
+            self.example_norms = None
+        else:
+            self.example_embeddings = np.array(
+                self.embeddings_model.embed_documents(self.intent_examples)
+            )
+            self.example_norms = np.linalg.norm(self.example_embeddings, axis=1)
         logger.info(f"FAQ Engine initialized with {len(self.intent_examples)} examples across {len(self.config['intents'])} intents")
 
     def detect_intent(self, query: str) -> str | None:
         """Detect intent via cosine similarity. Returns intent key or None."""
+        if self.embeddings_model is None or self.example_embeddings is None:
+            return None
+            
         q = query.lower().strip()
         if not q:
             return None

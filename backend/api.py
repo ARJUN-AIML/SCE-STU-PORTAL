@@ -38,22 +38,31 @@ import os
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    global _backend_state, _health_stats
+    global _backend_state, _ai_state, _health_stats
     _backend_state = "STARTING"
     _health_stats = {"startup_duration_ms": 0}
+    _ai_state = {
+        "embeddings": False,
+        "chroma": False,
+        "bm25": False,
+        "faq": False
+    }
 
     async def run_startup():
         global _backend_state
         profiler = StartupProfiler()
         t0 = time.time()
         
-        if not os.getenv("DATABASE_URL") or not os.getenv("GROQ_API_KEY"):
-            logger.error("Missing critical environment variables (DATABASE_URL or GROQ_API_KEY)")
+        if not os.getenv("DATABASE_URL"):
+            logger.error("Missing critical environment variables (DATABASE_URL)")
             _backend_state = "FAILED"
             return
             
         try:
+            # We must be able to connect to the DB (core functionality)
             # Run heavy independent loads concurrently
+            
+            # AI components have their own internal try/excepts
             await asyncio.gather(
                 asyncio.to_thread(init_embeddings),
                 asyncio.to_thread(init_llm),
@@ -65,13 +74,28 @@ async def lifespan(app: FastAPI):
             # Warm-up AI Models
             embeddings = get_embeddings()
             vectorstore = get_vectorstore()
-            await asyncio.to_thread(embeddings.embed_query, "warmup")
-            await asyncio.to_thread(vectorstore.hybrid_search, "warmup", k=1)
             
+            if embeddings is not None:
+                _ai_state["embeddings"] = True
+                await asyncio.to_thread(embeddings.embed_query, "warmup")
+            
+            if vectorstore:
+                if vectorstore.chroma:
+                    _ai_state["chroma"] = True
+                    await asyncio.to_thread(vectorstore.hybrid_search, "warmup", k=1)
+                    
+                if vectorstore.bm25:
+                    _ai_state["bm25"] = True
+            
+            from ai.faq_engine import FAQEngine
+            faq = FAQEngine.get_instance()
+            if faq.example_embeddings is not None:
+                _ai_state["faq"] = True
+                
             _health_stats["startup_duration_ms"] = int((time.time() - t0) * 1000)
             
             try:
-                if vectorstore.chroma:
+                if vectorstore and vectorstore.chroma:
                     data = vectorstore.chroma.get()
                     _health_stats["chunks"] = len(data.get("ids", []))
                     metas = data.get("metadatas", [])
@@ -79,12 +103,18 @@ async def lifespan(app: FastAPI):
             except Exception as e:
                 logger.error(f"Failed to load Chroma stats: {e}")
 
-            _backend_state = "READY"
+            # If any AI component is missing, we are DEGRADED, otherwise READY
+            if all(_ai_state.values()):
+                _backend_state = "READY"
+            else:
+                _backend_state = "DEGRADED"
+                
             profiler.print_report()
-            logger.info("AI Subsystems Ready in background.")
+            logger.info(f"Subsystems Ready in background. State: {_backend_state}")
             
         except Exception as e:
-            logger.error(f"Startup Failed: {e}")
+            # Only DB or critical fastAPI failure should reach here if AI degrades gracefully
+            logger.error(f"Core Startup Failed: {e}")
             global _backend_error
             _backend_error = str(e)
             _backend_state = "FAILED"
@@ -143,9 +173,10 @@ async def health_endpoint():
         "error": globals().get("_backend_error", None),
         "startup_duration_ms": _health_stats.get("startup_duration_ms", 0),
         "database": {
-            "connected": _backend_state == "READY",
+            "connected": _backend_state in ["READY", "DEGRADED"],
             "pool_size": 10
         },
+        "ai": _ai_state,
         "rag": {
             "collection": _health_stats.get("collection", "sce-campus"),
             "documents": _health_stats.get("documents", 0),
@@ -154,10 +185,10 @@ async def health_endpoint():
         },
         "llm": {
             "provider": "Groq",
-            "ready": _backend_state == "READY"
+            "ready": _backend_state in ["READY", "DEGRADED"] # LLM might be up even if Embeddings are down
         },
         "websocket": {
-            "ready": _backend_state == "READY"
+            "ready": _backend_state in ["READY", "DEGRADED"]
         }
     }
 
