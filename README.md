@@ -1,10 +1,10 @@
 # SCE Student Portal
 
 ## Project Overview
-The SCE Student Portal is an AI-powered centralized campus management platform. It streamlines academic workflows and administrative processes by providing students, faculty, and administrators with a unified interface for managing campus activities, resources, and communication.
+SCE Student Portal is a unified digital ecosystem that redefines campus operations by bringing academics, administration, student services, campus resources, and communication onto a single platform. With an intuitive user experience and centralized access to essential services, it empowers the entire campus community through greater efficiency, accessibility, and collaboration.
 
 ## Key Features
-- AI Assistant (RAG + Groq)
+- AI Assistant Chat Bot (RAG + Langchain + Emebeddings + Groq)
 - Student Dashboard
 - Event Management
 - Clubs
@@ -201,7 +201,7 @@ Railway will automatically load the updated index on the next deployment. No run
 
 **Arjun S** – Project Lead
 
-**Madhav Padmesh** ([@madhav-7575](https://github.com/madhav-7575)) – Co-Developer
+**Madhav Padmesh S** ([@madhav-7575](https://github.com/madhav-7575)) – Co-Developer
 
 ## License
 MIT
