@@ -228,6 +228,22 @@ async def rebuild_endpoint(background_tasks: BackgroundTasks):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
+@app.get("/api/seed-production-db")
+async def seed_production_db():
+    import subprocess
+    try:
+        # Run the unified seed script
+        result = subprocess.run(
+            ["python", "scripts/seed_production.py"], 
+            capture_output=True, text=True
+        )
+        if result.returncode == 0:
+            return {"success": True, "message": "Database seeded successfully!", "logs": result.stdout}
+        else:
+            return {"success": False, "message": "Seeding failed", "logs": result.stderr}
+    except Exception as e:
+        return {"success": False, "message": str(e)}
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run("api:app", host="0.0.0.0", port=8000, reload=True)

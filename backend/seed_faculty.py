@@ -236,12 +236,18 @@ def seed():
         # ── Step 1: Upsert Departments ──────────────────────────────
         dept_map = {}  # code -> Department ORM object
         for d_data in DEPARTMENTS:
-            existing = db.query(Department).filter(Department.code == d_data["code"]).first()
+            # Lookup by code OR name to avoid unique constraint violations
+            existing = db.query(Department).filter(
+                (Department.code == d_data["code"]) | 
+                (Department.name == d_data["name"])
+            ).first()
+            
             if existing:
                 existing.name = d_data["name"]
+                existing.code = d_data["code"]
                 existing.description = d_data["description"]
                 dept_map[d_data["code"]] = existing
-                logger.info(f"Updated department: {d_data['name']}")
+                logger.info(f"✓ Department updated: {d_data['name']}")
             else:
                 new_dept = Department(
                     name=d_data["name"],
@@ -251,7 +257,7 @@ def seed():
                 db.add(new_dept)
                 db.flush()
                 dept_map[d_data["code"]] = new_dept
-                logger.info(f"Created department: {d_data['name']}")
+                logger.info(f"✓ Department inserted: {d_data['name']}")
         db.commit()
 
         # ── Step 2: Clear HOD references to avoid FK issues ─────────

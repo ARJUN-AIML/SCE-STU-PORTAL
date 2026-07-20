@@ -12,16 +12,11 @@ import logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-def seed_transport():
+def seed():
     db = SessionLocal()
     try:
-        # Drop the existing table to update the schema
-        models.TransportRoute.__table__.drop(engine, checkfirst=True)
         # Create table if missing
         models.Base.metadata.create_all(bind=engine)
-        
-        # Clear existing
-        db.query(models.TransportRoute).delete()
         
         routes = [
             {
@@ -62,11 +57,27 @@ def seed_transport():
             }
         ]
         
+        updated_count = 0
+        inserted_count = 0
         for r in routes:
-            db.add(models.TransportRoute(**r))
+            existing = db.query(models.TransportRoute).filter(
+                models.TransportRoute.bus_id == r["bus_id"]
+            ).first()
+            
+            if existing:
+                existing.route_name = r["route_name"]
+                existing.from_stop = r["from_stop"]
+                existing.to_stop = r["to_stop"]
+                existing.final_destination = r["final_destination"]
+                existing.vehicle_type = r["vehicle_type"]
+                existing.stops = r["stops"]
+                updated_count += 1
+            else:
+                db.add(models.TransportRoute(**r))
+                inserted_count += 1
             
         db.commit()
-        logger.info(f"Seeded {len(routes)} transport routes successfully.")
+        logger.info(f"✓ Transport routes updated: {updated_count}, inserted: {inserted_count}")
         
     except Exception as e:
         logger.error(f"Error seeding transport: {e}")
@@ -75,7 +86,7 @@ def seed_transport():
         db.close()
 
 if __name__ == "__main__":
-    seed_transport()
+    seed()
     
     # Sync with RAG
     try:
