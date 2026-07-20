@@ -1,6 +1,6 @@
-# CampusOS AI Chatbot Dataset
+# SCE Student Portal AI Chatbot Dataset
 
-This repository contains the complete dataset for the CampusOS Freshers Portal AI Chatbot (Google Student Ambassador Hackathon Demo).
+This repository contains the complete dataset for the SCE Student Portal Freshers Portal AI Chatbot (Google Student Ambassador Hackathon Demo).
 
 ## Architecture
 The dataset is structured across 6 domain folders and 1 junction folder, fully normalized to 3NF (Third Normal Form) to eliminate data duplication and optimize for RAG (Retrieval-Augmented Generation) based embeddings.

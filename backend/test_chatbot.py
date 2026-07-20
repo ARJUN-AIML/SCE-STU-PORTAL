@@ -2,7 +2,7 @@ import requests
 import json
 import time
 
-URL = "http://localhost:8000/chat"
+URL = "https://protective-balance-production-5b44.up.railway.app/chat"
 
 queries = [
     "How do I apply for leave?",

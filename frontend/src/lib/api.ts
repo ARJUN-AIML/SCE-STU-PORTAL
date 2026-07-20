@@ -1,7 +1,11 @@
 import { auth } from "./firebase"
 import { demoData } from "@/repositories/demo-data"
 
-const API_BASE = import.meta.env.VITE_API_BASE_URL || "http://127.0.0.1:8000"
+export const API_BASE = import.meta.env.VITE_API_BASE_URL || ""
+if (!import.meta.env.VITE_API_BASE_URL) {
+  console.error("VITE_API_BASE_URL environment variable is missing.")
+}
+
 const REQUEST_TIMEOUT_MS = 15000
 
 export class ApiError extends Error {

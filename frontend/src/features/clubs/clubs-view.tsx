@@ -10,7 +10,7 @@ const CATEGORIES = [
     id: "technical",
     label: "Technical Clubs",
     clubs: [
-      { name: "Web Cell (Delta Force)", achievement: "Built the official CampusOS portal used by 5000+ students daily." },
+      { name: "Web Cell (Delta Force)", achievement: "Built the official SCE Student Portal portal used by 5000+ students daily." },
       { name: "R&D Cell", achievement: "Published 20+ research papers in international journals last year." },
       { name: "Nakshatra (Astronomy)", achievement: "Discovered a minor exoplanet candidate during the NASA space apps challenge." },
       { name: "Aero Modelling", achievement: "Won 1st place in the National Drone Racing Championship 2024." },

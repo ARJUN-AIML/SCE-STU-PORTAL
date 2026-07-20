@@ -23,7 +23,7 @@ test_text = get_text("test_final_log.txt")
 
 report_path = r"C:\Users\arjun\.gemini\antigravity\brain\ce2b5e59-30c0-41bb-842b-9532c146003c\report.md"
 with codecs.open(report_path, "w", "utf-8") as f:
-    f.write("# Campus OS AI Assistant - Final Production Report\n\n")
+    f.write("# SCE Student Portal AI Assistant - Final Production Report\n\n")
     
     f.write("## 1. Files Modified\n")
     f.write("- `backend/ai/prompts.py` (Improved hallucination fallback, added follow-up gen)\n")

@@ -16,9 +16,9 @@ Alembic is configured in `backend/alembic.ini` and `backend/alembic/env.py` to p
 
 ## Neon PostgreSQL Setup Guide
 1. Create a Neon account and project.
-2. Create a database (e.g., `campusos`).
+2. Create a database (e.g., `sce-portal`).
 3. Copy the pooled connection string.
-4. Set `DATABASE_URL=postgresql://user:password@ep-cold-shadow-1234.us-east-2.aws.neon.tech/campusos` in `backend/.env`.
+4. Set `DATABASE_URL=postgresql://user:password@ep-cold-shadow-1234.us-east-2.aws.neon.tech/sce-portal` in `backend/.env`.
 
 ## Cloudinary Setup Guide
 1. Create a Cloudinary account.

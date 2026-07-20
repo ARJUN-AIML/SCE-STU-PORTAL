@@ -74,7 +74,7 @@
 ## 6. Output of verify_dataset.py
 
 ```text
-=== CampusOS Dataset Verification ===
+=== SCE Student Portal Dataset Verification ===
 
 --- 1. File Presence & Volume Check ---
 [OK] core/buildings.csv (9 rows)

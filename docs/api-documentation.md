@@ -1,7 +1,7 @@
 # API Documentation
 
 ## Base URL
-`http://localhost:8000` (Local) / `{RENDER_URL}` (Production)
+`https://protective-balance-production-5b44.up.railway.app` (Local) / `{RENDER_URL}` (Production)
 
 ## Authentication
 All protected routes require a Firebase JWT Token passed in the `Authorization` header:

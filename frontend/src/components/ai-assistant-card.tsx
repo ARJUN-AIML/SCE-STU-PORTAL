@@ -12,6 +12,7 @@ import { useAi } from "@/context/ai-context"
 import type { ChatMessage } from "@/types"
 import { commandDispatcher } from "@/core/commands/dispatcher"
 import { resolveDestination } from "@/features/map/map-resolver"
+import { API_BASE } from "@/lib/api"
 
 
 // --- Agent Pipeline Visualizer ---
@@ -132,8 +133,7 @@ export function AiAssistantCard({ isDrawer = false }: { isDrawer?: boolean }) {
     if (wsRef.current?.readyState === WebSocket.OPEN) return
     setWsStatus("connecting")
 
-    const baseUrl = import.meta.env.VITE_API_BASE_URL || "http://127.0.0.1:8000"
-    const wsUrl = baseUrl.replace(/^http/, "ws") + "/ws/chat"
+    const wsUrl = API_BASE.replace(/^http/, "ws") + "/ws/chat"
 
     try {
       wsRef.current = new WebSocket(wsUrl)
@@ -239,8 +239,7 @@ export function AiAssistantCard({ isDrawer = false }: { isDrawer?: boolean }) {
 
     const checkHealth = async () => {
       try {
-        const baseUrl = import.meta.env.VITE_API_BASE_URL || "http://127.0.0.1:8000"
-        const res = await fetch(`${baseUrl}/health`)
+        const res = await fetch(`${API_BASE}/health`)
         if (res.ok) {
           const data = await res.json()
           if (data.status === "ready" || data.status === "live" || data.status === "ok") {

@@ -1,6 +1,7 @@
 import * as React from "react"
 import { Search, Map as MapIcon, Calendar, FileText, Building, Users } from "lucide-react"
 import { Dialog, DialogContent } from "@/components/ui/dialog"
+import { API_BASE } from "@/lib/api"
 
 
 export function GlobalSearch({ open, onOpenChange, onNavigate }: { 
@@ -21,7 +22,7 @@ export function GlobalSearch({ open, onOpenChange, onNavigate }: {
     const timer = setTimeout(async () => {
       setLoading(true)
       try {
-        const res = await fetch(`http://localhost:8000/search?query=${encodeURIComponent(query)}`)
+        const res = await fetch(`${API_BASE}/search?query=${encodeURIComponent(query)}`)
         const json = await res.json()
         if (json.success) {
           setResults(json.data)

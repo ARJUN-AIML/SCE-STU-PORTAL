@@ -22,7 +22,7 @@ A real, working React + TypeScript rebuild of the Campus Fresher Portal dashboar
 
 ```bash
 npm install
-npm run dev       # http://localhost:5173
+npm run dev       # https://sce-stu-portal.vercel.app
 npm run build     # production build to dist/
 npm run preview   # preview the production build
 ```

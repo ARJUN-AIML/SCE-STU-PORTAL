@@ -12,8 +12,8 @@ export async function exportTimetableToPDF(
   doc.setProperties({
     title: `Academic Timetable - ${filters.department} Year ${filters.year} Semester ${filters.semester}`,
     subject: "Saranathan College of Engineering timetable aligned to Anna University R2021 course structure",
-    author: "SCE Campus OS",
-    creator: "SCE Campus OS",
+    author: "SCE SCE Student Portal",
+    creator: "SCE SCE Student Portal",
   })
 
   // Header Background
@@ -98,7 +98,7 @@ export async function exportTimetableToPDF(
 
     doc.setFontSize(8)
     doc.setTextColor(156, 163, 175)
-    doc.text("SCE Campus OS • Anna University R2021 aligned", 14, pageHeight - 8)
+    doc.text("SCE SCE Student Portal • Anna University R2021 aligned", 14, pageHeight - 8)
     doc.text(`Page ${i} of ${pageCount}`, pageWidth - 14, pageHeight - 8, { align: "right" })
   }
 

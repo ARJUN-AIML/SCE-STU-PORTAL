@@ -1,8 +1,8 @@
-# CampusOS
+# SCE Student Portal
 
-![CampusOS Hero](https://via.placeholder.com/1200x400?text=CampusOS+-+The+Intelligent+Campus+Portal)
+![SCE Student Portal Hero](https://via.placeholder.com/1200x400?text=SCE Student Portal+-+The+Intelligent+Campus+Portal)
 
-CampusOS is a next-generation intelligent campus portal designed for Saranathan College of Engineering. It seamlessly integrates a beautiful React-based frontend with a powerful AI-driven FastAPI backend.
+SCE Student Portal is a next-generation intelligent campus portal designed for Saranathan College of Engineering. It seamlessly integrates a beautiful React-based frontend with a powerful AI-driven FastAPI backend.
 
 ## 🚀 Key Features
 
@@ -31,7 +31,7 @@ CampusOS is a next-generation intelligent campus portal designed for Saranathan 
 ## 📁 Folder Structure
 
 ```
-CampusOS/
+sce-portal/
 ├── frontend/             # React Vite Application
 │   ├── src/
 │   │   ├── components/   # Reusable UI components
@@ -51,8 +51,8 @@ CampusOS/
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-org/CampusOS.git
-   cd CampusOS
+   git clone https://github.com/your-org/sce-portal.git
+   cd sce-portal
    ```
 
 2. **Backend Setup**:
@@ -82,12 +82,12 @@ npm run build
 
 # Backend (Docker - optional)
 cd backend
-docker build -t campusos-backend .
+docker build -t sce-portal-backend .
 ```
 
 ## 🌍 Deployment Links
-* **Frontend**: [https://campusos-staging.vercel.app](https://campusos-staging.vercel.app) *(Placeholder)*
-* **Backend**: [https://api.campusos.render.com](https://api.campusos.render.com) *(Placeholder)*
+* **Frontend**: [https://sce-stu-portal.vercel.app](https://sce-stu-portal.vercel.app) *(Placeholder)*
+* **Backend**: [https://protective-balance-production-5b44.up.railway.app](https://protective-balance-production-5b44.up.railway.app) *(Placeholder)*
 
 ## 🗺️ Future Roadmap
 * Native iOS/Android app wrappers (React Native).

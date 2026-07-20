@@ -2,7 +2,7 @@
 
 ## Project Structure
 ```text
-CampusOS/
+sce-portal/
 ├── frontend/ (React, Vite, Tailwind, TanStack Query)
 │   ├── src/
 │   │   ├── components/  # UI components (schedule-card, ai-assistant-card, topbar, sidebar)

@@ -1,6 +1,6 @@
 # Deployment Guide
 
-This document outlines the steps required to deploy CampusOS to production environments.
+This document outlines the steps required to deploy SCE Student Portal to production environments.
 
 ## Frontend (Vercel)
 Vercel is recommended for the React/Vite frontend.

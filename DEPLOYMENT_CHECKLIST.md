@@ -1,6 +1,6 @@
 # Deployment Checklist
 
-Before announcing CampusOS as "live", ensure the following checklist is completed.
+Before announcing SCE Student Portal as "live", ensure the following checklist is completed.
 
 ## Frontend
 - [ ] Build succeeds locally (`npm run build`).

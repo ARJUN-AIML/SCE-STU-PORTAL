@@ -1,5 +1,5 @@
 import os
-for root, dirs, files in os.walk(r'e:\CampusOS\backend'):
+for root, dirs, files in os.walk(r'e:\SCE Student Portal\backend'):
     if 'venv' in root or '__pycache__' in root:
         continue
     for file in files:

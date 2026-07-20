@@ -1,6 +1,6 @@
 """
 verify_dataset.py
-Validates the CampusOS AI Chatbot dataset for foreign key integrity,
+Validates the SCE Student Portal AI Chatbot dataset for foreign key integrity,
 missing files, empty files, and duplicate primary keys.
 Run: python verify_dataset.py
 """
@@ -65,7 +65,7 @@ def read_csv(rel_path):
         return list(reader)
 
 def verify():
-    print("=== CampusOS Dataset Verification ===\n")
+    print("=== SCE Student Portal Dataset Verification ===\n")
     all_good = True
     datasets = {}
 

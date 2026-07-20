@@ -1,6 +1,6 @@
 # API Documentation
 
-Base URL: `http://localhost:8000` (Local) / `https://api.campusos.com` (Prod)
+Base URL: `https://protective-balance-production-5b44.up.railway.app` (Local) / `https://protective-balance-production-5b44.up.railway.app` (Prod)
 
 All protected routes require an `Authorization: Bearer <Firebase_ID_Token>` header.
 

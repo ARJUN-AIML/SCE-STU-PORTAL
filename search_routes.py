@@ -1,7 +1,7 @@
 import os
 import csv
 
-for root, dirs, files in os.walk(r'e:\CampusOS'):
+for root, dirs, files in os.walk(r'e:\SCE Student Portal'):
     # Skip virtual environments
     if 'venv' in root or 'node_modules' in root or '.git' in root:
         continue

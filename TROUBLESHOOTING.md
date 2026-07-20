@@ -10,7 +10,7 @@
 
 ## 3. CORS Problems
 **Symptom**: Browser console shows `CORS policy: No 'Access-Control-Allow-Origin' header is present`.
-**Fix**: Add your frontend URL (e.g., `http://localhost:5173` or `https://app.vercel.app`) to the FastAPI `CORSMiddleware` config in `api.py`.
+**Fix**: Add your frontend URL (e.g., `https://sce-stu-portal.vercel.app` or `https://app.vercel.app`) to the FastAPI `CORSMiddleware` config in `api.py`.
 
 ## 4. AI Model Connection Issues
 **Symptom**: Chatbot returns `500 Internal Server Error` or times out.

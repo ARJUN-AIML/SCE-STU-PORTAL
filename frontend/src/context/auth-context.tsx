@@ -10,6 +10,7 @@ import {
   getRoleFromEmail,
 } from "@/lib/firebase"
 import { toast } from "sonner"
+import { API_BASE } from "@/lib/api"
 
 export interface ExtendedUser extends FirebaseUser {
   dbId?: string
@@ -42,7 +43,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
     try {
       const token = await u.getIdToken()
-      const res = await fetch("http://localhost:8000/auth/me", {
+      const res = await fetch(`${API_BASE}/auth/me`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       if (res.ok) {

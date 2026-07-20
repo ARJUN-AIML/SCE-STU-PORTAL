@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react"
 import { Database, FileText, Activity, RefreshCw, Layers } from "lucide-react"
+import { API_BASE } from "@/lib/api"
 
 export function KnowledgeDashboard() {
   const [data, setData] = useState<any>(null)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch("http://localhost:8000/admin/knowledge/metrics")
+    fetch(`${API_BASE}/admin/knowledge/metrics`)
       .then(r => r.json())
       .then(d => {
         setData(d)
@@ -22,7 +23,7 @@ export function KnowledgeDashboard() {
     if (!confirm("Are you sure you want to completely rebuild the vector database? This will clear all existing embeddings.")) return
     
     try {
-      await fetch("http://localhost:8000/admin/knowledge/rebuild", { method: "POST" })
+      await fetch(`${API_BASE}/admin/knowledge/rebuild`, { method: "POST" })
       alert("Rebuild started in the background. It may take a few minutes depending on dataset size.")
     } catch (_e) {
       alert("Failed to start rebuild.")

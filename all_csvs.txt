@@ -1,98 +1,98 @@
-e:\CampusOS\backend\data\timetable.csv
-e:\CampusOS\backend\venv\Lib\site-packages\numpy\random\tests\data\mt19937-testset-1.csv
-e:\CampusOS\backend\venv\Lib\site-packages\numpy\random\tests\data\mt19937-testset-2.csv
-e:\CampusOS\backend\venv\Lib\site-packages\numpy\random\tests\data\pcg64-testset-1.csv
-e:\CampusOS\backend\venv\Lib\site-packages\numpy\random\tests\data\pcg64-testset-2.csv
-e:\CampusOS\backend\venv\Lib\site-packages\numpy\random\tests\data\pcg64dxsm-testset-1.csv
-e:\CampusOS\backend\venv\Lib\site-packages\numpy\random\tests\data\pcg64dxsm-testset-2.csv
-e:\CampusOS\backend\venv\Lib\site-packages\numpy\random\tests\data\philox-testset-1.csv
-e:\CampusOS\backend\venv\Lib\site-packages\numpy\random\tests\data\philox-testset-2.csv
-e:\CampusOS\backend\venv\Lib\site-packages\numpy\random\tests\data\sfc64-testset-1.csv
-e:\CampusOS\backend\venv\Lib\site-packages\numpy\random\tests\data\sfc64-testset-2.csv
-e:\CampusOS\backend\venv\Lib\site-packages\numpy\_core\tests\data\umath-validation-set-arccos.csv
-e:\CampusOS\backend\venv\Lib\site-packages\numpy\_core\tests\data\umath-validation-set-arccosh.csv
-e:\CampusOS\backend\venv\Lib\site-packages\numpy\_core\tests\data\umath-validation-set-arcsin.csv
-e:\CampusOS\backend\venv\Lib\site-packages\numpy\_core\tests\data\umath-validation-set-arcsinh.csv
-e:\CampusOS\backend\venv\Lib\site-packages\numpy\_core\tests\data\umath-validation-set-arctan.csv
-e:\CampusOS\backend\venv\Lib\site-packages\numpy\_core\tests\data\umath-validation-set-arctanh.csv
-e:\CampusOS\backend\venv\Lib\site-packages\numpy\_core\tests\data\umath-validation-set-cbrt.csv
-e:\CampusOS\backend\venv\Lib\site-packages\numpy\_core\tests\data\umath-validation-set-cos.csv
-e:\CampusOS\backend\venv\Lib\site-packages\numpy\_core\tests\data\umath-validation-set-cosh.csv
-e:\CampusOS\backend\venv\Lib\site-packages\numpy\_core\tests\data\umath-validation-set-exp.csv
-e:\CampusOS\backend\venv\Lib\site-packages\numpy\_core\tests\data\umath-validation-set-exp2.csv
-e:\CampusOS\backend\venv\Lib\site-packages\numpy\_core\tests\data\umath-validation-set-expm1.csv
-e:\CampusOS\backend\venv\Lib\site-packages\numpy\_core\tests\data\umath-validation-set-log.csv
-e:\CampusOS\backend\venv\Lib\site-packages\numpy\_core\tests\data\umath-validation-set-log10.csv
-e:\CampusOS\backend\venv\Lib\site-packages\numpy\_core\tests\data\umath-validation-set-log1p.csv
-e:\CampusOS\backend\venv\Lib\site-packages\numpy\_core\tests\data\umath-validation-set-log2.csv
-e:\CampusOS\backend\venv\Lib\site-packages\numpy\_core\tests\data\umath-validation-set-sin.csv
-e:\CampusOS\backend\venv\Lib\site-packages\numpy\_core\tests\data\umath-validation-set-sinh.csv
-e:\CampusOS\backend\venv\Lib\site-packages\numpy\_core\tests\data\umath-validation-set-tan.csv
-e:\CampusOS\backend\venv\Lib\site-packages\numpy\_core\tests\data\umath-validation-set-tanh.csv
-e:\CampusOS\backend\venv\Lib\site-packages\scipy\signal\tests\data\GLB.Ts+dSST.csv
-e:\CampusOS\backend\venv\Lib\site-packages\sklearn\datasets\data\breast_cancer.csv
-e:\CampusOS\backend\venv\Lib\site-packages\sklearn\datasets\data\iris.csv
-e:\CampusOS\backend\venv\Lib\site-packages\sklearn\datasets\data\linnerud_exercise.csv
-e:\CampusOS\backend\venv\Lib\site-packages\sklearn\datasets\data\linnerud_physiological.csv
-e:\CampusOS\backend\venv\Lib\site-packages\sklearn\datasets\data\wine_data.csv
-e:\CampusOS\Dataset_for_chatbot\announcements.csv
-e:\CampusOS\Dataset_for_chatbot\buildings.csv
-e:\CampusOS\Dataset_for_chatbot\campus_services.csv
-e:\CampusOS\Dataset_for_chatbot\clubs.csv
-e:\CampusOS\Dataset_for_chatbot\contacts.csv
-e:\CampusOS\Dataset_for_chatbot\departments.csv
-e:\CampusOS\Dataset_for_chatbot\events.csv
-e:\CampusOS\Dataset_for_chatbot\facilities.csv
-e:\CampusOS\Dataset_for_chatbot\faculty.csv
-e:\CampusOS\Dataset_for_chatbot\faq.csv
-e:\CampusOS\Dataset_for_chatbot\navigation.csv
-e:\CampusOS\Dataset_for_chatbot\offices.csv
-e:\CampusOS\Dataset_for_chatbot\registration_process.csv
-e:\CampusOS\Dataset_for_chatbot\rooms.csv
-e:\CampusOS\Dataset_for_chatbot\timetable.csv
-e:\CampusOS\Dataset_for_chatbot\academic\academic_calendar.csv
-e:\CampusOS\Dataset_for_chatbot\academic\exam_schedule.csv
-e:\CampusOS\Dataset_for_chatbot\academic\fees_structure.csv
-e:\CampusOS\Dataset_for_chatbot\academic\timetable.csv
-e:\CampusOS\Dataset_for_chatbot\activities\clubs.csv
-e:\CampusOS\Dataset_for_chatbot\activities\events.csv
-e:\CampusOS\Dataset_for_chatbot\activities\placement_drives.csv
-e:\CampusOS\Dataset_for_chatbot\campus\buildings.csv
-e:\CampusOS\Dataset_for_chatbot\campus\canteen_menu.csv
-e:\CampusOS\Dataset_for_chatbot\campus\facilities.csv
-e:\CampusOS\Dataset_for_chatbot\campus\hostel.csv
-e:\CampusOS\Dataset_for_chatbot\campus\library_books.csv
-e:\CampusOS\Dataset_for_chatbot\campus\locations.csv
-e:\CampusOS\Dataset_for_chatbot\campus\navigation.csv
-e:\CampusOS\Dataset_for_chatbot\campus\transport_routes.csv
-e:\CampusOS\Dataset_for_chatbot\core\buildings.csv
-e:\CampusOS\Dataset_for_chatbot\core\departments.csv
-e:\CampusOS\Dataset_for_chatbot\core\faculty.csv
-e:\CampusOS\Dataset_for_chatbot\core\offices.csv
-e:\CampusOS\Dataset_for_chatbot\core\rooms.csv
-e:\CampusOS\Dataset_for_chatbot\core\student_profiles.csv
-e:\CampusOS\Dataset_for_chatbot\core\subject_master.csv
-e:\CampusOS\Dataset_for_chatbot\events\club_information.csv
-e:\CampusOS\Dataset_for_chatbot\faculty\faculty_advisors.csv
-e:\CampusOS\Dataset_for_chatbot\faculty\faculty_directory.csv
-e:\CampusOS\Dataset_for_chatbot\junction\club_membership.csv
-e:\CampusOS\Dataset_for_chatbot\junction\faculty_subjects.csv
-e:\CampusOS\Dataset_for_chatbot\junction\it_onboarding_steps.csv
-e:\CampusOS\Dataset_for_chatbot\junction\placement_drive_eligibility.csv
-e:\CampusOS\Dataset_for_chatbot\junction\registration_steps.csv
-e:\CampusOS\Dataset_for_chatbot\junction\room_equipment.csv
-e:\CampusOS\Dataset_for_chatbot\junction\transport_stops.csv
-e:\CampusOS\Dataset_for_chatbot\office\contact_directory.csv
-e:\CampusOS\Dataset_for_chatbot\reference\aliases.csv
-e:\CampusOS\Dataset_for_chatbot\reference\entity_keywords.csv
-e:\CampusOS\Dataset_for_chatbot\reference\equipment.csv
-e:\CampusOS\Dataset_for_chatbot\reference\faq.csv
-e:\CampusOS\Dataset_for_chatbot\reference\id_mapping.csv
-e:\CampusOS\Dataset_for_chatbot\resources\documents.csv
-e:\CampusOS\Dataset_for_chatbot\services\announcements.csv
-e:\CampusOS\Dataset_for_chatbot\services\campus_services.csv
-e:\CampusOS\Dataset_for_chatbot\services\contacts.csv
-e:\CampusOS\Dataset_for_chatbot\services\forms.csv
-e:\CampusOS\Dataset_for_chatbot\services\it_onboarding.csv
-e:\CampusOS\Dataset_for_chatbot\services\registration_process.csv
-e:\CampusOS\Dataset_for_chatbot\services\student_support.csv
+e:\SCE Student Portal\backend\data\timetable.csv
+e:\SCE Student Portal\backend\venv\Lib\site-packages\numpy\random\tests\data\mt19937-testset-1.csv
+e:\SCE Student Portal\backend\venv\Lib\site-packages\numpy\random\tests\data\mt19937-testset-2.csv
+e:\SCE Student Portal\backend\venv\Lib\site-packages\numpy\random\tests\data\pcg64-testset-1.csv
+e:\SCE Student Portal\backend\venv\Lib\site-packages\numpy\random\tests\data\pcg64-testset-2.csv
+e:\SCE Student Portal\backend\venv\Lib\site-packages\numpy\random\tests\data\pcg64dxsm-testset-1.csv
+e:\SCE Student Portal\backend\venv\Lib\site-packages\numpy\random\tests\data\pcg64dxsm-testset-2.csv
+e:\SCE Student Portal\backend\venv\Lib\site-packages\numpy\random\tests\data\philox-testset-1.csv
+e:\SCE Student Portal\backend\venv\Lib\site-packages\numpy\random\tests\data\philox-testset-2.csv
+e:\SCE Student Portal\backend\venv\Lib\site-packages\numpy\random\tests\data\sfc64-testset-1.csv
+e:\SCE Student Portal\backend\venv\Lib\site-packages\numpy\random\tests\data\sfc64-testset-2.csv
+e:\SCE Student Portal\backend\venv\Lib\site-packages\numpy\_core\tests\data\umath-validation-set-arccos.csv
+e:\SCE Student Portal\backend\venv\Lib\site-packages\numpy\_core\tests\data\umath-validation-set-arccosh.csv
+e:\SCE Student Portal\backend\venv\Lib\site-packages\numpy\_core\tests\data\umath-validation-set-arcsin.csv
+e:\SCE Student Portal\backend\venv\Lib\site-packages\numpy\_core\tests\data\umath-validation-set-arcsinh.csv
+e:\SCE Student Portal\backend\venv\Lib\site-packages\numpy\_core\tests\data\umath-validation-set-arctan.csv
+e:\SCE Student Portal\backend\venv\Lib\site-packages\numpy\_core\tests\data\umath-validation-set-arctanh.csv
+e:\SCE Student Portal\backend\venv\Lib\site-packages\numpy\_core\tests\data\umath-validation-set-cbrt.csv
+e:\SCE Student Portal\backend\venv\Lib\site-packages\numpy\_core\tests\data\umath-validation-set-cos.csv
+e:\SCE Student Portal\backend\venv\Lib\site-packages\numpy\_core\tests\data\umath-validation-set-cosh.csv
+e:\SCE Student Portal\backend\venv\Lib\site-packages\numpy\_core\tests\data\umath-validation-set-exp.csv
+e:\SCE Student Portal\backend\venv\Lib\site-packages\numpy\_core\tests\data\umath-validation-set-exp2.csv
+e:\SCE Student Portal\backend\venv\Lib\site-packages\numpy\_core\tests\data\umath-validation-set-expm1.csv
+e:\SCE Student Portal\backend\venv\Lib\site-packages\numpy\_core\tests\data\umath-validation-set-log.csv
+e:\SCE Student Portal\backend\venv\Lib\site-packages\numpy\_core\tests\data\umath-validation-set-log10.csv
+e:\SCE Student Portal\backend\venv\Lib\site-packages\numpy\_core\tests\data\umath-validation-set-log1p.csv
+e:\SCE Student Portal\backend\venv\Lib\site-packages\numpy\_core\tests\data\umath-validation-set-log2.csv
+e:\SCE Student Portal\backend\venv\Lib\site-packages\numpy\_core\tests\data\umath-validation-set-sin.csv
+e:\SCE Student Portal\backend\venv\Lib\site-packages\numpy\_core\tests\data\umath-validation-set-sinh.csv
+e:\SCE Student Portal\backend\venv\Lib\site-packages\numpy\_core\tests\data\umath-validation-set-tan.csv
+e:\SCE Student Portal\backend\venv\Lib\site-packages\numpy\_core\tests\data\umath-validation-set-tanh.csv
+e:\SCE Student Portal\backend\venv\Lib\site-packages\scipy\signal\tests\data\GLB.Ts+dSST.csv
+e:\SCE Student Portal\backend\venv\Lib\site-packages\sklearn\datasets\data\breast_cancer.csv
+e:\SCE Student Portal\backend\venv\Lib\site-packages\sklearn\datasets\data\iris.csv
+e:\SCE Student Portal\backend\venv\Lib\site-packages\sklearn\datasets\data\linnerud_exercise.csv
+e:\SCE Student Portal\backend\venv\Lib\site-packages\sklearn\datasets\data\linnerud_physiological.csv
+e:\SCE Student Portal\backend\venv\Lib\site-packages\sklearn\datasets\data\wine_data.csv
+e:\SCE Student Portal\Dataset_for_chatbot\announcements.csv
+e:\SCE Student Portal\Dataset_for_chatbot\buildings.csv
+e:\SCE Student Portal\Dataset_for_chatbot\campus_services.csv
+e:\SCE Student Portal\Dataset_for_chatbot\clubs.csv
+e:\SCE Student Portal\Dataset_for_chatbot\contacts.csv
+e:\SCE Student Portal\Dataset_for_chatbot\departments.csv
+e:\SCE Student Portal\Dataset_for_chatbot\events.csv
+e:\SCE Student Portal\Dataset_for_chatbot\facilities.csv
+e:\SCE Student Portal\Dataset_for_chatbot\faculty.csv
+e:\SCE Student Portal\Dataset_for_chatbot\faq.csv
+e:\SCE Student Portal\Dataset_for_chatbot\navigation.csv
+e:\SCE Student Portal\Dataset_for_chatbot\offices.csv
+e:\SCE Student Portal\Dataset_for_chatbot\registration_process.csv
+e:\SCE Student Portal\Dataset_for_chatbot\rooms.csv
+e:\SCE Student Portal\Dataset_for_chatbot\timetable.csv
+e:\SCE Student Portal\Dataset_for_chatbot\academic\academic_calendar.csv
+e:\SCE Student Portal\Dataset_for_chatbot\academic\exam_schedule.csv
+e:\SCE Student Portal\Dataset_for_chatbot\academic\fees_structure.csv
+e:\SCE Student Portal\Dataset_for_chatbot\academic\timetable.csv
+e:\SCE Student Portal\Dataset_for_chatbot\activities\clubs.csv
+e:\SCE Student Portal\Dataset_for_chatbot\activities\events.csv
+e:\SCE Student Portal\Dataset_for_chatbot\activities\placement_drives.csv
+e:\SCE Student Portal\Dataset_for_chatbot\campus\buildings.csv
+e:\SCE Student Portal\Dataset_for_chatbot\campus\canteen_menu.csv
+e:\SCE Student Portal\Dataset_for_chatbot\campus\facilities.csv
+e:\SCE Student Portal\Dataset_for_chatbot\campus\hostel.csv
+e:\SCE Student Portal\Dataset_for_chatbot\campus\library_books.csv
+e:\SCE Student Portal\Dataset_for_chatbot\campus\locations.csv
+e:\SCE Student Portal\Dataset_for_chatbot\campus\navigation.csv
+e:\SCE Student Portal\Dataset_for_chatbot\campus\transport_routes.csv
+e:\SCE Student Portal\Dataset_for_chatbot\core\buildings.csv
+e:\SCE Student Portal\Dataset_for_chatbot\core\departments.csv
+e:\SCE Student Portal\Dataset_for_chatbot\core\faculty.csv
+e:\SCE Student Portal\Dataset_for_chatbot\core\offices.csv
+e:\SCE Student Portal\Dataset_for_chatbot\core\rooms.csv
+e:\SCE Student Portal\Dataset_for_chatbot\core\student_profiles.csv
+e:\SCE Student Portal\Dataset_for_chatbot\core\subject_master.csv
+e:\SCE Student Portal\Dataset_for_chatbot\events\club_information.csv
+e:\SCE Student Portal\Dataset_for_chatbot\faculty\faculty_advisors.csv
+e:\SCE Student Portal\Dataset_for_chatbot\faculty\faculty_directory.csv
+e:\SCE Student Portal\Dataset_for_chatbot\junction\club_membership.csv
+e:\SCE Student Portal\Dataset_for_chatbot\junction\faculty_subjects.csv
+e:\SCE Student Portal\Dataset_for_chatbot\junction\it_onboarding_steps.csv
+e:\SCE Student Portal\Dataset_for_chatbot\junction\placement_drive_eligibility.csv
+e:\SCE Student Portal\Dataset_for_chatbot\junction\registration_steps.csv
+e:\SCE Student Portal\Dataset_for_chatbot\junction\room_equipment.csv
+e:\SCE Student Portal\Dataset_for_chatbot\junction\transport_stops.csv
+e:\SCE Student Portal\Dataset_for_chatbot\office\contact_directory.csv
+e:\SCE Student Portal\Dataset_for_chatbot\reference\aliases.csv
+e:\SCE Student Portal\Dataset_for_chatbot\reference\entity_keywords.csv
+e:\SCE Student Portal\Dataset_for_chatbot\reference\equipment.csv
+e:\SCE Student Portal\Dataset_for_chatbot\reference\faq.csv
+e:\SCE Student Portal\Dataset_for_chatbot\reference\id_mapping.csv
+e:\SCE Student Portal\Dataset_for_chatbot\resources\documents.csv
+e:\SCE Student Portal\Dataset_for_chatbot\services\announcements.csv
+e:\SCE Student Portal\Dataset_for_chatbot\services\campus_services.csv
+e:\SCE Student Portal\Dataset_for_chatbot\services\contacts.csv
+e:\SCE Student Portal\Dataset_for_chatbot\services\forms.csv
+e:\SCE Student Portal\Dataset_for_chatbot\services\it_onboarding.csv
+e:\SCE Student Portal\Dataset_for_chatbot\services\registration_process.csv
+e:\SCE Student Portal\Dataset_for_chatbot\services\student_support.csv

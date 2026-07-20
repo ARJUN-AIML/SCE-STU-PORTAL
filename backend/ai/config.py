@@ -7,7 +7,7 @@ load_dotenv()
 # Resolve absolute paths
 current_file_path = Path(__file__).resolve()
 
-# PROJECT_ROOT is e:/CampusOS (3 levels up from config.py)
+# PROJECT_ROOT is e:/SCE Student Portal (3 levels up from config.py)
 PROJECT_ROOT = current_file_path.parent.parent.parent
 
 # Dataset directory

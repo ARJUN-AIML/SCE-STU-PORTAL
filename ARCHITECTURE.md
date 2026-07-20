@@ -1,6 +1,6 @@
 # System Architecture
 
-This document describes the architectural layout of CampusOS.
+This document describes the architectural layout of SCE Student Portal.
 
 ## Frontend → Backend Communication
 

@@ -1,6 +1,6 @@
-# Contributing to CampusOS
+# Contributing to SCE Student Portal
 
-Welcome! We appreciate your help in making CampusOS better.
+Welcome! We appreciate your help in making SCE Student Portal better.
 
 ## Coding Conventions
 * **Frontend**: React 19, TypeScript, Tailwind CSS. Use functional components and hooks. Avoid default exports where possible. Use `lucide-react` for icons.

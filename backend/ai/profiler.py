@@ -19,7 +19,7 @@ class StartupProfiler:
     def print_report(self):
         self.total_time = time.time() - self.start_time
         print("\n====================================================")
-        print("Campus OS Backend Startup")
+        print("SCE Student Portal Backend Startup")
         print("====================================================")
         print("")
         for name, duration in self.phases:

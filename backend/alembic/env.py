@@ -34,6 +34,10 @@ if not db_url:
 if db_url.startswith("postgres://"):
     db_url = db_url.replace("postgres://", "postgresql://", 1)
 
+if "neon.tech" in db_url and "sslmode=require" not in db_url:
+    separator = "&" if "?" in db_url else "?"
+    db_url += f"{separator}sslmode=require"
+
 config.set_main_option("sqlalchemy.url", db_url)
 
 # other values from the config, defined by the needs of env.py,

@@ -1,7 +1,7 @@
 """
 generate_data.py
 Freshers Portal RAG Dataset — Hackathon Demo Generator
-Generates all CSV files for the CampusOS AI Chatbot demo.
+Generates all CSV files for the SCE Student Portal AI Chatbot demo.
 Run: python generate_data.py
 """
 
@@ -1323,7 +1323,7 @@ def gen_club_membership(student_ids, club_ids):
 # ---------------------------------------------------------------------------
 
 def main():
-    print("\n=== CampusOS Dataset Generator ===\n")
+    print("\n=== SCE Student Portal Dataset Generator ===\n")
 
     # Phase A — Tier 1
     print("--- Phase A: Foundation ---")

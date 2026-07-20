@@ -1,7 +1,7 @@
 import os
 import re
 
-base = r"e:\CampusOS\frontend\src"
+base = r"e:\SCE Student Portal\frontend\src"
 
 def process(filepath, func):
     with open(filepath, 'r', encoding='utf-8') as f:

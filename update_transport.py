@@ -1,9 +1,9 @@
 import csv
 import random
 
-routes_csv = r'e:\CampusOS\Dataset_for_chatbot\campus\transport_routes.csv'
-stops_csv = r'e:\CampusOS\Dataset_for_chatbot\junction\transport_stops.csv'
-profiles_csv = r'e:\CampusOS\Dataset_for_chatbot\core\student_profiles.csv'
+routes_csv = r'e:\SCE Student Portal\Dataset_for_chatbot\campus\transport_routes.csv'
+stops_csv = r'e:\SCE Student Portal\Dataset_for_chatbot\junction\transport_stops.csv'
+profiles_csv = r'e:\SCE Student Portal\Dataset_for_chatbot\core\student_profiles.csv'
 
 new_routes = [
     {

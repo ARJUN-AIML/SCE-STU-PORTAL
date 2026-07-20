@@ -14,7 +14,7 @@ def fix_file(filepath):
     with open(filepath, 'w', encoding='utf-8') as f:
         f.write(content)
 
-base = r"e:\CampusOS\frontend\src"
+base = r"e:\SCE Student Portal\frontend\src"
 fix_file(os.path.join(base, "features", "clubs", "clubs-view.tsx"))
 fix_file(os.path.join(base, "features", "map", "map-view.tsx"))
 fix_file(os.path.join(base, "components", "command-palette.tsx"))

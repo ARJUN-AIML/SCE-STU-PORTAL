@@ -15,7 +15,7 @@ const puppeteer = require('puppeteer');
   });
 
   try {
-    await page.goto('http://localhost:5173', { waitUntil: 'networkidle2', timeout: 10000 });
+    await page.goto('https://sce-stu-portal.vercel.app', { waitUntil: 'networkidle2', timeout: 10000 });
     console.log('Page loaded successfully');
   } catch (e) {
     console.log('Navigation error:', e.message);
