@@ -1,7 +1,7 @@
 import { auth } from "./firebase"
 import { demoData } from "@/repositories/demo-data"
 
-export const API_BASE = import.meta.env.VITE_API_BASE_URL || ""
+export const API_BASE = (import.meta.env.VITE_API_BASE_URL || "").replace(/\/+$/, "")
 if (!import.meta.env.VITE_API_BASE_URL) {
   console.error("VITE_API_BASE_URL environment variable is missing.")
 }
@@ -27,7 +27,8 @@ async function fetchWithAuth(url: string, options: RequestInit = {}) {
       headers.set("Authorization", `Bearer ${token}`)
     }
 
-    const response = await fetch(`${API_BASE}${url}`, { ...options, headers, signal: controller.signal })
+    const normalizedUrl = url.startsWith('/') ? url : '/' + url;
+    const response = await fetch(`${API_BASE}${normalizedUrl}`, { ...options, headers, signal: controller.signal })
     const contentType = response.headers.get("content-type") || ""
     const data = contentType.includes("application/json") ? await response.json() : null
     if (response.status === 401) throw new ApiError(401, "Your session has expired. Please sign in again.")

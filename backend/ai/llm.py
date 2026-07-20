@@ -11,14 +11,19 @@ _llm_instance = None
 def init_embeddings():
     global _embeddings_instance
     logger.info("Initializing Embeddings (Singleton)...")
-    _embeddings_instance = HuggingFaceEmbeddings(
-        model_name=config.EMBEDDING_MODEL_NAME,
-        model_kwargs={"local_files_only": True}
-    )
+    try:
+        _embeddings_instance = HuggingFaceEmbeddings(
+            model_name=config.EMBEDDING_MODEL_NAME,
+            model_kwargs={"local_files_only": False}
+        )
+    except Exception as e:
+        logger.error(f"Failed to initialize embeddings: {e}. AI Retrieval will be degraded.")
+        _embeddings_instance = None
 
 def get_embeddings():
     if _embeddings_instance is None:
-        raise RuntimeError("Embeddings not initialized! Call init_embeddings() first.")
+        logger.warning("Embeddings are not available. AI features may be degraded.")
+        return None
     return _embeddings_instance
 
 def init_llm():

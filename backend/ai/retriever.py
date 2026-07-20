@@ -18,6 +18,11 @@ class CampusRetriever:
         self.build_bm25_index()
 
     def _initialize_chroma(self, force_rebuild):
+        if not self.embeddings:
+            logger.warning("Embeddings are missing, skipping Chroma initialization.")
+            self.chroma = None
+            return
+
         if force_rebuild:
             logger.info("Force rebuild requested. Starting ingestion...")
             self.chroma = Chroma(
@@ -68,6 +73,10 @@ class CampusRetriever:
     def hybrid_search(self, query: str, k: int = 6, filter_dict: dict = None):
         """Executes Hybrid Retrieval (Dense + BM25) and scores via Reciprocal Rank Fusion."""
         
+        if not self.chroma:
+            logger.warning("Chroma is not initialized, hybrid search unavailable.")
+            return []
+            
         # 1. Dense Search
         if filter_dict:
             dense_results = self.chroma.similarity_search_with_score(query, k=k*2, filter=filter_dict)

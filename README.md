@@ -1,98 +1,152 @@
 # SCE Student Portal
 
-![SCE Student Portal Hero](https://via.placeholder.com/1200x400?text=SCE Student Portal+-+The+Intelligent+Campus+Portal)
+## Project Overview
+The SCE Student Portal is an AI-powered centralized campus management platform. It streamlines academic workflows and administrative processes by providing students, faculty, and administrators with a unified interface for managing campus activities, resources, and communication.
 
-SCE Student Portal is a next-generation intelligent campus portal designed for Saranathan College of Engineering. It seamlessly integrates a beautiful React-based frontend with a powerful AI-driven FastAPI backend.
+## Key Features
+- AI Assistant (RAG + Groq)
+- Student Dashboard
+- Event Management
+- Clubs
+- Transport
+- Academics
+- Placement Cell
+- Notifications
+- Administration
+- Firebase Authentication
+- Responsive UI
 
-## 🚀 Key Features
-
-* **Intelligent AI Assistant**: RAG-powered chatbot utilizing Groq and ChromaDB to answer campus-specific questions.
-* **Smart Dashboards**: Real-time insights, analytics, and notices for students and faculty.
-* **Campus Navigation**: Interactive indoor and outdoor routing maps.
-* **Academic Hub**: Timetables, Library Resources, and Department Directories.
-* **Transport Tracker**: Live tracking and routing of college buses.
-* **Role-Based Access**: Specialized interfaces for Students, Faculty, and Administrators.
-
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Frontend
-* **Framework**: React 19 + Vite
-* **Styling**: Tailwind CSS + Radix UI
-* **State/Routing**: React Query, Zustand, React Router
-* **Testing**: Vitest + Playwright
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- Shadcn UI
 
 ### Backend
-* **Framework**: FastAPI (Python)
-* **Database**: PostgreSQL (Neon) with SQLite Fallback
-* **ORM**: SQLAlchemy + Alembic
-* **AI/LLM**: LangChain, Groq API, HuggingFace Embeddings, ChromaDB
-* **Testing**: Pytest
+- FastAPI
+- SQLAlchemy
+- Alembic
 
-## 📁 Folder Structure
+### AI
+- Groq
+- LangChain
+- ChromaDB
+- Sentence Transformers
 
+### Database
+- Neon PostgreSQL
+
+### Cloud
+- Railway
+- Vercel
+- Firebase
+- Cloudinary
+
+## Project Architecture
+```text
+frontend/
+backend/
+docs/
+Dataset_for_chatbot/
 ```
-sce-portal/
-├── frontend/             # React Vite Application
-│   ├── src/
-│   │   ├── components/   # Reusable UI components
-│   │   ├── features/     # Feature-based modules (Dashboard, Auth, etc.)
-│   │   ├── lib/          # Utilities and API clients
-│   │   └── context/      # React contexts (Auth, Theme)
-│   └── e2e/              # Playwright Tests
-│
-├── backend/              # FastAPI Application
-│   ├── routers/          # API Route handlers
-│   ├── services/         # Business logic & AI pipelines
-│   ├── database/         # Models and connection logic
-│   └── tests/            # Pytest suites
-```
 
-## 💻 Local Setup
+## Live Deployment
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/your-org/sce-portal.git
-   cd sce-portal
-   ```
+Frontend:
+https://sce-stu-portal.vercel.app/
 
-2. **Backend Setup**:
-   ```bash
-   cd backend
-   python -m venv venv
-   source venv/bin/activate  # On Windows: .\venv\Scripts\activate
-   pip install -r requirements.txt
-   uvicorn api:app --reload
-   ```
+Backend:
+https://protective-balance-production-5b44.up.railway.app
 
-3. **Frontend Setup**:
-   ```bash
-   cd frontend
-   npm install
-   npm run dev
-   ```
+## Local Setup
 
-## ⚙️ Environment Variables Reference
-See [ENVIRONMENT.md](./ENVIRONMENT.md) for a detailed list of required environment variables.
+### Prerequisites
+- Node.js (v18 or higher)
+- Python (3.10 or higher)
+- Git
 
-## 🏗️ Build Instructions
+### Clone
 ```bash
-# Frontend
-cd frontend
-npm run build
-
-# Backend (Docker - optional)
-cd backend
-docker build -t sce-portal-backend .
+git clone <repository-url>
+cd <repository-directory>
 ```
 
-## 🌍 Deployment Links
-* **Frontend**: [https://sce-stu-portal.vercel.app](https://sce-stu-portal.vercel.app) *(Placeholder)*
-* **Backend**: [https://protective-balance-production-5b44.up.railway.app](https://protective-balance-production-5b44.up.railway.app) *(Placeholder)*
+### Backend Setup
+```bash
+cd backend
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+pip install -r requirements.txt
+```
 
-## 🗺️ Future Roadmap
-* Native iOS/Android app wrappers (React Native).
-* Automated push notifications.
-* Live bus GPS integration.
+### Frontend Setup
+```bash
+cd frontend
+npm install
+```
 
-## 📄 License
-This project is licensed under the MIT License.
+### Environment Variables
+Configure the required environment variables in both the `frontend` and `backend` directories before running the application locally.
+
+### Run Commands
+
+Backend:
+```bash
+cd backend
+uvicorn api:app --reload
+```
+
+Frontend:
+```bash
+cd frontend
+npm run dev
+```
+
+## Environment Variables
+
+### Backend
+- DATABASE_URL
+- GROQ_API_KEY
+- GEMINI_API_KEY
+- CLOUDINARY_CLOUD_NAME
+- CLOUDINARY_API_KEY
+- CLOUDINARY_API_SECRET
+- GOOGLE_APPLICATION_CREDENTIALS
+- BYPASS_AUTH
+
+### Frontend
+- VITE_FIREBASE_API_KEY
+- VITE_FIREBASE_AUTH_DOMAIN
+- VITE_FIREBASE_PROJECT_ID
+- VITE_FIREBASE_STORAGE_BUCKET
+- VITE_FIREBASE_MESSAGING_SENDER_ID
+- VITE_FIREBASE_APP_ID
+- VITE_API_BASE_URL
+- VITE_BYPASS_AUTH
+
+## API Documentation
+The API documentation is automatically generated and available at the following endpoints when the backend is running:
+- /docs
+- /redoc
+
+## Project Structure
+- frontend/ - Contains the React application, UI components, and state management logic.
+- backend/ - Contains the FastAPI server, database models, AI integration, and core business logic.
+- docs/ - Technical documentation and setup guides.
+- Dataset_for_chatbot/ - Datasets and scripts used for training and seeding the AI assistant.
+
+## Deployment
+- Frontend -> Vercel
+- Backend -> Railway
+- Database -> Neon PostgreSQL
+- Authentication -> Firebase
+- Media -> Cloudinary
+
+## Contributors
+Contributions are welcome. Please ensure pull requests follow the existing coding standards and include appropriate documentation updates.
+
+## License
+MIT

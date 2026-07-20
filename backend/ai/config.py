@@ -7,11 +7,15 @@ load_dotenv()
 # Resolve absolute paths
 current_file_path = Path(__file__).resolve()
 
-# PROJECT_ROOT is e:/SCE Student Portal (3 levels up from config.py)
-PROJECT_ROOT = current_file_path.parent.parent.parent
+# Resolve dataset directory dynamically to support both local and Railway deployments
+def _find_dataset_dir():
+    if Path("../Dataset_for_chatbot").exists():
+        return Path("../Dataset_for_chatbot").resolve()
+    if Path("Dataset_for_chatbot").exists():
+        return Path("Dataset_for_chatbot").resolve()
+    return Path("../Dataset_for_chatbot")
 
-# Dataset directory
-DATA_DIR = PROJECT_ROOT / "Dataset_for_chatbot"
+DATA_DIR = _find_dataset_dir()
 
 # ChromaDB directory
 CHROMA_DB_DIR = current_file_path.parent.parent / "chroma_db"
