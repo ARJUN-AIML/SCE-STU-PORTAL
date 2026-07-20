@@ -24,26 +24,57 @@ The SCE Student Portal is an AI-powered centralized campus management platform. 
 - Vite
 - Tailwind CSS
 - Shadcn UI
+- React Router
+- TanStack Query (React Query)
+- Axios
+- React Hook Form
+- Zod
+- Lucide React
 
 ### Backend
 - FastAPI
 - SQLAlchemy
 - Alembic
+- Pydantic
+- Uvicorn
+- Psycopg2
 
-### AI
-- Groq
+### AI & Machine Learning
+- Groq (LLM Inference)
 - LangChain
-- ChromaDB
+- ChromaDB (Vector Database)
+- Google Gemini Embeddings
 - Sentence Transformers
+- RAG (Retrieval-Augmented Generation)
 
 ### Database
-- Neon PostgreSQL
+- Neon PostgreSQL(For Production)
+- PostgreSQL(For Development)
 
-### Cloud
-- Railway
-- Vercel
-- Firebase
+### Authentication
+- Firebase Authentication
+- Firebase Admin SDK
+
+### Cloud & Deployment
+- Railway(Backend)
+- Vercel(Frontend)
 - Cloudinary
+- Firebase
+
+### APIs & Integrations
+- Google Maps API
+- Google Geocoding API
+
+### Development Tools
+- Git
+- GitHub
+- VS Code
+- Postman
+
+### Architecture
+- REST API
+- JWT Authentication
+- Role-Based Access Control (RBAC)
 
 ## Project Architecture
 ```text
@@ -166,8 +197,11 @@ git push
 
 Railway will automatically load the updated index on the next deployment. No runtime indexing occurs in production.
 
-## Contributors
-Contributions are welcome. Please ensure pull requests follow the existing coding standards and include appropriate documentation updates.
+## Project Team
+
+**Arjun S** – Project Lead
+
+**Madhav Padmesh** ([@madhav-7575](https://github.com/madhav-7575)) – Co-Developer
 
 ## License
 MIT
