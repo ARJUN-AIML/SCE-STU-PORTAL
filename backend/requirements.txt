@@ -15,6 +15,7 @@ langchain-experimental
 sqlalchemy
 alembic
 psycopg[binary]
+psycopg2-binary
 firebase-admin
 cloudinary
 websockets
