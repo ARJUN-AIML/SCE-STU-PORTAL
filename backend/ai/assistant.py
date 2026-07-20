@@ -34,10 +34,7 @@ class CollegeAIAssistant:
     """
     Independent RAG-based AI Assistant module for College Knowledge Base.
     """
-    def __init__(self, force_rebuild=False):
-        if force_rebuild:
-            from .retriever import init_vectorstore
-            init_vectorstore(force_rebuild=True)
+    def __init__(self):
         self.chat_history = []
         self.max_memory = 5  # Maintain last 5 user/assistant exchanges
         
@@ -52,13 +49,32 @@ class CollegeAIAssistant:
         if config.CHROMA_DB_DIR.exists():
             shutil.rmtree(config.CHROMA_DB_DIR)
             logger.info(f"Deleted existing ChromaDB at {config.CHROMA_DB_DIR}")
-        
+
         self.chat_history = []
         query_cache.invalidate()
+
+        # Re-ingest from datasets
+        from .llm import get_embeddings
+        from .ingest import ingest_data
+        from langchain_chroma import Chroma
+
+        embeddings = get_embeddings()
+        if embeddings is None:
+            logger.error("Cannot rebuild: embeddings are unavailable.")
+            return
+
+        config.CHROMA_DB_DIR.mkdir(parents=True, exist_ok=True)
+        vectorstore = Chroma(
+            persist_directory=str(config.CHROMA_DB_DIR),
+            embedding_function=embeddings,
+        )
+        ingest_data(vectorstore)
+
+        # Reload the retriever singleton
         from .retriever import init_vectorstore
-        init_vectorstore(force_rebuild=True)
-        
-        # Sync faculty
+        init_vectorstore()
+
+        # Sync faculty and transport
         from database.config import SessionLocal
         from ai.faculty_sync import sync_all_faculty_to_chroma
         from ai.transport_sync import sync_all_transport_to_chroma
@@ -70,7 +86,7 @@ class CollegeAIAssistant:
             logger.error(f"Error during Postgres sync: {e}")
         finally:
             db.close()
-            
+
         logger.info("Rebuild complete.")
 
     async def _detect_intent(self, query: str, llm):

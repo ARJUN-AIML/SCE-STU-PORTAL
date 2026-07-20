@@ -29,15 +29,12 @@ def generate_transport_document(db: Session):
 
 def sync_all_transport_to_chroma():
     try:
-        from ai.llm import init_embeddings
-        init_embeddings()
-        
-        from ai.retriever import init_vectorstore, get_vectorstore
-        try:
-            vs = get_vectorstore()
-        except RuntimeError:
-            init_vectorstore(force_rebuild=False)
-            vs = get_vectorstore()
+        from ai.retriever import get_vectorstore
+        vs = get_vectorstore()
+
+        if vs is None or vs.chroma is None:
+            logger.warning("Vectorstore unavailable. Skipping transport sync.")
+            return
             
         db = SessionLocal()
         

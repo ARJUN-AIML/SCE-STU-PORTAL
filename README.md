@@ -145,6 +145,27 @@ The API documentation is automatically generated and available at the following 
 - Authentication -> Firebase
 - Media -> Cloudinary
 
+## Updating AI Knowledge Base
+
+The AI assistant uses a pre-built ChromaDB vector index that is committed to the repository. Railway loads this index at startup without downloading any models or generating embeddings.
+
+To update the knowledge base after modifying datasets:
+
+```bash
+cd backend
+python scripts/build_vector_store.py
+```
+
+Then commit and push the updated index:
+
+```bash
+git add backend/chroma_db/
+git commit -m "Update vector store index"
+git push
+```
+
+Railway will automatically load the updated index on the next deployment. No runtime indexing occurs in production.
+
 ## Contributors
 Contributions are welcome. Please ensure pull requests follow the existing coding standards and include appropriate documentation updates.
 

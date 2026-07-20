@@ -15,9 +15,10 @@ import time
 import asyncio
 import os
 
-# FORCE HUGGINGFACE OFFLINE MODE to skip network checks during startup
+# FORCE HUGGINGFACE OFFLINE MODE — production must never download models
 os.environ["HF_HUB_OFFLINE"] = "1"
 os.environ["TRANSFORMERS_OFFLINE"] = "1"
+
 from ai.profiler import StartupProfiler
 from ai.assistant import CollegeAIAssistant
 from ai.llm import init_embeddings, get_embeddings, init_llm
@@ -34,99 +35,102 @@ from websocket import socket
 # Create DB tables
 Base.metadata.create_all(bind=engine)
 
-import os
+
+# ── Health state ─────────────────────────────────────────────────────────
+
+_backend_state = "STARTING"
+_ai_state = {
+    "embeddings": False,
+    "chroma": False,
+    "bm25": False,
+    "faq": False,
+}
+_health_stats = {}
+
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     global _backend_state, _ai_state, _health_stats
     _backend_state = "STARTING"
     _health_stats = {"startup_duration_ms": 0}
-    _ai_state = {
-        "embeddings": False,
-        "chroma": False,
-        "bm25": False,
-        "faq": False
-    }
 
     async def run_startup():
         global _backend_state
         profiler = StartupProfiler()
         t0 = time.time()
-        
+
         if not os.getenv("DATABASE_URL"):
-            logger.error("Missing critical environment variables (DATABASE_URL)")
+            logger.error("Missing critical environment variable: DATABASE_URL")
             _backend_state = "FAILED"
             return
-            
+
         try:
-            # We must be able to connect to the DB (core functionality)
-            # Run heavy independent loads concurrently
-            
-            # AI components have their own internal try/excepts
+            # ── Core: LLM + CSV (independent, can run in parallel) ────
             await asyncio.gather(
                 asyncio.to_thread(init_embeddings),
                 asyncio.to_thread(init_llm),
-                asyncio.to_thread(csv_db.load_all)
+                asyncio.to_thread(csv_db.load_all),
             )
-            # Chroma depends on embeddings
+
+            # ── Load pre-built ChromaDB (no ingestion, no embedding gen) ──
             await asyncio.to_thread(init_vectorstore)
-            
-            # Warm-up AI Models
+
+            # ── Record AI component states ────────────────────────────
             embeddings = get_embeddings()
             vectorstore = get_vectorstore()
-            
+
             if embeddings is not None:
                 _ai_state["embeddings"] = True
-                await asyncio.to_thread(embeddings.embed_query, "warmup")
-            
-            if vectorstore:
-                if vectorstore.chroma:
+
+            if vectorstore is not None:
+                if vectorstore.chroma is not None:
                     _ai_state["chroma"] = True
-                    await asyncio.to_thread(vectorstore.hybrid_search, "warmup", k=1)
-                    
-                if vectorstore.bm25:
+                if vectorstore.bm25 is not None:
                     _ai_state["bm25"] = True
-            
-            from ai.faq_engine import FAQEngine
-            faq = FAQEngine.get_instance()
-            if faq.example_embeddings is not None:
-                _ai_state["faq"] = True
-                
+
+            # ── FAQ Engine ────────────────────────────────────────────
+            try:
+                from ai.faq_engine import FAQEngine
+                faq = FAQEngine.get_instance()
+                if faq.example_embeddings is not None:
+                    _ai_state["faq"] = True
+            except Exception as e:
+                logger.warning(f"FAQ Engine failed to initialize: {e}")
+
             _health_stats["startup_duration_ms"] = int((time.time() - t0) * 1000)
-            
+
+            # ── Collect Chroma stats ──────────────────────────────────
             try:
                 if vectorstore and vectorstore.chroma:
                     data = vectorstore.chroma.get()
                     _health_stats["chunks"] = len(data.get("ids", []))
                     metas = data.get("metadatas", [])
-                    _health_stats["documents"] = len(set(m.get("source_file") for m in metas if m and "source_file" in m))
+                    _health_stats["documents"] = len(set(
+                        m.get("source_file") for m in metas if m and "source_file" in m
+                    ))
             except Exception as e:
                 logger.error(f"Failed to load Chroma stats: {e}")
 
-            # If any AI component is missing, we are DEGRADED, otherwise READY
+            # ── Final state ───────────────────────────────────────────
             if all(_ai_state.values()):
                 _backend_state = "READY"
             else:
                 _backend_state = "DEGRADED"
-                
+
             profiler.print_report()
-            logger.info(f"Subsystems Ready in background. State: {_backend_state}")
-            
+            logger.info(f"Startup complete. State: {_backend_state} | AI: {_ai_state}")
+
         except Exception as e:
-            # Only DB or critical fastAPI failure should reach here if AI degrades gracefully
             logger.error(f"Core Startup Failed: {e}")
             global _backend_error
             _backend_error = str(e)
             _backend_state = "FAILED"
 
-    # Start the heavy initialization in the background
+    # Start background init — the web server binds the port immediately
     asyncio.create_task(run_startup())
-    
-    # Yield immediately so the web server can bind the port and serve regular HTTP requests instantly!
     yield
 
-_backend_state = "STARTING"
-_health_stats = {}
+
 app = FastAPI(title="SCE Campus AI Assistant API", lifespan=lifespan)
 
 # Initialize the assistant globally so it's shared across requests
@@ -137,8 +141,6 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "https://sce-stu-portal.vercel.app",
-        "https://protective-balance-production-5b44.up.railway.app",
-        "https://protective-balance-production-5b44.up.railway.app",
         "https://protective-balance-production-5b44.up.railway.app",
         "*"
     ],
@@ -158,6 +160,9 @@ app.include_router(admin_cms.router)
 app.include_router(auth.router)
 app.include_router(clubs.router)
 
+
+# ── Models ───────────────────────────────────────────────────────────────
+
 class ChatRequest(BaseModel):
     question: str
 
@@ -165,6 +170,9 @@ class ChatResponse(BaseModel):
     answer: str
     sources: list[str]
     metadata: list[dict[str, Any]]
+
+
+# ── Endpoints ────────────────────────────────────────────────────────────
 
 @app.get("/health")
 async def health_endpoint():
@@ -185,7 +193,7 @@ async def health_endpoint():
         },
         "llm": {
             "provider": "Groq",
-            "ready": _backend_state in ["READY", "DEGRADED"] # LLM might be up even if Embeddings are down
+            "ready": _backend_state in ["READY", "DEGRADED"]
         },
         "websocket": {
             "ready": _backend_state in ["READY", "DEGRADED"]
