@@ -21,3 +21,5 @@ cloudinary
 websockets
 pandas
 google-genai
+
+langchain-google-genai

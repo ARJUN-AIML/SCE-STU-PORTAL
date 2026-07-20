@@ -1,5 +1,5 @@
 import logging
-from langchain_huggingface import HuggingFaceEmbeddings
+
 from langchain_groq import ChatGroq
 from . import config
 
@@ -8,22 +8,26 @@ logger = logging.getLogger(__name__)
 _embeddings_instance = None
 _llm_instance = None
 
-def init_embeddings():
-    global _embeddings_instance
-    logger.info("Initializing Embeddings (Singleton)...")
-    try:
-        _embeddings_instance = HuggingFaceEmbeddings(
-            model_name=config.EMBEDDING_MODEL_NAME,
-            model_kwargs={"local_files_only": False}
-        )
-    except Exception as e:
-        logger.error(f"Failed to initialize embeddings: {e}. AI Retrieval will be degraded.")
-        _embeddings_instance = None
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
 
 def get_embeddings():
-    if _embeddings_instance is None:
-        logger.warning("Embeddings are not available. AI features may be degraded.")
+    global _embeddings_instance
+    if _embeddings_instance is not None:
+        return _embeddings_instance
+
+    if not config.GEMINI_API_KEY:
+        logger.warning("GEMINI_API_KEY is not set. Embeddings unavailable.")
         return None
+        
+    try:
+        _embeddings_instance = GoogleGenerativeAIEmbeddings(
+            model=config.EMBEDDING_MODEL_NAME,
+            google_api_key=config.GEMINI_API_KEY
+        )
+    except Exception as e:
+        logger.error(f"Failed to load embedding API client: {e}")
+        _embeddings_instance = None
+        
     return _embeddings_instance
 
 def init_llm():

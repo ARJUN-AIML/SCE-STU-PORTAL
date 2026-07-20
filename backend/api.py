@@ -21,9 +21,9 @@ os.environ["TRANSFORMERS_OFFLINE"] = "1"
 
 from ai.profiler import StartupProfiler
 from ai.assistant import CollegeAIAssistant
-from ai.llm import init_embeddings, get_embeddings, init_llm
+from ai.llm import get_embeddings, init_llm
 from ai.retriever import init_vectorstore, get_vectorstore
-from services.csv_loader import csv_db
+
 from database.config import engine, Base
 
 # Import routers
@@ -65,11 +65,9 @@ async def lifespan(app: FastAPI):
             return
 
         try:
-            # ── Core: LLM + CSV (independent, can run in parallel) ────
+            # ── Core: LLM (independent, can run in parallel) ────
             await asyncio.gather(
-                asyncio.to_thread(init_embeddings),
-                asyncio.to_thread(init_llm),
-                asyncio.to_thread(csv_db.load_all),
+                asyncio.to_thread(init_llm)
             )
 
             # ── Load pre-built ChromaDB (no ingestion, no embedding gen) ──

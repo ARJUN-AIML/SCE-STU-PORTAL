@@ -39,9 +39,7 @@ def main():
 
     # ── 1. Initialize Embeddings ─────────────────────────────────────────
     logger.info("Initializing embedding model...")
-    from ai.llm import init_embeddings, get_embeddings
-    init_embeddings()
-
+    from ai.llm import get_embeddings
     embeddings = get_embeddings()
     if embeddings is None:
         logger.error("Failed to initialize embeddings. Cannot build vector store.")

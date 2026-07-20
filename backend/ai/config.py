@@ -24,5 +24,6 @@ GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 if not GROQ_API_KEY:
     import logging as _logging
     _logging.getLogger(__name__).warning("GROQ_API_KEY is not set. LLM features will be unavailable.")
-EMBEDDING_MODEL_NAME = "BAAI/bge-small-en-v1.5"
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+EMBEDDING_MODEL_NAME = "models/text-embedding-004"
 LLM_MODEL_NAME = "llama-3.3-70b-versatile"

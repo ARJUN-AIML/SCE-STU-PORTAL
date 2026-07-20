@@ -8,7 +8,6 @@ from database.config import SessionLocal
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(name)s: %(message)s')
     print("Starting dataset ingestion and database sync (safe mode)...")
-    init_embeddings()
     
     # Ingest Datasets (CSV, JSON, PDF from Dataset_for_chatbot)
     ingest_data()
