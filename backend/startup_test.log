@@ -1,0 +1,122 @@
+2026-07-18 23:35:04,918 - ai.llm - INFO - Initializing Embeddings (Singleton)...
+2026-07-18 23:35:04,925 - sentence_transformers.base.model - INFO - No device provided, using cpu
+2026-07-18 23:35:05,504 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-07-18 23:35:05,506 - huggingface_hub.utils._http - WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-07-18 23:35:05,765 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/modules.json "HTTP/1.1 200 OK"
+2026-07-18 23:35:06,025 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-18 23:35:06,055 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-07-18 23:35:06,063 - sentence_transformers.base.model - INFO - Loading SentenceTransformer model from BAAI/bge-small-en-v1.5.
+2026-07-18 23:35:06,316 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-18 23:35:06,348 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-07-18 23:35:06,601 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-07-18 23:35:06,653 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/README.md "HTTP/1.1 200 OK"
+2026-07-18 23:35:06,907 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-18 23:35:06,940 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/modules.json "HTTP/1.1 200 OK"
+2026-07-18 23:35:07,193 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-18 23:35:07,221 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-07-18 23:35:07,478 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-07-18 23:35:07,738 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-18 23:35:07,773 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  66%|######6   | 132/199 [00:00<00:00, 1314.03it/s]Loading weights: 100%|##########| 199/199 [00:00<00:00, 1754.95it/s]
+2026-07-18 23:35:08,787 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-07-18 23:35:09,038 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-18 23:35:09,288 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-18 23:35:09,547 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-18 23:35:09,840 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-18 23:35:09,868 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-07-18 23:35:10,127 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-18 23:35:10,161 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+2026-07-18 23:35:10,425 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-18 23:35:10,453 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+2026-07-18 23:35:10,722 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-18 23:35:10,751 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-07-18 23:35:11,032 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-07-18 23:35:11,299 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-07-18 23:35:11,713 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-18 23:35:11,743 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-07-18 23:35:12,002 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5 "HTTP/1.1 200 OK"
+2026-07-18 23:35:12,046 - ai.retriever - INFO - Connecting to existing ChromaDB...
+2026-07-18 23:35:13,317 - ai.retriever - INFO - Loaded existing ChromaDB with 7013 chunks.
+2026-07-18 23:35:14,287 - ai.retriever - INFO - Built BM25 index over 7013 chunks.
+2026-07-18 23:35:14,377 - ai.llm - INFO - Initializing LLM (Singleton)...
+2026-07-18 23:35:14,423 - services.csv_loader - INFO - Loaded 8 records from announcements.csv
+2026-07-18 23:35:14,428 - services.csv_loader - INFO - Loaded 5 records from buildings.csv
+2026-07-18 23:35:14,434 - services.csv_loader - INFO - Loaded 7 records from campus_services.csv
+2026-07-18 23:35:14,448 - services.csv_loader - INFO - Loaded 12 records from clubs.csv
+2026-07-18 23:35:14,453 - services.csv_loader - INFO - Loaded 5 records from contacts.csv
+2026-07-18 23:35:14,459 - services.csv_loader - INFO - Loaded 10 records from departments.csv
+2026-07-18 23:35:14,465 - services.csv_loader - INFO - Loaded 10 records from events.csv
+2026-07-18 23:35:14,472 - services.csv_loader - INFO - Loaded 8 records from facilities.csv
+2026-07-18 23:35:14,481 - services.csv_loader - INFO - Loaded 13 records from faculty.csv
+2026-07-18 23:35:14,486 - services.csv_loader - INFO - Loaded 7 records from faq.csv
+2026-07-18 23:35:14,493 - services.csv_loader - INFO - Loaded 7 records from navigation.csv
+2026-07-18 23:35:14,500 - services.csv_loader - INFO - Loaded 8 records from offices.csv
+2026-07-18 23:35:14,509 - services.csv_loader - INFO - Loaded 10 records from registration_process.csv
+2026-07-18 23:35:14,516 - services.csv_loader - INFO - Loaded 44 records from rooms.csv
+2026-07-18 23:35:14,723 - services.csv_loader - INFO - Loaded 2688 records from timetable.csv
+2026-07-18 23:35:14,745 - services.csv_loader - INFO - Loaded 19 records from academic_calendar.csv
+2026-07-18 23:35:14,755 - services.csv_loader - INFO - Loaded 28 records from exam_schedule.csv
+2026-07-18 23:35:14,767 - services.csv_loader - INFO - Loaded 40 records from fees_structure.csv
+2026-07-18 23:35:14,782 - services.csv_loader - INFO - Loaded 90 records from timetable.csv
+2026-07-18 23:35:14,801 - services.csv_loader - INFO - Loaded 12 records from clubs.csv
+2026-07-18 23:35:14,812 - services.csv_loader - INFO - Loaded 15 records from events.csv
+2026-07-18 23:35:14,820 - services.csv_loader - INFO - Loaded 5 records from placement_drives.csv
+2026-07-18 23:35:14,829 - services.csv_loader - INFO - Loaded 4 records from buildings.csv
+2026-07-18 23:35:14,838 - services.csv_loader - INFO - Loaded 30 records from canteen_menu.csv
+2026-07-18 23:35:14,848 - services.csv_loader - INFO - Loaded 10 records from facilities.csv
+2026-07-18 23:35:14,858 - services.csv_loader - INFO - Loaded 5 records from hostel.csv
+2026-07-18 23:35:14,875 - services.csv_loader - INFO - Loaded 35 records from library_books.csv
+2026-07-18 23:35:14,885 - services.csv_loader - INFO - Loaded 5 records from locations.csv
+2026-07-18 23:35:14,893 - services.csv_loader - INFO - Loaded 21 records from navigation.csv
+2026-07-18 23:35:14,903 - services.csv_loader - INFO - Loaded 10 records from transport_routes.csv
+2026-07-18 23:35:14,912 - services.csv_loader - INFO - Loaded 9 records from buildings.csv
+2026-07-18 23:35:14,925 - services.csv_loader - INFO - Loaded 10 records from departments.csv
+2026-07-18 23:35:14,933 - services.csv_loader - INFO - Loaded 25 records from faculty.csv
+2026-07-18 23:35:14,948 - services.csv_loader - INFO - Loaded 11 records from offices.csv
+2026-07-18 23:35:14,961 - services.csv_loader - INFO - Loaded 50 records from rooms.csv
+2026-07-18 23:35:14,971 - services.csv_loader - INFO - Loaded 75 records from student_profiles.csv
+2026-07-18 23:35:14,982 - services.csv_loader - INFO - Loaded 35 records from subject_master.csv
+2026-07-18 23:35:14,990 - services.csv_loader - INFO - Loaded 3 records from club_information.csv
+2026-07-18 23:35:14,998 - services.csv_loader - INFO - Loaded 3 records from faculty_advisors.csv
+2026-07-18 23:35:15,005 - services.csv_loader - INFO - Loaded 6 records from faculty_directory.csv
+2026-07-18 23:35:15,016 - services.csv_loader - INFO - Loaded 96 records from club_membership.csv
+2026-07-18 23:35:15,024 - services.csv_loader - INFO - Loaded 38 records from faculty_subjects.csv
+2026-07-18 23:35:15,032 - services.csv_loader - INFO - Loaded 26 records from it_onboarding_steps.csv
+2026-07-18 23:35:15,040 - services.csv_loader - INFO - Loaded 24 records from placement_drive_eligibility.csv
+2026-07-18 23:35:15,045 - services.csv_loader - INFO - Loaded 47 records from registration_steps.csv
+2026-07-18 23:35:15,059 - services.csv_loader - INFO - Loaded 46 records from room_equipment.csv
+2026-07-18 23:35:15,068 - services.csv_loader - INFO - Loaded 54 records from transport_stops.csv
+2026-07-18 23:35:15,074 - services.csv_loader - INFO - Loaded 4 records from contact_directory.csv
+2026-07-18 23:35:15,085 - services.csv_loader - INFO - Loaded 90 records from aliases.csv
+2026-07-18 23:35:15,097 - services.csv_loader - INFO - Loaded 199 records from entity_keywords.csv
+2026-07-18 23:35:15,103 - services.csv_loader - INFO - Loaded 15 records from equipment.csv
+2026-07-18 23:35:15,114 - services.csv_loader - INFO - Loaded 35 records from faq.csv
+2026-07-18 23:35:15,121 - services.csv_loader - INFO - Loaded 11 records from id_mapping.csv
+2026-07-18 23:35:15,128 - services.csv_loader - INFO - Loaded 3 records from documents.csv
+2026-07-18 23:35:15,144 - services.csv_loader - INFO - Loaded 15 records from announcements.csv
+2026-07-18 23:35:15,153 - services.csv_loader - INFO - Loaded 10 records from campus_services.csv
+2026-07-18 23:35:15,162 - services.csv_loader - INFO - Loaded 12 records from contacts.csv
+2026-07-18 23:35:15,171 - services.csv_loader - INFO - Loaded 8 records from forms.csv
+2026-07-18 23:35:15,177 - services.csv_loader - INFO - Loaded 5 records from it_onboarding.csv
+2026-07-18 23:35:15,187 - services.csv_loader - INFO - Loaded 10 records from registration_process.csv
+2026-07-18 23:35:15,194 - services.csv_loader - INFO - Loaded 6 records from student_support.csv
+2026-07-18 23:35:16,561 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+
+====================================================
+Campus OS Backend Startup
+====================================================
+
+Environment Variables....0 ms
+PostgreSQL Pool..........1 ms
+Embedding Model..........0 ms
+CSV Datasets.............813 ms
+LLM Client...............1113 ms
+ChromaDB & Retriever.....0 ms
+AI Warm-up...............1130 ms
+
+-----------------------------------------------
+TOTAL.....................2.76 s
+STATUS....................READY
+====================================================
+

@@ -10,6 +10,7 @@ logger = logging.getLogger(__name__)
 DATABASE_URL = os.getenv("DATABASE_URL")
 
 def get_engine(url):
+    
     if not url or url.startswith("sqlite"):
         fallback_url = url or "sqlite:///./campus.db"
         return create_engine(
