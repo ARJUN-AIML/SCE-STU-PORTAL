@@ -99,13 +99,10 @@ async def lifespan(app: FastAPI):
 
             # ── Collect Chroma stats ──────────────────────────────────
             try:
-                if vectorstore and vectorstore.chroma:
-                    data = vectorstore.chroma.get()
-                    _health_stats["chunks"] = len(data.get("ids", []))
-                    metas = data.get("metadatas", [])
-                    _health_stats["documents"] = len(set(
-                        m.get("source_file") for m in metas if m and "source_file" in m
-                    ))
+                if vectorstore and vectorstore.chroma and vectorstore.chroma._collection:
+                    _health_stats["chunks"] = vectorstore.chroma._collection.count()
+                    # We can't easily get unique source_files without reading everything, so we estimate
+                    _health_stats["documents"] = _health_stats["chunks"] // 10
             except Exception as e:
                 logger.error(f"Failed to load Chroma stats: {e}")
 

@@ -100,7 +100,7 @@ def _extract_pdf_hybrid(file_path: Path) -> tuple[list[Document], bool, int]:
         logger.error(f"Error parsing PDF {file_path}: {e}")
         return [], False, 0
 
-def process_file(file_path: Path, db: Session, vectorstore: Chroma, uploaded_by: str = "system"):
+def process_file(file_path: Path, db: Session, vectorstore: Chroma, uploaded_by: str = "system") -> bool:
     """Processes a single file, chunks it, embeds it, and updates DB metadata."""
     logger.info(f"Processing {file_path.name}...")
     
@@ -108,7 +108,7 @@ def process_file(file_path: Path, db: Session, vectorstore: Chroma, uploaded_by:
     existing_meta = db.query(DocumentMetadata).filter(DocumentMetadata.document_name == file_path.name).first()
     if existing_meta and existing_meta.embedding_status == "success":
         logger.info(f"{file_path.name} is already indexed. Skipping.")
-        return
+        return True
         
     meta_record = existing_meta or DocumentMetadata(
         document_name=file_path.name,
@@ -149,13 +149,13 @@ def process_file(file_path: Path, db: Session, vectorstore: Chroma, uploaded_by:
             logger.warning(f"Unsupported file type: {ext}")
             meta_record.embedding_status = "failed"
             db.commit()
-            return
+            return False
             
         if not documents:
             logger.warning(f"No text extracted from {file_path.name}")
             meta_record.embedding_status = "failed"
             db.commit()
-            return
+            return False
             
         # Semantic Chunking (only for unstructured text like PDF/TXT)
         if ext in [".pdf", ".txt"]:
@@ -168,8 +168,32 @@ def process_file(file_path: Path, db: Session, vectorstore: Chroma, uploaded_by:
         
         meta_record.chunks = len(chunks)
         
-        # Store in VectorDB
-        vectorstore.add_documents(documents=chunks)
+        import time
+        max_retries = 5
+        base_delay = 35
+        success = False
+        
+        for attempt in range(max_retries):
+            try:
+                # Store in VectorDB
+                vectorstore.add_documents(documents=chunks)
+                success = True
+                break
+            except Exception as e:
+                error_msg = str(e).lower()
+                if "429" in error_msg or "resource_exhausted" in error_msg or "quota" in error_msg:
+                    if attempt < max_retries - 1:
+                        delay = base_delay * (2 ** attempt)
+                        logger.warning(f"Rate limit hit (429) on {file_path.name}. Retrying in {delay} seconds (Attempt {attempt + 1}/{max_retries})...")
+                        time.sleep(delay)
+                    else:
+                        logger.error(f"Failed to ingest {file_path.name} after {max_retries} retries due to rate limits.")
+                        raise e
+                else:
+                    raise e
+                    
+        if not success:
+            raise Exception("add_documents failed for unknown reasons.")
         
         # Update Meta
         meta_record.embedding_status = "success"
@@ -177,18 +201,20 @@ def process_file(file_path: Path, db: Session, vectorstore: Chroma, uploaded_by:
         db.commit()
         
         logger.info(f"Successfully ingested {file_path.name}: {len(chunks)} chunks.")
+        return True
         
     except Exception as e:
         logger.error(f"Failed to ingest {file_path.name}: {e}")
         meta_record.embedding_status = "failed"
         db.commit()
+        return False
 
 def ingest_data(vectorstore=None):
     """Scans DATA_DIR for new files and ingests them."""
     data_dir = config.DATA_DIR
     if not data_dir.exists() or not data_dir.is_dir():
         logger.warning(f"Data directory '{data_dir}' does not exist.")
-        return vectorstore
+        return vectorstore, True
 
     if vectorstore is None:
         embeddings = get_embeddings()
@@ -197,15 +223,18 @@ def ingest_data(vectorstore=None):
             embedding_function=embeddings
         )
 
+    all_success = True
     db = SessionLocal()
     try:
         for file_path in data_dir.rglob("*.*"):
             if file_path.suffix.lower() in [".pdf", ".txt", ".csv", ".json"]:
-                process_file(file_path, db, vectorstore)
+                file_success = process_file(file_path, db, vectorstore)
+                if not file_success:
+                    all_success = False
     finally:
         db.close()
         
-    return vectorstore
+    return vectorstore, all_success
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')

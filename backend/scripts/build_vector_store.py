@@ -52,6 +52,19 @@ def main():
     if chroma_dir.exists():
         logger.info(f"Deleting existing ChromaDB at {chroma_dir}...")
         shutil.rmtree(chroma_dir)
+        
+        # Clear the PostgreSQL ingestion metadata so files aren't skipped
+        from database.config import SessionLocal
+        from models.models import DocumentMetadata
+        db = SessionLocal()
+        try:
+            deleted = db.query(DocumentMetadata).delete()
+            db.commit()
+            logger.info(f"Cleared {deleted} records from document metadata registry.")
+        except Exception as e:
+            logger.error(f"Failed to clear document metadata: {e}")
+        finally:
+            db.close()
 
     chroma_dir.mkdir(parents=True, exist_ok=True)
 
@@ -64,7 +77,7 @@ def main():
 
     from ai.ingest import ingest_data
     logger.info("Ingesting datasets from Dataset_for_chatbot/...")
-    vectorstore = ingest_data(vectorstore)
+    vectorstore, all_success = ingest_data(vectorstore)
 
     # ── 4. Sync PostgreSQL data (faculty, transport) ─────────────────────
     from database.config import SessionLocal
@@ -77,7 +90,7 @@ def main():
         from ai.retriever import init_vectorstore, get_vectorstore
 
         # We need a CampusRetriever wrapper for sync functions that expect it
-        init_vectorstore(force_rebuild=False)
+        init_vectorstore()
         vs = get_vectorstore()
 
         sync_all_faculty_to_chroma(db, vs)
@@ -94,24 +107,40 @@ def main():
 
     # ── 5. Report results ────────────────────────────────────────────────
     try:
-        data = vectorstore.get()
-        chunk_count = len(data.get("ids", []))
-        metas = data.get("metadatas", [])
-        doc_count = len(set(
-            m.get("source_file") for m in metas if m and "source_file" in m
-        ))
+        chunk_count = vectorstore._collection.count() if vectorstore._collection else 0
+        
+        # Get exact stats from DB
+        from database.config import SessionLocal
+        from models.models import DocumentMetadata
+        from sqlalchemy import func
+        db = SessionLocal()
+        try:
+            csv_count = db.query(DocumentMetadata).filter(DocumentMetadata.file_type == '.csv', DocumentMetadata.embedding_status == 'success').count()
+            docs_created = db.query(DocumentMetadata).filter(DocumentMetadata.embedding_status == 'success').count()
+            chunks_created = db.query(DocumentMetadata).filter(DocumentMetadata.embedding_status == 'success').with_entities(func.sum(DocumentMetadata.chunks)).scalar() or 0
+        except Exception:
+            csv_count = 0
+            docs_created = 0
+            chunks_created = 0
+        finally:
+            db.close()
+            
     except Exception:
         chunk_count = 0
-        doc_count = 0
+        csv_count = 0
+        docs_created = 0
+        chunks_created = 0
 
     elapsed = round(time.time() - t0, 2)
 
     logger.info("=" * 60)
     logger.info("Vector Store Build Complete")
-    logger.info(f"  Documents indexed : {doc_count}")
-    logger.info(f"  Total chunks      : {chunk_count}")
-    logger.info(f"  Output directory  : {chroma_dir}")
-    logger.info(f"  Elapsed time      : {elapsed}s")
+    logger.info(f"  CSV files processed : {csv_count}")
+    logger.info(f"  Documents created   : {docs_created}")
+    logger.info(f"  Chunks created      : {chunks_created}")
+    logger.info(f"  Chroma count        : {chunk_count}")
+    logger.info(f"  Output directory    : {chroma_dir}")
+    logger.info(f"  Elapsed time        : {elapsed}s")
     logger.info("=" * 60)
     logger.info("")
     logger.info("Next steps:")
@@ -120,6 +149,10 @@ def main():
     logger.info("  3. git push")
     logger.info("")
 
+    if not all_success:
+        logger.error("Build finished with skipped or failed datasets due to rate limits or errors.")
+        logger.error("The vector store is incomplete. Please run the build script again.")
+        sys.exit(1)
 
 if __name__ == "__main__":
     main()

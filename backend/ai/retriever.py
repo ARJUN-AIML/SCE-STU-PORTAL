@@ -41,11 +41,12 @@ class CampusRetriever:
             # Load Chroma without an embedding function so BM25 can still work
             try:
                 self.chroma = Chroma(persist_directory=str(chroma_path))
-                count = len(self.chroma.get()["ids"])
+                count = self.chroma._collection.count() if self.chroma._collection else 0
+                logger.info(f"Persistence path: {chroma_path} | Collection: {self.chroma._collection.name}")
                 if count > 0:
                     logger.info(f"Loaded ChromaDB with {count} chunks (BM25-only mode, no dense search).")
                 else:
-                    logger.warning("ChromaDB is empty.")
+                    logger.warning("ChromaDB collection is empty.")
                     self.chroma = None
             except Exception as e:
                 logger.error(f"Failed to load ChromaDB in BM25-only mode: {e}")
@@ -57,11 +58,12 @@ class CampusRetriever:
                 persist_directory=str(chroma_path),
                 embedding_function=self.embeddings,
             )
-            count = len(self.chroma.get()["ids"])
+            count = self.chroma._collection.count() if self.chroma._collection else 0
+            logger.info(f"Persistence path: {chroma_path} | Collection: {self.chroma._collection.name}")
             if count > 0:
                 logger.info(f"Loaded pre-built ChromaDB with {count} chunks.")
             else:
-                logger.warning("ChromaDB is empty. RAG will return no results.")
+                logger.warning("ChromaDB collection is empty. RAG will return no results.")
                 self.chroma = None
         except Exception as e:
             logger.error(f"Failed to load ChromaDB: {e}")
