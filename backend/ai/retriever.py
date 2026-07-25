@@ -115,6 +115,16 @@ class CampusRetriever:
             logger.warning("Both Chroma and BM25 are unavailable. Returning empty results.")
             return []
 
+        # 0. Ensure embedding function is active
+        if not self.embeddings:
+            self.embeddings = get_embeddings()
+
+        if self.chroma and self.embeddings:
+            try:
+                self.chroma._embedding_function = self.embeddings
+            except Exception:
+                pass
+
         # 1. Dense Search
         dense_results = []
         if self.chroma and self.embeddings:

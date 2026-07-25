@@ -51,7 +51,7 @@
       "follow_ups": ["What are the library hours?", "Where is the Library located?"]
     },
     "library_hours": {
-      "examples": ["What time does the library open?", "library timings", "is the library open now?", "when does library close", "library working hours"],
+      "examples": ["What time does the library open?", "library timings", "is the library open now?", "when does library close", "library working hours", "library timings and working hours", "what are the library timings", "library hours"],
       "dynamic": "library_hours",
       "follow_ups": ["Where is the library located?", "How many books can I borrow?"]
     },
