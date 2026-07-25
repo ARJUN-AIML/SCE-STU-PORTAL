@@ -168,19 +168,17 @@ def process_file(file_path: Path, db: Session, vectorstore: Chroma, uploaded_by:
         
         meta_record.chunks = len(chunks)
         
-        import time
-        batch_size = 50
+        batch_size = 200
         total_chunks = len(chunks)
         
         for i in range(0, total_chunks, batch_size):
             batch = chunks[i:i + batch_size]
-            max_retries = 5
-            base_delay = 10
+            max_retries = 3
+            base_delay = 2
             
             for attempt in range(max_retries):
                 try:
                     vectorstore.add_documents(documents=batch)
-                    time.sleep(0.3)  # Rate limit breathing space
                     break
                 except Exception as e:
                     error_msg = str(e).lower()

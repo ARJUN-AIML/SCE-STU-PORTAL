@@ -15,6 +15,23 @@ def get_embeddings():
     if _embeddings_instance is not None:
         return _embeddings_instance
 
+    # 1. Try local HuggingFace model if available (0ms latency, zero API rate limit)
+    try:
+        import os
+        from langchain_huggingface import HuggingFaceEmbeddings
+        local_model_path = os.path.join(config.BASE_DIR, "models", "bge-small-en-v1.5")
+        if os.path.exists(local_model_path):
+            _embeddings_instance = HuggingFaceEmbeddings(
+                model_name=local_model_path,
+                model_kwargs={'device': 'cpu'},
+                encode_kwargs={'normalize_embeddings': True}
+            )
+            logger.info("Successfully initialized local HuggingFace embeddings (bge-small-en-v1.5).")
+            return _embeddings_instance
+    except Exception as e:
+        logger.warning(f"Local HuggingFace embeddings load attempt skipped: {e}")
+
+    # 2. Fallback to Gemini API Embeddings
     if not config.GEMINI_API_KEY:
         logger.warning("GEMINI_API_KEY is not set. Embeddings unavailable.")
         return None

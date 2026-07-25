@@ -6,6 +6,7 @@ load_dotenv()
 
 # Resolve absolute paths
 current_file_path = Path(__file__).resolve()
+BASE_DIR = current_file_path.parent.parent
 
 def _find_dataset_dir():
     backend_dir = current_file_path.parent.parent
