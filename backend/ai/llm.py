@@ -43,6 +43,7 @@ def init_llm():
     )
 
 def get_llm():
+    global _llm_instance
     if _llm_instance is None:
-        raise RuntimeError("LLM not initialized! Call init_llm() first.")
+        init_llm()
     return _llm_instance

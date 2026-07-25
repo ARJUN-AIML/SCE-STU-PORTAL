@@ -37,6 +37,22 @@ async def get_events(background_tasks: BackgroundTasks, db: Session = Depends(ge
         })
     return StandardResponse(success=True, data=data, message="Events loaded successfully")
 
+@router.get("/events/{id}", response_model=StandardResponse)
+def get_event_by_id(id: int, db: Session = Depends(get_db)):
+    e = db.query(Event).filter(Event.id == id).first()
+    if not e:
+        return StandardResponse(success=False, message="Event not found")
+    data = {
+        "id": str(e.id), "title": e.title, "description": e.description,
+        "type": e.type, "thumbnail": e.thumbnail, "date": e.date.isoformat() if e.date else "",
+        "time": e.time, "venue": e.venue, "coordinator": e.coordinator,
+        "seats_total": e.seats_total, "seats_filled": e.seats_filled,
+        "is_recommended": e.is_recommended, "status": e.status,
+        "image_url": e.image_url,
+        "image_generation_status": e.image_generation_status
+    }
+    return StandardResponse(success=True, data=data, message="Event loaded successfully")
+
 @router.get("/clubs", response_model=StandardResponse)
 def get_clubs(db: Session = Depends(get_db)):
     clubs = db.query(Club).all()
@@ -60,6 +76,7 @@ def get_faculty(db: Session = Depends(get_db)):
     return StandardResponse(success=True, data=data, message="Faculty loaded successfully")
 
 @router.get("/schedule", response_model=StandardResponse)
+@router.get("/timetable", response_model=StandardResponse)
 def get_schedule(db: Session = Depends(get_db)):
     schedule = db.query(TimetableEntry).all()
     data = [{
@@ -79,6 +96,18 @@ def get_notices(db: Session = Depends(get_db)):
         "author": n.author, "date": n.publish_date.isoformat() if n.publish_date else ""
     } for n in notices]
     return StandardResponse(success=True, data=data, message="Notices loaded successfully")
+
+@router.get("/notices/{id}", response_model=StandardResponse)
+def get_notice_by_id(id: int, db: Session = Depends(get_db)):
+    n = db.query(Notice).filter(Notice.id == id).first()
+    if not n:
+        return StandardResponse(success=False, message="Notice not found")
+    data = {
+        "id": str(n.id), "title": n.title, "content": n.content,
+        "type": n.type, "category": n.category, "priority": n.priority,
+        "author": n.author, "date": n.publish_date.isoformat() if n.publish_date else ""
+    }
+    return StandardResponse(success=True, data=data, message="Notice loaded successfully")
 
 @router.get("/resources", response_model=StandardResponse)
 def get_resources(db: Session = Depends(get_db)):
@@ -261,6 +290,7 @@ def search_all(query: str, db: Session = Depends(get_db)):
     return StandardResponse(success=True, data=results, message="Search completed")
 
 @router.get("/map/buildings", response_model=StandardResponse)
+@router.get("/buildings", response_model=StandardResponse)
 def get_buildings(db: Session = Depends(get_db)):
     buildings = db.query(Building).all()
     data = [{

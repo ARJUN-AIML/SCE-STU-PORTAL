@@ -25,7 +25,7 @@ for q in queries:
         duration = time.time() - start
         if response.status_code == 200:
             data = response.json()
-            print(f"[Response] ({duration:.2f}s): {data.get('response')[:200]}...")
+            print(f"[Response] ({duration:.2f}s): {data.get('answer', data.get('response', ''))[:200]}...")
         else:
             print(f"[Error] {response.status_code}: {response.text}")
     except Exception as e:

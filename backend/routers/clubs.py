@@ -20,9 +20,10 @@ class ClubRegistrationRequest(BaseModel):
 
     @validator('college_email')
     def validate_college_email(cls, v):
-        if not v.endswith('@saranathan.ac.in'):
+        email_clean = v.strip().lower()
+        if not email_clean.endswith('@saranathan.ac.in'):
             raise ValueError('Email must end with @saranathan.ac.in')
-        return v
+        return email_clean
 
 class UpdateStatusRequest(BaseModel):
     status: str

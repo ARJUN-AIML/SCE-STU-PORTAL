@@ -21,23 +21,16 @@ load_dotenv()
 import sys
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 
-from database.config import Base
+from database.config import Base, normalize_database_url
 import models.models
 
 target_metadata = Base.metadata
 
 db_url = os.environ.get("DATABASE_URL")
 if not db_url:
-    raise ValueError("DATABASE_URL environment variable is not set")
+    db_url = "sqlite:///./campus.db"
 
-# Handle legacy postgres:// URLs
-if db_url.startswith("postgres://"):
-    db_url = db_url.replace("postgres://", "postgresql://", 1)
-
-if "neon.tech" in db_url and "sslmode=require" not in db_url:
-    separator = "&" if "?" in db_url else "?"
-    db_url += f"{separator}sslmode=require"
-
+db_url = normalize_database_url(db_url)
 config.set_main_option("sqlalchemy.url", db_url)
 
 # other values from the config, defined by the needs of env.py,
@@ -77,10 +70,20 @@ def run_migrations_online() -> None:
     and associate a connection with the context.
 
     """
+    connect_args = {}
+    if not db_url.startswith("sqlite"):
+        connect_args = {
+            "keepalives": 1,
+            "keepalives_idle": 30,
+            "keepalives_interval": 10,
+            "keepalives_count": 5,
+        }
+
     connectable = engine_from_config(
         config.get_section(config.config_ini_section, {}),
         prefix="sqlalchemy.",
         poolclass=pool.NullPool,
+        connect_args=connect_args,
     )
 
     with connectable.connect() as connection:
@@ -90,6 +93,7 @@ def run_migrations_online() -> None:
 
         with context.begin_transaction():
             context.run_migrations()
+
 
 
 if context.is_offline_mode():

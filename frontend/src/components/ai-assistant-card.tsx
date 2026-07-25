@@ -348,7 +348,7 @@ export function AiAssistantCard({ isDrawer = false }: { isDrawer?: boolean }) {
             <div className="grid grid-cols-2 gap-2 mt-2">
               {[
                 "👨‍🏫 Who is the HOD of Computer Science?",
-                "🚌 Which bus goes to Anna Nagar?",
+                "🚌 Which bus goes to KK Nagar?",
                 "📢 Are there any placement notices?",
                 "🎉 What technical events are coming up?",
                 "💻 Tell me about the coding clubs.",

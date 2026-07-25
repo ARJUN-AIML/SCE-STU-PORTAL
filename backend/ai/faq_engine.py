@@ -37,53 +37,62 @@ class FAQEngine:
                 self.intent_examples.append(ex.lower())
                 self.intent_keys.append(key)
 
+        self.embeddings_model = None
         self.example_embeddings = None
         self.example_norms = None
         logger.info(f"FAQ Engine instantiated with {len(self.intent_examples)} examples across {len(self.config['intents'])} intents")
 
     def _ensure_initialized(self):
-        if self.example_embeddings is not None:
-            return
-        
-        self.embeddings_model = get_embeddings()
-        if self.embeddings_model is None:
-            logger.warning("Embeddings unavailable. FAQ Engine semantic search disabled.")
-            return
-
-        try:
-            self.example_embeddings = np.array(
-                self.embeddings_model.embed_documents(self.intent_examples)
-            )
-            self.example_norms = np.linalg.norm(self.example_embeddings, axis=1)
-            logger.info("FAQ Engine semantic embeddings initialized successfully.")
-        except Exception as e:
-            logger.error(f"FAQ Engine failed to initialize embeddings: {e}")
-            self.example_embeddings = None
-            self.example_norms = None
+        # We rely on fast 0ms direct phrase/regex intent matching to preserve Gemini API quota.
+        # Avoid bulk API call for 166 examples on startup.
+        return
 
     def detect_intent(self, query: str) -> str | None:
-        """Detect intent via cosine similarity. Returns intent key or None."""
-        self._ensure_initialized()
-        if self.embeddings_model is None or self.example_embeddings is None:
-            return None
-            
+        """Detect intent via fast text matching or cosine similarity."""
         q = query.lower().strip()
         if not q:
             return None
 
-        query_vec = np.array(self.embeddings_model.embed_query(q))
-        query_norm = np.linalg.norm(query_vec)
-        if query_norm == 0:
+        import re
+        for i, example in enumerate(self.intent_examples):
+            # 1. Exact match
+            if example == q:
+                matched = self.intent_keys[i]
+                logger.info(f"FAQ direct text match: '{q}' -> {matched}")
+                return matched
+            # 2. Multi-word phrase match
+            if len(example.split()) > 1 and example in q:
+                matched = self.intent_keys[i]
+                logger.info(f"FAQ phrase match: '{q}' -> {matched}")
+                return matched
+            # 3. Single-word whole word match
+            if len(example.split()) == 1 and re.search(r'\b' + re.escape(example) + r'\b', q):
+                matched = self.intent_keys[i]
+                logger.info(f"FAQ word match: '{q}' -> {matched}")
+                return matched
+
+        # 2. Dense Embedding Cosine Similarity (Fallback if API available)
+        self._ensure_initialized()
+        if self.embeddings_model is None or self.example_embeddings is None:
             return None
 
-        similarities = np.dot(self.example_embeddings, query_vec) / (self.example_norms * query_norm)
-        best_idx = int(np.argmax(similarities))
-        best_score = float(similarities[best_idx])
+        try:
+            query_vec = np.array(self.embeddings_model.embed_query(q))
+            query_norm = np.linalg.norm(query_vec)
+            if query_norm == 0:
+                return None
 
-        if best_score >= SIMILARITY_THRESHOLD:
-            matched = self.intent_keys[best_idx]
-            logger.debug(f"FAQ match: '{q}' → {matched} (score={best_score:.3f})")
-            return matched
+            similarities = np.dot(self.example_embeddings, query_vec) / (self.example_norms * query_norm)
+            best_idx = int(np.argmax(similarities))
+            best_score = float(similarities[best_idx])
+
+            if best_score >= SIMILARITY_THRESHOLD:
+                matched = self.intent_keys[best_idx]
+                logger.debug(f"FAQ match: '{q}' -> {matched} (score={best_score:.3f})")
+                return matched
+        except Exception as e:
+            logger.warning(f"FAQ embedding similarity search skipped due to API limits: {e}")
+
         return None
 
     def get_response(self, intent_key: str) -> tuple[str, list[str]]:

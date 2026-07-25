@@ -131,14 +131,26 @@ app = FastAPI(title="SCE Campus AI Assistant API", lifespan=lifespan)
 # Initialize the assistant globally so it's shared across requests
 assistant = CollegeAIAssistant()
 
-# Allow CORS for local frontend testing
+# Add ProxyHeadersMiddleware for reverse proxy header forwarding on Railway
+from uvicorn.middleware.proxy_headers import ProxyHeadersMiddleware
+app.add_middleware(ProxyHeadersMiddleware, trusted_hosts=["*"])
+
+# Allow CORS for configured origins & production Vercel frontend
+raw_cors = os.getenv("CORS_ORIGINS", "")
+allowed_origins = [origin.strip() for origin in raw_cors.split(",") if origin.strip()]
+default_origins = [
+    "https://sce-stu-portal.vercel.app",
+    "https://protective-balance-production-5b44.up.railway.app",
+    "http://localhost:5173",
+    "http://localhost:3000",
+]
+for default_origin in default_origins:
+    if default_origin not in allowed_origins:
+        allowed_origins.append(default_origin)
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "https://sce-stu-portal.vercel.app",
-        "https://protective-balance-production-5b44.up.railway.app",
-        "*"
-    ],
+    allow_origins=allowed_origins if "*" not in allowed_origins else ["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -171,13 +183,22 @@ class ChatResponse(BaseModel):
 
 @app.get("/health")
 async def health_endpoint():
+    db_connected = False
+    try:
+        from sqlalchemy import text
+        with engine.connect() as conn:
+            conn.execute(text("SELECT 1"))
+        db_connected = True
+    except Exception as e:
+        logger.warning(f"Database health check failed: {e}")
+
     return {
-        "status": _backend_state.lower(),
+        "status": "ready" if (db_connected and _backend_state in ["READY", "DEGRADED"]) else (_backend_state.lower()),
         "error": globals().get("_backend_error", None),
         "startup_duration_ms": _health_stats.get("startup_duration_ms", 0),
         "database": {
-            "connected": _backend_state in ["READY", "DEGRADED"],
-            "pool_size": 10
+            "connected": db_connected,
+            "pool_size": 5
         },
         "ai": _ai_state,
         "rag": {
@@ -209,10 +230,10 @@ async def metrics_endpoint():
 @app.post("/chat", response_model=ChatResponse)
 async def chat_endpoint(request: ChatRequest):
     try:
-        response_data = assistant.ask(request.question)
+        response_data = await assistant.ask_async(request.question)
         return ChatResponse(
-            answer=response_data["answer"],
-            sources=response_data["sources"],
+            answer=response_data.get("answer", ""),
+            sources=response_data.get("sources", []),
             metadata=response_data.get("metadata", [])
         )
     except Exception as e:
@@ -246,4 +267,6 @@ async def seed_production_db():
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("api:app", host="0.0.0.0", port=8000, reload=True)
+    port = int(os.getenv("PORT", "8000"))
+    uvicorn.run("api:app", host="0.0.0.0", port=port, reload=False)
+

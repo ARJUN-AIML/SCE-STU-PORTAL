@@ -51,7 +51,10 @@ def main():
 
     if chroma_dir.exists():
         logger.info(f"Deleting existing ChromaDB at {chroma_dir}...")
-        shutil.rmtree(chroma_dir)
+        try:
+            shutil.rmtree(chroma_dir, ignore_errors=True)
+        except Exception as e:
+            logger.warning(f"Could not delete ChromaDB directory cleanly: {e}")
         
         # Clear the PostgreSQL ingestion metadata so files aren't skipped
         from database.config import SessionLocal

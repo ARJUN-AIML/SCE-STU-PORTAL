@@ -26,7 +26,7 @@ def seed():
                 "to_stop": "Saranathan College of Engineering",
                 "final_destination": "Saranathan College of Engineering",
                 "vehicle_type": "Bus",
-                "stops": ["KK Nagar", "Sundar Nagar", "LIC Colony", "Kajamalai", "Airport", "Gundur", "HAPP", "Thuvakudi", "Saranathan College of Engineering"]
+                "stops": ["KK Nagar", "Anna Nagar", "Sundar Nagar", "LIC Colony", "Kajamalai", "Airport", "Gundur", "HAPP", "Thuvakudi", "Saranathan College of Engineering"]
             },
             {
                 "bus_id": "Bus 18",

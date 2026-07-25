@@ -83,7 +83,6 @@ export function RegisterDialog({
                 <Input id="name" placeholder="" {...register("name")} />
                 {errors.name && <span className="text-xs text-danger">{errors.name.message}</span>}
               </div>
-              {submitError && <p role="alert" className="text-xs text-danger">{submitError}</p>}
               <div className="flex flex-col gap-1.5">
                 <Label htmlFor="email">{t("email")}</Label>
                 <Input id="email" type="email" placeholder="" {...register("email")} />
@@ -98,6 +97,7 @@ export function RegisterDialog({
                 <Label htmlFor="notes">{t("notes")}</Label>
                 <Input id="notes" placeholder="" {...register("notes")} />
               </div>
+              {submitError && <p role="alert" className="text-sm font-medium text-danger mt-1">{submitError}</p>}
               <div className="mt-2 flex justify-end gap-2">
                 <Button type="button" variant="outline" onClick={() => handleClose(false)}>
                   {t("cancel")}

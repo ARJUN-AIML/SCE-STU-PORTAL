@@ -46,7 +46,7 @@ async def verify_token(request: Request, db: Session = Depends(get_db)):
         decoded_token = auth.verify_id_token(token)
         uid = decoded_token['uid']
         email = decoded_token.get('email', '').strip().lower()
-        if not decoded_token.get('email_verified') or not (email.endswith('@saranathan.ac.in') or email.endswith('@sceadmin.ac.in')):
+        if not (email.endswith('@saranathan.ac.in') or email.endswith('@sceadmin.ac.in')):
             raise HTTPException(status_code=403, detail="Only official Saranathan College accounts are allowed.")
         
         # Determine role based on email domain
@@ -66,6 +66,8 @@ async def verify_token(request: Request, db: Session = Depends(get_db)):
             db.refresh(user)
             
         return user
+    except HTTPException:
+        raise
     except Exception as e:
         raise HTTPException(status_code=401, detail="Invalid token")
 

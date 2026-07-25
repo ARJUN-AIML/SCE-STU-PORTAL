@@ -1,57 +1,52 @@
 # Deployment Guide
 
-This document outlines the steps required to deploy SCE Student Portal to production environments.
+This document outlines the production deployment for the SCE Student Portal (**Railway** for backend & **Neon PostgreSQL** for database, **Vercel** for frontend).
 
 ## Frontend (Vercel)
-Vercel is recommended for the React/Vite frontend.
+Vercel hosts the React/Vite frontend.
 
 1. Connect your GitHub repository to Vercel.
 2. **Build Settings**:
    * Framework Preset: `Vite`
+   * Root Directory: `frontend`
    * Build Command: `npm run build`
    * Output Directory: `dist`
-3. **Environment Variables**: Add all `VITE_*` variables.
-4. **Deploy**: Vercel handles the CDN distribution automatically.
+3. **Environment Variables**:
+   * `VITE_API_BASE_URL`: `https://protective-balance-production-5b44.up.railway.app` (or your Railway backend domain)
+   * `VITE_FIREBASE_*` credentials.
+4. **Deploy**: Vercel handles global deployment automatically.
 
-## Backend (Render)
-Render (or Heroku/Railway) is recommended for the FastAPI backend.
+## Backend (Railway)
+Railway hosts the FastAPI backend with multi-worker ASGI performance and reverse proxy header trust.
 
-1. Connect the repository and select `Web Service`.
-2. **Build Settings**:
-   * Root Directory: `backend`
-   * Runtime: `Python 3.10+`
-   * Build Command: `pip install -r requirements.txt`
-   * Start Command: `uvicorn api:app --host 0.0.0.0 --port $PORT`
-3. **Environment Variables**: Add `DATABASE_URL`, `GROQ_API_KEY`, etc.
+1. Connect your GitHub repository to **Railway**.
+2. **Service Settings**:
+   * Root Directory: `backend` (or repo root)
+   * Build Command: Automatic via `nixpacks.toml` / `railway.json`
+   * Start Command: `alembic upgrade head && uvicorn api:app --host 0.0.0.0 --port $PORT --workers 2 --proxy-headers --forwarded-allow-ips='*'`
+3. **Environment Variables**:
+   * `DATABASE_URL`: Your Neon PostgreSQL pooler URL (`postgresql+psycopg://user:pass@ep-pooler.neon.tech/neondb?sslmode=require`)
+   * `GROQ_API_KEY`: Groq LLM API Key
+   * `FIREBASE_CREDENTIALS_JSON`: Stringified JSON of Firebase Admin service account key
+   * `CORS_ORIGINS`: Comma-separated allowed frontend domains (e.g., `https://sce-stu-portal.vercel.app`)
 
 ## Database (Neon PostgreSQL)
 1. Create a project on [Neon.tech](https://neon.tech).
-2. Copy the connection string.
-3. Replace the local SQLite string with the Neon URL in your `.env` (e.g., `postgresql+psycopg://user:password@ep-cold-pond-1234.us-east-2.aws.neon.tech/neondb?sslmode=require`).
-4. **Migrations**: Run `alembic upgrade head` from your backend environment.
+2. Copy the connection pooler URL.
+3. Set `DATABASE_URL` in Railway variables (e.g., `postgresql+psycopg://user:pass@ep-pooler.neon.tech/neondb?sslmode=require`).
+4. Connection pooling, `pool_pre_ping=True`, `pool_recycle=180`, TCP keepalives, and automatic `alembic upgrade head` migrations on deploy ensure zero-downtime database startup.
 
 ## Firebase Authentication
 1. Go to Firebase Console > Project Settings > Service Accounts.
 2. Generate a new private key.
-3. Stringify the JSON and set it as `FIREBASE_CREDENTIALS_JSON` on Render.
-4. Add authorized domains (e.g., your Vercel URL) in Firebase Authentication settings.
+3. Stringify the JSON and set it as `FIREBASE_CREDENTIALS_JSON` on Railway.
+4. Add authorized domains (e.g., your Vercel URL and Railway URL) in Firebase Authentication settings.
 
 ## Cloudinary
 1. Obtain your Cloudinary URL from the dashboard.
-2. Set `CLOUDINARY_URL` in the backend for image upload routing.
+2. Set `CLOUDINARY_URL` in Railway backend environment variables for image upload routing.
 
-## CORS Configuration
-Ensure your FastAPI CORS middleware explicitly allows the Vercel production URL:
-```python
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["https://your-vercel-domain.vercel.app"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-```
+## Health Checks & Monitoring
+* **Health Endpoint**: Railway continuously pings `/health` to verify database connectivity and AI assistant state.
+* **Rollback**: Railway allows instant 1-click rollbacks from the project deployment timeline.
 
-## Health Checks & Rollback
-* **Health Endpoint**: Vercel/Render will ping `/health` to ensure uptime.
-* **Rollback**: Vercel allows instant 1-click rollbacks. Render allows reverting to previous successful builds from the dashboard.

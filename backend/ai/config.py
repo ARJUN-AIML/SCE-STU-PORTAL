@@ -7,13 +7,20 @@ load_dotenv()
 # Resolve absolute paths
 current_file_path = Path(__file__).resolve()
 
-# Resolve dataset directory dynamically to support both local and Railway deployments
 def _find_dataset_dir():
-    if Path("../Dataset_for_chatbot").exists():
-        return Path("../Dataset_for_chatbot").resolve()
-    if Path("Dataset_for_chatbot").exists():
-        return Path("Dataset_for_chatbot").resolve()
-    return Path("../Dataset_for_chatbot")
+    backend_dir = current_file_path.parent.parent
+    root_dir = backend_dir.parent
+    
+    candidate_1 = root_dir / "Dataset_for_chatbot"
+    if candidate_1.exists():
+        return candidate_1
+    candidate_2 = backend_dir / "Dataset_for_chatbot"
+    if candidate_2.exists():
+        return candidate_2
+    candidate_3 = backend_dir / "data"
+    if candidate_3.exists():
+        return candidate_3
+    return candidate_1
 
 DATA_DIR = _find_dataset_dir()
 

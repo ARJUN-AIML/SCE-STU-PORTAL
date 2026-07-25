@@ -40,8 +40,12 @@ class CollegeAIAssistant:
         
     @property
     def vectorstore(self):
-        from .retriever import get_vectorstore
-        return get_vectorstore()
+        from .retriever import get_vectorstore, init_vectorstore
+        vs = get_vectorstore()
+        if vs is None:
+            init_vectorstore()
+            vs = get_vectorstore()
+        return vs
 
     def rebuild(self):
         """Clears the existing ChromaDB and recreates it from datasets."""
@@ -320,16 +324,36 @@ Respond ONLY with the category name.
         
         yield {"type": "done", **final_response}
 
+    async def ask_async(self, query: str) -> dict:
+        """
+        Asynchronous execution method for FastAPI endpoints running inside an event loop.
+        """
+        last = None
+        async for chunk in self.ask_stream(query):
+            if chunk.get("type") == "done":
+                last = chunk
+        return last or {
+            "answer": "No response generated.",
+            "sources": [],
+            "metadata": []
+        }
+
     def ask(self, query: str) -> dict:
         """
-        Synchronous fallback method for the REST API.
+        Synchronous fallback method for CLI or scripts.
         """
         import asyncio
-        async def _run():
-            last = None
-            async for chunk in self.ask_stream(query):
-                if chunk["type"] == "done":
-                    last = chunk
-            return last
-        return asyncio.run(_run())
+        try:
+            loop = asyncio.get_running_loop()
+        except RuntimeError:
+            loop = None
+
+        if loop and loop.is_running():
+            import concurrent.futures
+            with concurrent.futures.ThreadPoolExecutor() as pool:
+                future = pool.submit(asyncio.run, self.ask_async(query))
+                return future.result()
+        else:
+            return asyncio.run(self.ask_async(query))
+
 

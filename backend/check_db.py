@@ -8,7 +8,7 @@ engine = create_engine(db_url)
 print('--- DB Counts (Neon) ---')
 try:
     with engine.connect() as conn:
-        for table in ['departments', 'faculty', 'events', 'transport_routes']:
+        for table in ['departments', 'faculty', 'events', 'transport']:
             res = conn.execute(text(f"SELECT COUNT(*) FROM {table}")).scalar()
             print(f"{table}: {res}")
 except Exception as e:
