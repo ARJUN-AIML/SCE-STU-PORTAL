@@ -169,31 +169,31 @@ def process_file(file_path: Path, db: Session, vectorstore: Chroma, uploaded_by:
         meta_record.chunks = len(chunks)
         
         import time
-        max_retries = 5
-        base_delay = 35
-        success = False
+        batch_size = 50
+        total_chunks = len(chunks)
         
-        for attempt in range(max_retries):
-            try:
-                # Store in VectorDB
-                vectorstore.add_documents(documents=chunks)
-                success = True
-                break
-            except Exception as e:
-                error_msg = str(e).lower()
-                if "429" in error_msg or "resource_exhausted" in error_msg or "quota" in error_msg:
-                    if attempt < max_retries - 1:
-                        delay = base_delay * (2 ** attempt)
-                        logger.warning(f"Rate limit hit (429) on {file_path.name}. Retrying in {delay} seconds (Attempt {attempt + 1}/{max_retries})...")
-                        time.sleep(delay)
+        for i in range(0, total_chunks, batch_size):
+            batch = chunks[i:i + batch_size]
+            max_retries = 5
+            base_delay = 10
+            
+            for attempt in range(max_retries):
+                try:
+                    vectorstore.add_documents(documents=batch)
+                    time.sleep(0.3)  # Rate limit breathing space
+                    break
+                except Exception as e:
+                    error_msg = str(e).lower()
+                    if "429" in error_msg or "resource_exhausted" in error_msg or "quota" in error_msg:
+                        if attempt < max_retries - 1:
+                            delay = base_delay * (2 ** attempt)
+                            logger.warning(f"Rate limit hit (429) on {file_path.name} batch {i//batch_size + 1}. Retrying in {delay}s...")
+                            time.sleep(delay)
+                        else:
+                            logger.error(f"Failed to ingest {file_path.name} batch {i//batch_size + 1} after {max_retries} retries.")
+                            raise e
                     else:
-                        logger.error(f"Failed to ingest {file_path.name} after {max_retries} retries due to rate limits.")
                         raise e
-                else:
-                    raise e
-                    
-        if not success:
-            raise Exception("add_documents failed for unknown reasons.")
         
         # Update Meta
         meta_record.embedding_status = "success"
