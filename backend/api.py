@@ -90,7 +90,7 @@ async def lifespan(app: FastAPI):
             try:
                 from ai.faq_engine import FAQEngine
                 faq = FAQEngine.get_instance()
-                if faq.example_embeddings is not None:
+                if faq is not None and len(faq.intent_examples) > 0:
                     _ai_state["faq"] = True
             except Exception as e:
                 logger.warning(f"FAQ Engine failed to initialize: {e}")
