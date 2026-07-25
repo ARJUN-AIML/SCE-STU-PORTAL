@@ -34,4 +34,4 @@ if not GROQ_API_KEY:
     _logging.getLogger(__name__).warning("GROQ_API_KEY is not set. LLM features will be unavailable.")
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 EMBEDDING_MODEL_NAME = "models/gemini-embedding-2"
-LLM_MODEL_NAME = "llama-3.3-70b-versatile"
+LLM_MODEL_NAME = "llama-3.1-8b-instant"

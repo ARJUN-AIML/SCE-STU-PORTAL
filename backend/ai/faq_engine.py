@@ -129,36 +129,35 @@ class FAQEngine:
                 today = datetime.now().date()
                 events = db.query(Event).filter(func.date(Event.date) == today).all()
                 if not events:
-                    return "There are no events scheduled for today."
+                    upcoming = db.query(Event).filter(Event.status == "open").limit(5).all()
+                    if upcoming:
+                        return "There are no events scheduled for today. Here are upcoming events:\n" + "\n".join(f"• **{e.title}** ({e.date.strftime('%d %b') if e.date else 'TBD'}) — {e.venue or 'TBD'}" for e in upcoming)
+                    return "There are currently no events scheduled for today."
                 return "Today's events:\n" + "\n".join(f"• **{e.title}** — {e.venue or 'TBD'}" for e in events)
 
             if dynamic_key == "weekly_workshops":
                 from models.models import Event
-                workshops = db.query(Event).filter(Event.type.ilike("%workshop%"), Event.status == "open").all()
+                workshops = db.query(Event).filter(Event.type.ilike("%workshop%")).all()
                 if not workshops:
-                    return "There are no workshops scheduled this week."
-                return "Workshops this week:\n" + "\n".join(f"• **{e.title}** — {e.venue or 'TBD'}" for e in workshops)
+                    return "Workshops and technical training sessions are announced periodically on the college portal."
+                return "Upcoming workshops:\n" + "\n".join(f"• **{e.title}** — {e.venue or 'TBD'}" for e in workshops)
 
             if dynamic_key == "upcoming_hackathons":
                 from models.models import Event
-                hackathons = db.query(Event).filter(
-                    Event.type.ilike("%hackathon%"), Event.status == "open"
-                ).all()
+                hackathons = db.query(Event).filter(Event.type.ilike("%hackathon%")).all()
                 if not hackathons:
-                    return "There are no upcoming hackathons at the moment."
+                    return "There are no upcoming hackathons at the moment. Check the portal announcements for updates."
                 return "Upcoming hackathons:\n" + "\n".join(f"• **{e.title}** — {e.date.strftime('%d %b %Y') if e.date else 'TBD'}" for e in hackathons)
 
             if dynamic_key == "open_competitions":
                 from models.models import Event
-                competitions = db.query(Event).filter(
-                    Event.type.ilike("%competition%"), Event.status == "open"
-                ).all()
+                competitions = db.query(Event).filter(Event.type.ilike("%competition%")).all()
                 if not competitions:
                     return "There are no competitions currently open."
                 return "Open competitions:\n" + "\n".join(f"• **{e.title}**" for e in competitions)
 
             if dynamic_key == "event_registration":
-                return "You can register for open events through the **Events** section in the portal. If registration is closed, it will be indicated on the event card."
+                return "To register for any event or workshop, open the **Events** section in the SCE Student Portal and click the **Register** button on the event card."
 
         except Exception as e:
             logger.error(f"Dynamic FAQ error for '{dynamic_key}': {e}")

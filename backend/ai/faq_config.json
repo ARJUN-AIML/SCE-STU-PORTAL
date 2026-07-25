@@ -11,17 +11,22 @@
       "follow_ups": ["Who is the HOD of CSE?", "Which bus goes to my area?", "Any upcoming events?"]
     },
     "leave_application": {
-      "examples": ["I need leave tomorrow", "I'll be absent today", "How do I apply for leave?", "I want to take a day off", "leave application", "sick leave", "absent from class"],
+      "examples": ["I need leave tomorrow", "I'll be absent today", "How do I apply for leave?", "How do I apply for leave / sick leave?", "I want to take a day off", "leave application", "sick leave", "absent from class"],
       "response": "First inform your Class Coordinator about your absence. If you need a formal leave application, I can help you draft a leave email to your Department HOD. Would you like me to draft one?",
       "follow_ups": ["Can you draft the leave email?", "Who is my Class Coordinator?", "What is the attendance policy?"]
     },
+    "draft_leave": {
+      "examples": ["Can you draft a leave application email to my HOD?", "draft leave email", "write leave email", "leave letter template"],
+      "response": "Subject: Permission for Leave of Absence - [Your Name] ([Roll No])\n\nRespected Sir/Madam,\n\nI am writing to formally request leave of absence on [Date] due to [Reason]. I will ensure all missed coursework and lab work are caught up promptly.\n\nThank you for your understanding.\n\nSincerely,\n[Your Name]\n[Roll Number] - [Department]",
+      "follow_ups": ["Who is my HOD?", "What is the attendance policy?"]
+    },
     "bonafide_certificate": {
-      "examples": ["I need a bonafide certificate", "How to get bonafide", "bonafide request", "apply for bonafide certificate", "bonafide letter"],
+      "examples": ["I need a bonafide certificate", "How to get bonafide", "How do I request a Bonafide Certificate?", "bonafide request", "apply for bonafide certificate", "bonafide letter"],
       "response": "You can request a Bonafide Certificate from your Department Office or the Administrative Office. Bring your college ID card. I can help draft a request letter if needed.",
       "follow_ups": ["Can you draft the request letter?", "Where is the Administrative Office?"]
     },
     "lost_id_card": {
-      "examples": ["My ID is missing", "I lost my college card", "I can't find my ID", "where to report lost ID", "lost my identity card", "ID card replacement"],
+      "examples": ["My ID is missing", "I lost my college card", "I lost my college ID card, what should I do?", "I can't find my ID", "where to report lost ID", "lost my identity card", "ID card replacement"],
       "response": "Report the loss immediately to your Department Office or Administrative Office and apply for a replacement ID card. You'll need to fill a replacement form and pay the replacement fee.",
       "follow_ups": ["Where is the Administrative Office?", "How much does a replacement ID cost?"]
     },
@@ -36,12 +41,17 @@
       "follow_ups": ["Documents for admission", "Documents for scholarship", "Documents for bonafide"]
     },
     "join_clubs": {
-      "examples": ["How to join a club", "club recruitment", "I want to join coding club", "participate in clubs", "register for club"],
+      "examples": ["How do I join the Coding Club?", "How to join a club", "club recruitment", "I want to join coding club", "participate in clubs", "register for club"],
       "response": "Clubs announce recruitment periodically during the semester. You can register through their official announcements on the portal's Events or Clubs section.",
       "follow_ups": ["What clubs are available?", "Are there any active recruitments?"]
     },
+    "clubs_active": {
+      "examples": ["What student clubs are active on campus?", "What clubs are available?", "active clubs", "list of clubs", "clubs on campus"],
+      "response": "Active student clubs at SCE include the Coding Club, Robotics Club, Fine Arts Club, IEEE Student Branch, Rotaract Club, and Sports Club. You can view all club details in the Clubs section of the portal.",
+      "follow_ups": ["How do I join the Coding Club?", "What sports facilities are available?"]
+    },
     "sports_information": {
-      "examples": ["Tell me about sports", "is there a gym", "can I play cricket", "sports facilities", "indoor games", "outdoor sports"],
+      "examples": ["What sports facilities are available?", "Tell me about sports", "is there a gym", "can I play cricket", "sports facilities", "indoor games", "outdoor sports"],
       "response": "SCE offers indoor sports (table tennis, chess, carrom) and outdoor sports (cricket, football, volleyball, basketball, athletics). Contact the Physical Education Department for schedules and team selections.",
       "follow_ups": ["Where is the sports ground?", "When are the sports trials?"]
     },
@@ -61,27 +71,27 @@
       "follow_ups": ["What are the library hours?", "How many books can I borrow?"]
     },
     "canteen_hours": {
-      "examples": ["When does the canteen open?", "canteen timings", "is the canteen open?", "what time is canteen closing", "canteen working hours", "mess timings"],
+      "examples": ["When does the canteen open?", "canteen timings", "is the canteen open?", "is the canteen open right now?", "what time is canteen closing", "canteen working hours", "mess timings"],
       "dynamic": "canteen_hours",
       "follow_ups": ["Where is the canteen?", "What is on the canteen menu?"]
     },
     "today_events": {
-      "examples": ["What events are happening today?", "today's events", "any events today?", "is there any event today", "what's going on today"],
+      "examples": ["What events are scheduled for today?", "What events are happening today?", "today's events", "any events today?", "is there any event today", "what's going on today"],
       "dynamic": "today_events",
       "follow_ups": ["Any upcoming hackathons?", "How do I register for events?"]
     },
     "weekly_workshops": {
-      "examples": ["Any workshops this week?", "weekly workshops", "workshops happening now", "upcoming workshops", "training sessions"],
+      "examples": ["What technical workshops are happening this week?", "Any workshops this week?", "weekly workshops", "workshops happening now", "upcoming workshops", "training sessions"],
       "dynamic": "weekly_workshops",
       "follow_ups": ["What events are happening today?", "Any open competitions?"]
     },
     "event_registration": {
-      "examples": ["How to register for event", "event registration", "I want to participate in event", "sign up for events", "register for workshop"],
+      "examples": ["How do I register for an event or workshop?", "How to register for event", "event registration", "I want to participate in event", "sign up for events", "register for workshop"],
       "dynamic": "event_registration",
       "follow_ups": ["What events are happening today?", "Any upcoming hackathons?"]
     },
     "upcoming_hackathons": {
-      "examples": ["Any hackathons?", "upcoming hackathons", "hackathon schedule", "when is the next hackathon", "coding competition"],
+      "examples": ["Are there any upcoming hackathons or coding contests?", "Any hackathons?", "upcoming hackathons", "hackathon schedule", "when is the next hackathon", "coding competition"],
       "dynamic": "upcoming_hackathons",
       "follow_ups": ["How to register for events?", "Any workshops this week?"]
     },
@@ -91,7 +101,7 @@
       "follow_ups": ["Any upcoming hackathons?", "How to register for events?"]
     },
     "placement_info": {
-      "examples": ["Tell me about placements", "placement details", "placement record", "which companies visit", "campus recruitment", "placement cell"],
+      "examples": ["What are the latest placement notices?", "Tell me about placements", "placement details", "placement record", "which companies visit", "campus recruitment", "placement cell"],
       "response": "The Training & Placement Cell handles all campus recruitment. Companies like TCS, Infosys, Wipro, CTS, and others conduct drives regularly. Check the Notices section for upcoming placement drives.",
       "follow_ups": ["Are there any upcoming placement drives?", "Where is the placement cell?"]
     },
@@ -111,7 +121,7 @@
       "follow_ups": ["When are the exams?", "Any recent notices?"]
     },
     "campus_wifi": {
-      "examples": ["How to connect to wifi", "campus wifi", "internet access", "wifi password", "wifi not working"],
+      "examples": ["How do I connect to campus WiFi?", "How to connect to wifi", "campus wifi", "internet access", "wifi password", "wifi not working"],
       "response": "Campus WiFi is available in all academic blocks. Connect to the college network and use your student credentials to login. For WiFi issues, contact the IT Support team in the Computer Centre.",
       "follow_ups": ["Where is the Computer Centre?", "Who handles IT support?"]
     },
@@ -126,7 +136,7 @@
       "follow_ups": ["What documents are required?", "Where is the Admissions Office?"]
     },
     "attendance_policy": {
-      "examples": ["What is the attendance policy?", "minimum attendance", "attendance percentage", "attendance requirement", "how much attendance is needed"],
+      "examples": ["What is the minimum attendance policy for semester exams?", "What is the attendance policy?", "minimum attendance", "attendance percentage", "attendance requirement", "how much attendance is needed"],
       "response": "A minimum of 75% attendance is mandatory for all students to be eligible for end-semester exams. Students below 75% may be detained. Contact your Class Coordinator for your attendance status.",
       "follow_ups": ["How do I apply for leave?", "Who is my Class Coordinator?"]
     },
@@ -141,8 +151,8 @@
       "follow_ups": ["Where is the Computer Centre?", "How to connect to campus WiFi?"]
     },
     "college_timings": {
-      "examples": ["What are the college timings?", "when does college start", "college working hours", "what time does college close", "class timings"],
-      "response": "College hours are from 8:45 AM to 4:00 PM (Monday to Friday). Saturday classes may be scheduled as per department requirements.",
+      "examples": ["What are the college bus timings in the morning and evening?", "What are the college timings?", "when does college start", "college working hours", "what time does college close", "class timings", "bus timings"],
+      "response": "College working hours are from 8:45 AM to 4:00 PM (Monday to Friday). College buses leave from various pickup points between 07:00 AM and 07:30 AM to reach campus by 08:30 AM, and return buses leave campus at 04:30 PM.",
       "follow_ups": ["What are the library hours?", "What are the canteen hours?"]
     },
     "parking_info": {
