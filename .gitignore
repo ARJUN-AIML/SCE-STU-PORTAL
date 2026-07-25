@@ -48,6 +48,5 @@ htmlcov/
 # Local Databases
 *.sqlite3
 campus.db
-chroma_db/
-backend/chroma_db/
+
 
